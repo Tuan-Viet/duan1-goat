@@ -26,6 +26,4 @@
     include "views/footer.php";
 ?>
 
-hello 4
 
-hello 5
