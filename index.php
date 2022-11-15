@@ -25,5 +25,3 @@
     }
     include "views/footer.php";
 ?>
-
-
