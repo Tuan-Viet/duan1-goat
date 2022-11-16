@@ -1,683 +1,104 @@
-<div class="slider">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!--Carousel Indicators-->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-        </ol>
-        <!--Carousel Items-->
-        <div class="carousel-inner">
-            <!--tips: add data-interval="" to a .carousel-item to change the amount of time to delay before the next item.(Default: 5000)-->
-            <div class="carousel-item active">
-                <img src="https://cdn.dribbble.com/userupload/3853689/file/original-7acfb7d39b65057eac749d4b86eff658.jpg?compress=1&resize=1200x900" class="img_slider d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Chào mừng đến cửa hàng GOAT</h5>
-                    <p>Nơi bán hàng uy tín - Chất lượng nhất Việt Nam</p>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!--Carousel Indicators-->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+            </ol>
+            <!--Carousel Items-->
+            <div class="carousel-inner">
+                <!--tips: add data-interval="" to a .carousel-item to change the amount of time to delay before the next item.(Default: 5000)-->
+                <div class="carousel-item active">
+                    <img src="https://file.hstatic.net/200000136061/file/f235552373d9b987e0c8_b0a0cbd950f7477682350b0082ebd23b.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://file.hstatic.net/200000136061/file/slide-02_7a87c73829e941aaa652bda34f1fa49e.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="https://cdn.dribbble.com/users/1997192/screenshots/17217031/media/518fa1f43f307f7ae97da6ba22ccea1d.png?compress=1&resize=1000x750&vertical=top" class="img_slider d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Chào mừng đến cửa hàng GOAT</h5>
-                    <p>Nơi bán hàng uy tín - Chất lượng nhất Việt Nam</p>
-                </div>
-            </div>
-        </div>
-        <!--Carousel Controls-->
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</div>
-<div class="content wrapper">
-    <div class="section_content">
-        <h3 class="title_content mt40">
-            <a href="">Áo khoác</a>
-        </h3>
-        <div class="products_content mt40">
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12 ">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-
-        </div>
-        <button class="btn_section-content">Xem tất cả sản phẩm này</button>
-    </div>
-    <div class="section_content">
-        <a href="">
-            <h3 class="title_content mt40">
-                Quần áo Tây
-            </h3>
-        </a>
-        <div class="items_content mt40">
-            <div class="item">
-                <a href="">
-                    <div class="item_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/articles/webcover1-02.jpg?v=1650382843857" alt="" class="item_img">
-                    </div>
-                    <div class="item_nav">
-                        <p class="item_nav-title">Sản xuất tại Việt Nam</p>
-                        <p href="" class="item_nav-intro">Từ những nghệ nhân đóng giày dày dạn kinh nghiệm với mong muốn mang đến cho Quý Ông đôi giày mang Thương Hiệu Việt chất lượng tốt nhất.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="item_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/articles/webcover1-02.jpg?v=1650382843857" alt="" class="item_img">
-                    </div>
-                    <div class="item_nav">
-                        <p class="item_nav-title">Sản xuất tại Việt Nam</p>
-                        <p href="" class="item_nav-intro">Từ những nghệ nhân đóng giày dày dạn kinh nghiệm với mong muốn mang đến cho Quý Ông đôi giày mang Thương Hiệu Việt chất lượng tốt nhất.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="item_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/articles/webcover1-02.jpg?v=1650382843857" alt="" class="item_img">
-                    </div>
-                    <div class="item_nav">
-                        <p class="item_nav-title">Sản xuất tại Việt Nam</p>
-                        <p href="" class="item_nav-intro">Từ những nghệ nhân đóng giày dày dạn kinh nghiệm với mong muốn mang đến cho Quý Ông đôi giày mang Thương Hiệu Việt chất lượng tốt nhất.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="item_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/articles/webcover1-02.jpg?v=1650382843857" alt="" class="item_img">
-                    </div>
-                    <div class="item_nav">
-                        <p class="item_nav-title">Sản xuất tại Việt Nam</p>
-                        <p href="" class="item_nav-intro">Từ những nghệ nhân đóng giày dày dạn kinh nghiệm với mong muốn mang đến cho Quý Ông đôi giày mang Thương Hiệu Việt chất lượng tốt nhất.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="items_content-bottom mt40">
-            <div class="carts_bottom">
-                <div class="cart_bottom-box">
-                    <div class="cart_bottom-photo">
-                        <img src="//bizweb.dktcdn.net/100/292/624/themes/758446/assets/ant_index_banner_1.jpg?1668225621181" alt="" class="cart_bottom-img">
-                        <div class="nav_cart-bottom">
-                            <p class="title_cart-bottom">DRESS SHOES</p>
-                            <a href="" class="btn_cart-bottom">Xem thêm</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="cart_bottom-box">
-                    <div class="cart_bottom-photo">
-                        <img src="//bizweb.dktcdn.net/100/292/624/themes/758446/assets/ant_index_banner_1.jpg?1668225621181" alt="" class="cart_bottom-img">
-                        <div class="nav_cart-bottom">
-                            <p class="title_cart-bottom">DRESS SHOES</p>
-                            <a href="" class="btn_cart-bottom">Xem thêm</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="cart_bottom-box">
-                    <div class="cart_bottom-photo">
-                        <img src="//bizweb.dktcdn.net/100/292/624/themes/758446/assets/ant_index_banner_1.jpg?1668225621181" alt="" class="cart_bottom-img">
-                        <div class="nav_cart-bottom">
-                            <p class="title_cart-bottom">DRESS SHOES</p>
-                            <a href="" class="btn_cart-bottom">Xem thêm</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section_content">
-        <h3 class="title_content mt40">
-            <a href="">Áo hoodie</a>
-        </h3>
-        <div class="products_content mt40">
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12 ">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-
-        </div>
-        <button class="btn_section-content">Xem tất cả sản phẩm này</button>
-    </div>
-    <div class="section_content">
-        <h3 class="title_content mt40">
-            <a href="">Phụ kiện</a>
-        </h3>
-        <div class="products_content mt40">
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12 ">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-
-        </div>
-        <button class="btn_section-content">Xem tất cả sản phẩm này</button>
-    </div>
-    <div class="section_content">
-        <h3 class="title_content mt40">
-            <a href="">Giày</a>
-        </h3>
-        <div class="products_content mt40">
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12 ">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-            <div class="product_cart">
-                <div class="product_cart-photo">
-                    <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                </div>
-                <div class="covert">
-                    <div class="covert_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                    </div>
-                </div>
-                <div class="product_cart-nav">
-                    <p class="cart_nav-top fz12">
-                        Derby
-                    </p>
-                    <p class="cart_nav-center">
-                        James Derby - DB27
-                    </p>
-                    <p class="price fz12">
-                        1.750.000 <sup>đ</sup>
-                    </p>
-                    <button class="btn_cart-product">Mua ngay</button>
-                </div>
-            </div>
-
-        </div>
-        <button class="btn_section-content">Xem tất cả sản phẩm này</button>
-    </div>
-    <div class="section_content">
-        <h3 class="title_content mt40">
-            <a href="">OutFit</a>
-        </h3>
-        <div class="outfits_list">
-            <div class="outfit mt40">
-                <div class="outfit_photo">
-                    <img src="//bizweb.dktcdn.net/100/292/624/themes/758446/assets/index-evo-icon-2.jpg?1668225621181" alt="" class="outfit_img">
-                </div>
-                <div class="product_cart product_outfit">
-                    <div class="product_cart-photo">
-                        <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                    </div>
-                    <div class="covert">
-                        <div class="covert_photo">
-                            <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                        </div>
-                    </div>
-                    <div class="product_cart-nav">
-                        <p class="cart_nav-top fz12 ">
-                            Derby
-                        </p>
-                        <p class="cart_nav-center">
-                            James Derby - DB27
-                        </p>
-                        <p class="price fz12">
-                            1.750.000 <sup>đ</sup>
-                        </p>
-                        <button class="btn_cart-product">Mua ngay</button>
-                    </div>
-                </div>
-            </div>
-            <div class="outfit mt40">
-                <div class="outfit_photo">
-                    <img src="//bizweb.dktcdn.net/100/292/624/themes/758446/assets/index-evo-icon-2.jpg?1668225621181" alt="" class="outfit_img">
-                </div>
-                <div class="product_cart product_outfit">
-                    <div class="product_cart-photo">
-                        <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                    </div>
-                    <div class="covert">
-                        <div class="covert_photo">
-                            <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                        </div>
-                    </div>
-                    <div class="product_cart-nav">
-                        <p class="cart_nav-top fz12 ">
-                            Derby
-                        </p>
-                        <p class="cart_nav-center">
-                            James Derby - DB27
-                        </p>
-                        <p class="price fz12">
-                            1.750.000 <sup>đ</sup>
-                        </p>
-                        <button class="btn_cart-product">Mua ngay</button>
-                    </div>
-                </div>
-            </div>
-            <div class="outfit mt40">
-                <div class="outfit_photo">
-                    <img src="//bizweb.dktcdn.net/100/292/624/themes/758446/assets/index-evo-icon-2.jpg?1668225621181" alt="" class="outfit_img">
-                </div>
-                <div class="product_cart product_outfit">
-                    <div class="product_cart-photo">
-                        <a href=""><img src="//bizweb.dktcdn.net/thumb/large/100/292/624/products/dscf6130.jpg?v=1657792739000" alt="" class="product_cart-img"></a>
-                    </div>
-                    <div class="covert">
-                        <div class="covert_photo">
-                            <img src="//bizweb.dktcdn.net/thumb/small/100/292/624/products/web-edit-1104-62.jpg" alt="" class="covert_img">
-                        </div>
-                    </div>
-                    <div class="product_cart-nav">
-                        <p class="cart_nav-top fz12 ">
-                            Derby
-                        </p>
-                        <p class="cart_nav-center">
-                            James Derby - DB27
-                        </p>
-                        <p class="price fz12">
-                            1.750.000 <sup>đ</sup>
-                        </p>
-                        <button class="btn_cart-product">Mua ngay</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="section_content">
-        <h3 class="title_content mt40">
-            <a href="">Tin tức hot</a>
-        </h3>
-        <div class="items_content mt40">
-            <div class="item">
-                <a href="">
-                    <div class="item_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/articles/b92c847e9d4c5a12035d.jpg?v=1665643962513" alt="" class="item_img">
-                    </div>
-                    <div class="item_nav">
-                        <p class="item_nav-title">Sản xuất tại Việt Nam</p>
-                        <p href="" class="item_nav-intro nav_last-content">Từ những nghệ nhân đóng giày dày dạn kinh nghiệm với mong muốn mang đến cho Quý Ông đôi giày mang Thương Hiệu Việt chất lượng tốt nhất.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="item_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/articles/b92c847e9d4c5a12035d.jpg?v=1665643962513" alt="" class="item_img">
-                    </div>
-                    <div class="item_nav">
-                        <p class="item_nav-title">Sản xuất tại Việt Nam</p>
-                        <p href="" class="item_nav-intro nav_last-content">Từ những nghệ nhân đóng giày dày dạn kinh nghiệm với mong muốn mang đến cho Quý Ông đôi giày mang Thương Hiệu Việt chất lượng tốt nhất.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="item_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/articles/b92c847e9d4c5a12035d.jpg?v=1665643962513" alt="" class="item_img">
-                    </div>
-                    <div class="item_nav">
-                        <p class="item_nav-title">Sản xuất tại Việt Nam</p>
-                        <p href="" class="item_nav-intro nav_last-content">Từ những nghệ nhân đóng giày dày dạn kinh nghiệm với mong muốn mang đến cho Quý Ông đôi giày mang Thương Hiệu Việt chất lượng tốt nhất.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="item">
-                <a href="">
-                    <div class="item_photo">
-                        <img src="//bizweb.dktcdn.net/thumb/large/100/292/624/articles/b92c847e9d4c5a12035d.jpg?v=1665643962513" alt="" class="item_img">
-                    </div>
-                    <div class="item_nav">
-                        <p class="item_nav-title">Sản xuất tại Việt Nam</p>
-                        <p href="" class="item_nav-intro nav_last-content">Từ những nghệ nhân đóng giày dày dạn kinh nghiệm với mong muốn mang đến cho Quý Ông đôi giày mang Thương Hiệu Việt chất lượng tốt nhất.</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <button class="btn_section-content">Xem tất cả sản phẩm này</button>
-
-    </div>
-</div>
-<div class="sub_content mt40">
-    <p class="title_sub-content">Sản phẩm đã xem</p>
-    <div class="container_sub-content">
-        <div class="box_sub-content">
-            <a href="">
-                <img src="https://bizweb.dktcdn.net/100/292/624/products/dscf6129.jpg?v=1663582443010" alt="" class="img_sub-content">
-                <div class="nav_sub-content">
-                    <p class="name_product">CLASS LOAFERS - LF02</p>
-                    <p class="price">1.450.000 <sup>đ</sup></p>
-                </div>
+            <!--Carousel Controls-->
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
             </a>
         </div>
-        <div class="box_sub-content">
-            <a href="">
-                <img src="https://bizweb.dktcdn.net/100/292/624/products/dscf6129.jpg?v=1663582443010" alt="" class="img_sub-content">
-                <div class="nav_sub-content">
-                    <p class="name_product">CLASS LOAFERS - LF02</p>
-                    <p class="price">1.450.000 <sup>đ</sup></p>
+        <div class="content wrapper">
+            <div class="content_sections">
+                <div class="content_section-top mb30">
+                    <div class="box_content-top">
+                        <div class="photo_box-top">
+                            <a href=""><img src="./images/product_demo/slide_2-01_5133adfaedb141b4bf6beaf362826934.jpg" alt="" class="img_box-top"></a>
+                        </div>
+                        <div class="photo_box-top">
+                            <a href=""><img src="./images/product_demo/slide_2-02_c782e553112c4156b36cb80d0700844a.jpg" alt="" class="img_box-top"></a>
+                        </div>
+                        <div class="photo_box-top">
+                            <a href=""><img src="./images/product_demo/slide_2-01_5133adfaedb141b4bf6beaf362826934.jpg" alt="" class="img_box-top"></a>
+                        </div>
+                    </div>
                 </div>
-            </a>
-        </div>
-        <div class="box_sub-content">
-            <a href="">
-                <img src="https://bizweb.dktcdn.net/100/292/624/products/dscf6129.jpg?v=1663582443010" alt="" class="img_sub-content">
-                <div class="nav_sub-content">
-                    <p class="name_product">CLASS LOAFERS - LF02</p>
-                    <p class="price">1.450.000 <sup>đ</sup></p>
+                <div class="content_section-center mb30">    
+                    <div class="box_content-center">
+                        <div class="box_center">
+                            <div class="photo_large">
+                                <a href="" class="img_href">
+                                    <img src="https://file.hstatic.net/200000136061/file/slide_3-02_76e321bd6f2a46cab9dcf22d084a4fe9.jpg" alt="" class="img_content-center">
+                                </a>
+                            </div>
+                            <div class="photo_large">
+                                <a href="" class="img_href">
+                                    <img src="https://file.hstatic.net/200000136061/file/slide_3-01_91e4e101ce8645548a05a87be0899a98.jpg" alt="" class="img_content-center">
+                                </a>
+                            </div>
+                            <div class="photo_large">
+                                <a href="" class="img_href">
+                                    <img src="https://file.hstatic.net/200000136061/file/slide_3-03_0fae7352209548cc82a3a3a365d32c2e.jpg" alt="" class="img_content-center">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </a>
+                <div class="content_section-bottom">
+                    <div class="box_content-bottom">
+                        <div class="photo_content-bottom">
+                            <a href="" class="img_href">
+                                <img src="https://file.hstatic.net/200000136061/file/z2438908040220_72b736f1d225dbabe576be53145114c6_f8bb9872698341d7aee25aeba949db29.jpg" alt="" class="img_content-bottom">
+                                <div class="nav_content-bottom">
+                                    <p class="title_content-bottom">Backpack</p>
+                                    <p class="pro_quantity">23 sản phẩm</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="photo_content-bottom">
+                            <a href="" class="img_href">
+                                <img src="https://file.hstatic.net/200000136061/file/z2438908040372_06e31198149a28544df62e6ec14bd451_1264cb336bb94cbf9b5ee524d400c48a.jpg" alt="" class="img_content-bottom">
+                                <div class="nav_content-bottom">
+                                    <p class="title_content-bottom">Backpack</p>
+                                    <p class="pro_quantity">23 sản phẩm</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="photo_content-bottom">
+                            <a href="" class="img_href">
+                                <img src="https://file.hstatic.net/200000136061/file/z2438908029449_31054c9a1a8845a7e4eb066452abda2c_0ad5286cbead4c7d8958b7b5c4907283.jpg" alt="" class="img_content-bottom">
+                                <div class="nav_content-bottom">
+                                    <p class="title_content-bottom">Backpack</p>
+                                    <p class="pro_quantity">23 sản phẩm</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="photo_content-bottom">
+                            <a href="" class="img_href">
+                                <img src="https://file.hstatic.net/200000136061/file/z2438908119007_719f4812609147f9e47425fd35239021_bbfb6e5555a247039bae5ebc20c74f24.jpg" alt="" class="img_content-bottom">
+                                <div class="nav_content-bottom">
+                                    <p class="title_content-bottom">Backpack</p>
+                                    <p class="pro_quantity">23 sản phẩm</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
