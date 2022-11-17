@@ -12,7 +12,7 @@
       <!-- The sidebar -->
       <div class="sidebar">
         <img src="../images/logo/Logo.jpg" alt="" width="100%">
-        <a class="active" href="./home_admin.html">Goat Shop</a>
+        <a class="active" href="./home_admin.php">Goat Shop</a>
         <button type="button" class="collapsible">Quản lí người dùng</button>
         <div class="content1">
             <a href="#">Danh sách người dùng</a>
