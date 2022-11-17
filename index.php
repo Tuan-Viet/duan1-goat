@@ -15,6 +15,15 @@
             case 'hang_hoa_chi_tiet':
                 include "views/hang_hoa_chi_tiet.php";
                 break;
+            case 'dang_nhap':
+                include "views/accounts/dang_nhap.php";
+                break;
+            case 'dang_ky':
+                include "views/accounts/dang_ky.php";
+                break;
+            case 'quen_mat_khau':
+                include "views/accounts/quen_mat_khau.php";
+                break;
             default:
             include "views/home.php";
             break; 
