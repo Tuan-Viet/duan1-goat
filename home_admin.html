@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/admin/style.css">
+  <link rel="stylesheet" href="./style.css">
   <title>Home Admin</title>
 </head>
 <body>
     <div class="main">
       <!-- The sidebar -->
       <div class="sidebar">
-        <img src="../images/logo/Logo.jpg" alt="" width="100%">
+        <img src="./Image/goat-logo-template_165421-original.png" alt="" width="100%">
         <a class="active" href="./home_admin.html">Goat Shop</a>
         <button type="button" class="collapsible">Quản lí người dùng</button>
         <div class="content1">
@@ -24,12 +24,12 @@
         </div>
         <button type="button" class="collapsible">Quản lí sản phẩm</button>
         <div class="content1">
-            <a href="?act=list_products">Danh sách sản phẩm</a>
+            <a href="#">Danh sách sản phẩm</a>
             <a href="#">Thêm mới</a>
         </div>
         <button type="button" class="collapsible">Quản lí loại hàng</button>
         <div class="content1">
-            <a href="?act=list_cate">Danh sách loại hàng</a>
+            <a href="#">Danh sách loại hàng</a>
             <a href="#">Thêm mới</a>
         </div>
         <button type="button" class="collapsible">Quản lí đơn hàng</button>
@@ -38,9 +38,30 @@
         </div>
         <button type="button" class="collapsible">Quản lí bình luận</button>
         <div class="content1">
-            <!-- <a href="#">Phản hồi</a>
-            <a href="#">Xóa bình luận</a> -->
+            <a href="#">Phản hồi</a>
+            <a href="#">Xóa bình luận</a>
         </div>
       </div>
       <!-- Page content -->
       <div class="content">
+            
+      </div>
+    </div>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+    </script>
+</body>
+</html>
