@@ -1,6 +1,7 @@
 <?php
     include "models/PDO.php";
     include "models/products.php";
+    include "models/products_detail.php";
     include "models/categories.php";
     include "models/comments.php";
     include "models/orders.php";
@@ -10,11 +11,16 @@
         $act = $_GET['act'];
         switch ($act) {
             case 'hang_hoa':
+                $listhanghoa = show_product(0);
                 include "views/hang_hoa.php";
                 break;
             case 'hang_hoa_chi_tiet':
+                $product_id = $_GET['id'];
+                $listhanghoa = show_product($product_id);
+                $listproduct = show_products_details($product_id);
                 include "views/hang_hoa_chi_tiet.php";
                 break;
+
             case 'dang_nhap':
                 include "views/accounts/dang_nhap.php";
                 break;
@@ -23,6 +29,13 @@
                 break;
             case 'quen_mat_khau':
                 include "views/accounts/quen_mat_khau.php";
+
+            case 'addtocart':
+                // if (isset($_POST['btn_buynow']) && $_POST['btn_buynow']) {
+
+                // }
+                include "views/bill/bill_confirm.php";
+
                 break;
             default:
             include "views/home.php";
