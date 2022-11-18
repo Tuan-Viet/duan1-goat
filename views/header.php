@@ -34,10 +34,10 @@
             <div class="header_menu">
                 <div class="section_header-menu wrapper">
                     <div class="logo_header">
-                        <a href="#"><img src="./images/logo/z3873649224107_9da7327af01da45a4a2f921f0e652d14-removebg-preview.png" alt="" class="logo_header"></a>
+                        <a href="?act=home"><img src="./images/logo/z3873649224107_9da7327af01da45a4a2f921f0e652d14-removebg-preview.png" alt="" class="logo_header"></a>
                     </div>
                     <ul class="menu">
-                        <li><a href="index.php">Trang chủ</a></li>
+                        <li><a href="./index.php">Trang chủ</a></li>
                         <li><a href="index.php?act=hang_hoa">Sản phẩm</a></li>
                         <li><a href="">Blog</a></li>
                         <li><a href="">Giới thiệu</a></li>
