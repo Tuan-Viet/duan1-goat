@@ -1,0 +1,116 @@
+body{
+    background: url('../images/logo/background.jpeg');
+    background-size: cover;
+    font-size: 14px;    
+    font-family: tahoma;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+#form-login{
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.8);
+    flex-grow: 1;
+    padding: 30px 30px 40px;
+    height: 65vh;
+}
+.form-login i{
+    color: #fff;
+    font-size: 14px;
+    padding-right: 10px;
+}
+.form-heading{
+    font-size: 25px;
+    color: #f5f5f5;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.form-group{
+    border-bottom: 1px solid #fff;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+.form-group i{
+    color: #fff;
+    font-size: 14px;
+    padding-right: 10px;
+}
+.form-input{
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: #f5f5f5;
+}
+#eye{
+    float: right;
+    margin-right: -10px;
+    cursor: pointer;
+}
+.form-input::placeholder{
+    color: #f5f5f5;
+}
+.form-submit{
+    background: transparent;
+    border: 1px solid #f5f5f5;
+    color: #fff;
+    width: 100%;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    transition: 0.25s ease-in-out;
+    margin-top: 30px;
+    cursor: pointer;
+}
+.form-submit:hover{
+    border: 1px solid #54a0ff;
+}
+.or{
+    color: #fff;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: -20px;
+    font-size: 15px;
+}
+.remember{
+    float: left;
+    margin-left: 0px;
+}
+span{
+    color: #fff;
+    font-size: 15px;
+}
+.quenmk{
+    float: right;
+    margin-right: 0px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+}
+.quenmk:hover{
+    text-decoration: underline;
+    color: #54a0ff;
+    transition: 0.25s ease-in-out;
+}
+.dangky {
+    border: 1px solid #fff;
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.dangky a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+.dangky:hover{
+    border: 1px solid #54a0ff;
+    transition: 0.25s ease-in-out;
+}
