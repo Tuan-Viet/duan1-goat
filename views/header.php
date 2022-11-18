@@ -45,11 +45,11 @@
                     </ul>
                     <div class="header_right">
                         <div class="user">
-                            <a href="" class="icon_user">        
+                            <a href="./index.php?act=dang_nhap" class="icon_user">        
                                 <ion-icon name="people-outline" class="icon_user-header"></ion-icon>
                                 <span>Đăng nhập</span>
                             </a>
-                            <a href="" class="cart">                  
+                            <a href="./index.php?act=dang_nhap" class="cart">                  
                                 <ion-icon name="cart-outline" class="icon_cart-header"></ion-icon>
                             </a>
                         </div>

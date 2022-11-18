@@ -20,11 +20,22 @@
                 $listproduct = show_products_details($product_id);
                 include "views/hang_hoa_chi_tiet.php";
                 break;
+
+            case 'dang_nhap':
+                include "views/accounts/dang_nhap.php";
+                break;
+            case 'dang_ky':
+                include "views/accounts/dang_ky.php";
+                break;
+            case 'quen_mat_khau':
+                include "views/accounts/quen_mat_khau.php";
+
             case 'addtocart':
                 // if (isset($_POST['btn_buynow']) && $_POST['btn_buynow']) {
 
                 // }
                 include "views/bill/bill_confirm.php";
+
                 break;
             default:
             include "views/home.php";
