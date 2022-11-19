@@ -62,6 +62,14 @@
                 include "views/bill/view_cart.php";
 
                 break;
+            case 'bill_pttt':
+
+                include "views/bill/bill_pttt.php";
+                break;
+            case 'bill_access':
+
+                include "views/bill/bill_access.php";
+                break;
             default:
             include "views/home.php";
             break; 
