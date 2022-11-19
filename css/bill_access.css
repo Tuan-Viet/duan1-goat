@@ -1,0 +1,35 @@
+.order_success {
+    width: 40px;
+    height: 40px;
+    color: aquamarine;
+}
+
+.main_left .title_order-success {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.row_confirm-order {
+    background-color: #ccc;
+    /* width: 400px; */
+    margin: 20px 0;
+    padding: 10px;
+
+    /* text-align: center; */
+}
+
+.row_confirm-order p {
+    font-family: 'font_main-medium';
+    min-width: 250px;
+    /* text-align: end; */
+    text-align: center;
+}
+
+.row_confirm-order .user_confirm span {
+    min-width: 200px;
+    font-weight: 600;
+}
+
+.user_confirm {
+    display: flex;
+}
