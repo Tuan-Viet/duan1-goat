@@ -44,6 +44,7 @@
                         <h1><?= $total ?><del class="price_pro-sale"><?= $product_price ?></del></h1>
                     </div>
                     <form action="index.php?act=addtocart" method="post" class="form_pro">
+                        <input type="hidden" name="product_id">
                         <div class="select_swatch mb24">
                             <span class="header_swatch mb8">Màu sắc:</span>
                             <div class="colors_pro">
@@ -61,24 +62,27 @@
                         <div class="select_swatch mb24">
                             <span class="header_swatch mb8">Kích thước</span>
                             <div class="select_swap">
-                                <?php foreach($listproduct as $product_detail): ?>
-                                    <?php extract($product_detail) ?>
-                                    <label class="swap_element" for="<?= $id?>">
-                                        <input type="radio" name="size" id="<?= $id?>" class="size_0-1">
-                                        <div class="ellipse"></div>
-                                        <name class="size-S"><?= $size ?></name>
-                                    </label>
-                                <?php endforeach ?>
-                                <!-- <label class="swap_element" for="radio_size1">
-                                    <input type="radio" name="size" id="radio_size1" class="size_0-1">
+                                <label class="swap_element" for="radio_size0">
+                                    <input type="radio" name="size" value="S" id="radio_size0" class="size_0-1">
+                                    <div class="ellipse"></div>
+                                    <name class="size-S">S</name>
+                                </label>
+                                <label class="swap_element" for="radio_size1">
+                                    <input type="radio" name="size" value="M" id="radio_size1" class="size_0-1">
                                     <div class="ellipse"></div>
                                     <name class="size-S">M</name>
                                 </label>
                                 <label class="swap_element" for="radio_size2">
-                                    <input type="radio" name="size" id="radio_size2" class="size_0-1">
+                                    <input type="radio" name="size" value="L" id="radio_size2" class="size_0-1">
                                     <div class="ellipse"></div>
                                     <name class="size-S">L</name>
-                                </label> -->
+                                </label>
+                                <label class="swap_element" for="radio_size3">
+                                    <input type="radio" name="size" value="XL" id="radio_size3" class="size_0-1">
+                                    <div class="ellipse"></div>
+                                    <name class="size-S">XL</name>
+                                </label>
+
                             </div>
                         </div>
                         <div class="select_watch">
