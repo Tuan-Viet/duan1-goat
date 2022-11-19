@@ -1,0 +1,58 @@
+.price_ship{
+    width: 100%;
+}
+.section_title{
+    font-size: 18px;
+}
+.row_section-content-ship{
+    border: 1px solid #ccc;
+    border-radius: 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.row_section-content-payment {
+    border: 1px solid #ccc;
+    border-radius: 0.6rem;
+    display: flex;
+}
+.section_ship-left{
+    display: flex;
+}
+
+.nav_payment,
+.section_ship-left .total_line-price {
+    opacity: 0.7;
+    font-weight: 600;
+    font-family: 'font_main-medium';
+    font-size: 15px;
+}
+.ellipse_ship{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #2cccff;
+    margin-right: 15px;
+}
+
+.section_ship-right {
+    display: flex;
+}
+
+.section_ship-right .total_line-price {
+    font-size: 14px;
+    color: #666666;
+}
+.payment{
+
+}
+.row_section-content-payment{
+
+}
+
+.ellipse_ship input {
+    width: 100%;
+    height: 100%;
+}
+

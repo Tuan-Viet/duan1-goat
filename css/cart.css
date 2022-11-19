@@ -1,0 +1,148 @@
+.carts_check{
+    /* padding: 0 24px; */
+}
+.carts_check .header_carts-check{
+    text-align: center;
+    font-family: 'font_main-medium';
+}
+
+.carts_check .header_carts-check h1 {
+    font-weight: 600;
+    font-size: 30px;
+}
+.count_cart{
+    
+}
+
+.count_cart span {
+    font-family: 'font_main-bold';
+}
+
+.item_id-pro{
+
+}
+.photo_pro-view{
+
+}
+.img_pro-view{
+
+}
+.info_pro-view{
+
+}
+.pro_title-view{
+
+}
+.pro_cate-view{
+
+}
+.pro_quantity-cart{
+    background-color: transparent;
+}
+.quantity_count{
+    width: 30px;
+}
+.pro_price-view{
+
+}
+
+.pro_price-cart {
+    margin-left: 0;
+}
+.icon_trash{
+    width: 25px;
+    height: 25px;
+    color: red;
+    cursor: pointer;
+    /* float: right; */
+}
+
+.total_pro-cart {
+    float: right;
+}
+
+.total_pro-cart p {
+    font-size: 18px;
+}
+
+.row{
+
+}
+.pay{
+
+}
+.col-lg-6{
+
+}
+.pay_box-left{
+
+}
+.note{
+    padding: 5px 20px;
+    background-color: #ededed;
+}
+.pay_box-right{
+    /* float: right; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.total_info{
+    text-align: right;
+    font-family: 'font_main-medium';
+    font-size: 15px;
+    color: #666666;
+    /* font-weight: 550; */
+}
+.pay_total-price{
+    font-weight: 600;
+    font-family: 'font_main-bold';
+    font-size: 28px;
+    /* color: #666666; */
+    margin-left: 10px;
+}
+.cart_buttons{
+    text-align: right;
+
+}
+
+.icon_return {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    border: none;
+    pointer-events: none;
+}
+.link_continue{
+    background-color: #333e48;
+    /* position: relative; */
+}
+.link_update{
+    background-color: #333e48;
+}
+.link_pay{
+    background-color: red;
+}
+
+.icon_return:hover {
+    border: none;
+    color: #333e48;
+}
+
+.icon_return:hover,
+.link_continue:hover , .link_update:hover {
+    background-color: #fff;
+    text-decoration: none;
+    border: 1px solid #333e48;
+    color: #333e48;
+}
+
+.link_continue , .link_update , .link_pay {
+    padding: 19px 20px;
+    color: #Fff;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-family: 'font_main-medium';
+    font-weight: 600;
+    transition: all .25s linear;
+}
