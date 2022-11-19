@@ -29,13 +29,24 @@
                 break;
             case 'quen_mat_khau':
                 include "views/accounts/quen_mat_khau.php";
-
-            case 'addtocart':
+            
+            case 'cart':
+                include "views/bill/cart.php";
+                break;
+            case 'bill_confirm':
                 // if (isset($_POST['btn_buynow']) && $_POST['btn_buynow']) {
 
                 // }
                 include "views/bill/bill_confirm.php";
 
+                break;
+            case 'bill_pttt':
+
+                include "views/bill/bill_pttt.php";
+                break;
+            case 'bill_access':
+
+                include "views/bill/bill_access.php";
                 break;
             default:
             include "views/home.php";
