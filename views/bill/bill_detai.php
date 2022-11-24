@@ -1,31 +1,33 @@
 <div class="main_right col-lg-5">
-    <?php $thanhtoan = 0; ?>
-    <?php foreach ($_SESSION['my_cart'] as $cart): ?>
+    <?php foreach ($load_all_order_detail as $order): ?>
+        <?php extract($order) ?>
     <div class="info_pro mb24">
         <div class="info_pro-id">
             <div class="photo_pro-view">
                 <a href="">
-                    <img src="./images/products/<?= $cart[4] ?>" alt="" class="img_pro-view">
+                    <img src="./images/products/<?= $image ?>" alt="" class="img_pro-view">
                 </a>
             </div>
             <div class="info_pro-view">
-                <a href="" class="pro_title-view"><?= $cart[1] ?></a>
-                <span class="pro_cate-view"><?= $cart[5] ?> /<?= $cart[6]?></span>
-                <span class="pro_quantity-view pro_quantity-cart"><span class="pro_quantity-view"><?= $cart[7] ?></span></span>
+                <a href="" class="pro_title-view"><?= $product_name ?></a>
+                <span class="pro_cate-view"><?= $product_color ?> /<?= $size?></span>
+                <span class="pro_quantity-view pro_quantity-cart"><span class="pro_quantity-view"><?= $quantity ?></span></span>
             </div>
         </div>
-        <span class="pro_price-view pro_price-cart"><?= $cart[8] ?> <sup>đ</sup></span>
-        <?php
-            $thanhtoan += $cart[8];
-        ?>
+        <span class="pro_price-view pro_price-cart"><?= $total ?> <sup>đ</sup></span>
     </div>
     <?php endforeach ?>
+    <?php 
+        if(isset($load_one_order)&&(is_array($load_one_order))) {
+            extract($load_one_order);
+        }
+    ?>
     <div class="row_table-pay">
         <table class="total_line-table">
             <tbody class="total_line-tbody">
                 <tr class="total_line">
                     <td class="total_line-name">Tạm tính</td>
-                    <td class="total_line-price"><?= $thanhtoan ?> <sup>đ</sup></td>
+                    <td class="total_line-price"><?= $total ?> <sup>đ</sup></td>
                 </tr>
                 <tr class="total_line">
                     <td class="total_line-name">Phí vẫn chuyển</td>
@@ -35,7 +37,7 @@
             <tfoot class="total_line-footer mt24">
                 <tr class="total_line">
                     <td class="total_line-name">Tổng cộng</td>
-                    <td class="total_line-price"><?= $thanhtoan ?> <sup>đ</sup> <span>VNĐ</span></td>
+                    <td class="total_line-price"><?= $total ?> <sup>đ</sup> <span>VNĐ</span></td>
                 </tr>
             </tfoot>
         </table>

@@ -12,15 +12,17 @@
 
 <body>
     <div id="wrapper">
-        <form action="form-login" id="form-login">
+        <form action="index.php?act=dang_nhap" method="post" id="form-login">
             <h1 class="form-heading">Đăng Nhập</h1>
             <div class="form-group">
                 <i class="far fa-user"></i>
-                <input type="text" class="form-input" placeholder="Tên đăng nhập">
+                <input type="text" class="form-input" name="user_name" placeholder="Tên đăng nhập">
+                <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['user_name']) ? $errors['user_name'] : '' ?></small>
             </div>
             <div class="form-group">
                 <i class="fas fa-key"></i>
-                <input type="password" class="form-input" placeholder="Mật khẩu">
+                <input type="password" class="form-input" name="user_password" placeholder="Mật khẩu">
+                <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['ten_loai_tour']) ? $errors['ten_loai_tour'] : '' ?></small>
                 <div id="eye">
                     <i class="far fa-eye"></i>
                 </div>
@@ -29,7 +31,7 @@
                 <input type="checkbox" value="" class="remember"><span>Remember me ?</span>
                 <a href="./index.php?act=quen_mat_khau" class="quenmk">Quên mật khẩu ?</a>
             </div>
-            <input type="submit" value="Đăng nhập" class="form-submit">
+            <input type="submit" name="btn_submit" value="Đăng nhập" class="form-submit">
             <h1 class="or">OR</h1>
             <div class="dangky">
                 <a href="./index.php?act=dang_ky">Đăng ký</a>

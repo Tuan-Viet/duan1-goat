@@ -12,28 +12,28 @@
 
 <body>
     <div id="wrapper">
-        <form action="" id="form-login">
+        <form action="index.php?act=dang_ky" method="post" id="form-login">
             <h1 class="form-heading">Đăng Ký</h1>
             <div class="form-group">
                 <i class="far fa-user"></i>
-                <input type="text" class="form-input" placeholder="Tên tài khoản">
+                <input type="text" class="form-input" placeholder="Tên tài khoản" name="user_name">
             </div>
             <div class="form-group">
                 <i class="far fa-envelope"></i>
-                <input type="text" class="form-input" placeholder="Email">
+                <input type="email" class="form-input" placeholder="Email" name="user_email">
             </div>
             <div class="form-group">
                 <i class="fas fa-phone"></i>
-                <input type="text" class="form-input" placeholder="Số điện thoại">
+                <input type="text" class="form-input" placeholder="Số điện thoại" name="user_tel">
             </div>
             <div class="form-group">
                 <i class="fas fa-key"></i>
-                <input type="password" class="form-input" placeholder="Mật khẩu">
+                <input type="password" class="form-input" placeholder="Mật khẩu" name="user_password">
                 <div id="eye">
                     <i class="far fa-eye"></i>
                 </div>
             </div>
-            <input type="submit" value="Đăng ký" class="form-submit">
+            <input type="submit" value="Đăng ký" class="form-submit" name="btn_submit">
         </form>
     </div>
 </body>

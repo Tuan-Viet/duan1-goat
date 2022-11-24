@@ -49,38 +49,28 @@
                     </ul>
                     <div class="header_right">
                         <div class="user">
-                            <a href="./index.php?act=dang_nhap" class="icon_user">        
-                                <ion-icon name="people-outline" class="icon_user-header"></ion-icon>
-                                <span>Đăng nhập</span>
-                            </a>
-                            <a href="" class="cart_icon">                  
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon_cart-header" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>
-                            </a>
+                            <?php if (isset($_SESSION['user'])){ ?>
+                                <a href="" class="icon_user">        
+                                    <ion-icon name="people-outline" class="icon_user-header"></ion-icon>
+                                    <p>Hi! <span>Nguyễn Công Quyền</span></p>
+                                </a>
+                                <a href="" class="cart_icon">                  
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon_cart-header" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>
+                                </a>
+                                <a href="index.php?act=dang_xuat">Đăng xuất</a>
+                            <?php } else { ?>
+                                <a href="index.php?act=dang_nhap" class="icon_user">        
+                                    <ion-icon name="people-outline" class="icon_user-header"></ion-icon>
+                                    <span>Đăng nhập</span>
+                                </a>
+                                <a href="" class="cart_icon">                  
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon_cart-header" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>
+                                </a>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
-                <div class="section_header-menu displayN wrapper">
-                    <div class="logo_header">
-                        <a href="?act=home"><img src="./images/logo/z3873649224107_9da7327af01da45a4a2f921f0e652d14-removebg-preview.png" alt="" class="logo_header"></a>
-                    </div>
-                    <ul class="menu">
-                        <li><a href="./index.php">Trang chủ</a></li>
-                        <li><a href="index.php?act=hang_hoa">Sản phẩm</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">Giới thiệu</a></li>
-                        <li><a href="">Liên hệ</a></li>
-                    </ul>
-                    <div class="header_right">
-                        <div class="user">
-                            <a href="./index.php?act=dang_nhap" class="icon_user">        
-                                <ion-icon name="people-outline" class="icon_user-header"></ion-icon>
-                                <p>Hi! <span>Nguyễn Công Quyền</span></p>
-                            </a>
-                            <a href="" class="cart_icon">                  
-                            <svg xmlns="http://www.w3.org/2000/svg" class="icon_cart-header" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>
-                            </a>
-                        </div>
-                    </div>
+                
                 </div>
             </div>
         </header>
@@ -90,32 +80,37 @@
                     <p>Giỏ hàng</p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon_close-cart ionicon" viewBox="0 0 512 512"><title>Close</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
                 </div>
+                <?php if(isset($_SESSION['my_cart'])): ?>
+                <?php foreach($_SESSION['my_cart'] as $cart): ?>
                 <table id="view_cart" class="mt50">
                     <tbody>
                         <tr class="item_id-pro">
                             <td class="photo_pro-view">
                                 <a href="">
-                                    <img src="./images/products/AK1_vang.jpg" alt="" class="img_pro-view">
+                                    <img src="./images/products/<?= $cart[4] ?>" alt="" class="img_pro-view">
                                 </a>
                             </td>
                             <td class="info_pro-view">
-                                <a href="" class="pro_title-view">Hoodie Only to Myself</a>
-                                <span class="pro_cate-view">Đen / FreeSize</span>
-                                <div class=""><span class="pro_quantity-view">1</span>
-                                <span class="pro_price-view">320.000 <sup>đ</sup></span></div>
+                                <a href="" class="pro_title-view"><?= $cart[1] ?></a>
+                                <span class="pro_cate-view"><?= $cart[5] ?> / <?= $cart[6] ?></span>
+                                <div class=""><span class="pro_quantity-view"><?= $cart[7] ?></span>
+                                <span class="pro_price-view"><?= $cart[2] ?> <sup>đ</sup></span></div>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon_close-viewcart ionicon" viewBox="0 0 512 512"><title>Close</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                <?php endforeach ?>
+                <?php endif ?>
                 <hr class="inline"></hr>
                 <div class="total_cart mt28">
                     <p>Tổng tiền</p>
-                    <p class="total_price">336.000 <sup>đ</sup></p>
+                    <p class="total_price"><?= $thanh_tien = tongtien() ?><sup>đ</sup></p>
                 </div>
                 <div class="btn_cart mt28">
                     <a href="index.php?act=cart" class="link_to-cart">Xem giỏ hàng</a>
                     <a href="index.php?act=bill_confirm" class="link_to-checkout">Thanh Toán</a>
                 </div>
+                
             </div> 
         </div>
