@@ -62,7 +62,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: none;
+    /* display: none; */
     /* height: 500px; */
     bottom: 0;
 }
@@ -176,7 +176,7 @@
 }
 
 .img_swap::after {
-    content: "";
+    /* content: "";
     border: 1px solid #000;
     height: 100%;
     width: 100%;
@@ -184,7 +184,7 @@
     transform: scale(1.3,1.3);
     border-radius: 50%;
     display: block;
-    background-color: red;
+    background-color: red; */
     /* opacity: 0; */
     /* background-color: red; */
 }
@@ -314,3 +314,7 @@
 .slick-next {
     right: 0;
 }
+
+.color {
+    margin-right: 10px;
+} 

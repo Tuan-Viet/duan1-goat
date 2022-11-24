@@ -10,5 +10,10 @@
         $product_detail = pdo_query($sql);
         return $product_detail;
     }
+    function products_detail_one($product_detail_id){
+        $sql="SELECT * FROM products_detail where id = $product_detail_id";
+        $product_detail_one = pdo_query_one($sql);
+        return $product_detail_one;
+    }
 ?>
 

@@ -7,18 +7,24 @@
             <div class="col-lg-5 left_detail">
                 <div class="row row_left_detail">
                     <div class="col-lg-12 box_pro-main">
+                            <?php extract($listhanghoa)?>
+                            <div class="photo_pro-main">
+                                <!-- <input type="radio" name="color" id="<?= $id ?>" class="image_color" checked> -->
+                                <!-- <input type="hidden" name="image" value="<?= $image ?>"> -->
+                                <!-- <img src="./images/products/<?= $image ?>" alt="" class="img_pro-main"> -->
+                            </div>
+                            <!-- <div class="photo_pro-main">
+                                <input type="radio" name="color" id="image_color-black" class="image_color">
+                                <img src="./images/products/AT1_do.jpg" alt="" class="img_pro-main">
+                            </div>
+                            <div class="photo_pro-main">
+                                <input type="radio" name="color" id="image_color-white" class="image_color">
+                                <img src="./images/products/AK2_nau.jpg" alt="" class="img_pro-main">
+                            </div> -->
                         <div class="photo_pro-main">
-                            <input type="radio" name="color" id="image_color-blue" class="image_color" checked>
-                            <img src="./images/products/AK2_avt.jpg" alt="" class="img_pro-main">
+                            <img src="./images/products/<?= $image ?>" alt="" class="img_pro-main">
                         </div>
-                        <div class="photo_pro-main">
-                            <input type="radio" name="color" id="image_color-black" class="image_color">
-                            <img src="./images/products/AT1_do.jpg" alt="" class="img_pro-main">
-                        </div>
-                        <div class="photo_pro-main">
-                            <input type="radio" name="color" id="image_color-white" class="image_color">
-                            <img src="./images/products/AK2_nau.jpg" alt="" class="img_pro-main">
-                        </div>
+                        <!-- <img src="" alt="" class="img_pro-main"> -->
                     </div>
                 </div>
             </div>
@@ -32,19 +38,22 @@
                         <h1><?= $total ?><del class="price_pro-sale"><?= $product_price ?></del></h1>
                     </div>
                     <form action="index.php?act=addtocart" method="post" class="form_pro">
-                        <input type="hidden" name="product_id">
+                        <input type="hidden" name="product_id" value="<?= $product_id ?>">
+                        <input type="hidden" name="product_name" value="<?= $product_name ?>">
+                        <input type="hidden" name="product_price" value="<?= $product_price ?>">
+                        <input type="hidden" name="sale" value="<?= $sale ?>">
+                        <input type="hidden" name="total" value="<?= $total ?>">
                         <div class="select_swatch mb24">
                             <span class="header_swatch mb8">Màu sắc:</span>
-                            <div class="colors_pro">
-                            <label for="image_color-blue" class="label_color">
-                                <img src="./images/products/AK2_avt.jpg" alt="" class="img_swap">
-                            </label>
-                            <label for="image_color-black" class="label_color">
-                                <img src="./images/products/AT1_do.jpg" alt="" class="img_swap">
-                            </label>
-                            <label for="image_color-white" class="label_color">
-                                <img src="./images/products/AK2_nau.jpg" alt="" class="img_swap">
-                            </label>
+                            <div class="select_swap">
+                                <?php foreach($listproduct as $product): ?>
+                                    <?php extract($product) ?>
+                                    <label class="swap_element" for="radio_color<?= $id ?>">
+                                        <input type="radio" name="product_detail_id" value="<?=  $id ?>" id="radio_color<?= $id ?>" class="size_0-1">
+                                        <div class="ellipse"></div>
+                                        <name class="size-S"><?= $product_color ?></name>
+                                    </label>
+                                <?php endforeach ?>
                             </div>
                         </div>
                         <div class="select_swatch mb24">
@@ -75,8 +84,12 @@
                         </div>
                         <div class="select_watch">
                             <input type="number" name="quantity" min="1" value="1" id="" class="form_control-quantity">
-                            <a href="" class="btn_cart">Thêm vào giỏ hàng</a>
-                            <a href="" class="btn_cart">Mua ngay</a>
+                            <!-- <a href="" class="btn_cart">Thêm vào giỏ hàng</a> -->
+                            <!-- <a href="" name="btn_buynow" class="btn_cart">
+                                <button type="submit" class="btn_cart">Mua ngay</button>    
+                            </a> -->
+                            <input type="submit" name="btn_addtocart"  class="btn_cart" value="Thêm vào giỏ hàng">
+                            <input type="submit" name="btn_buynow" class="btn_cart" value="Mua ngay">
                         </div>
                     </form>
                 </div>
@@ -192,3 +205,4 @@
     </div>
 
 </main>
+
