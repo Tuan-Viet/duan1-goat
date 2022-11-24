@@ -8,16 +8,7 @@
                 <div class="row row_left_detail">
                     <div class="col-lg-12 box_pro-main">
                         <div class="photo_pro-main">
-                            <input type="radio" name="color" id="image_color-blue" class="image_color" checked>
-                            <img src="./images/products/AK2_avt.jpg" alt="" class="img_pro-main">
-                        </div>
-                        <div class="photo_pro-main">
-                            <input type="radio" name="color" id="image_color-black" class="image_color">
-                            <img src="./images/products/AT1_do.jpg" alt="" class="img_pro-main">
-                        </div>
-                        <div class="photo_pro-main">
-                            <input type="radio" name="color" id="image_color-white" class="image_color">
-                            <img src="./images/products/AK2_nau.jpg" alt="" class="img_pro-main">
+                            <img src="./images/products/AT2_avt.jpg" alt="" class="img_pro-main">
                         </div>
                     </div>
                 </div>
@@ -35,15 +26,21 @@
                         <div class="select_swatch mb24">
                             <span class="header_swatch mb8">Màu sắc:</span>
                             <div class="colors_pro">
-                            <label for="image_color-blue" class="label_color">
-                                <img src="./images/products/AK2_avt.jpg" alt="" class="img_swap">
-                            </label>
-                            <label for="image_color-black" class="label_color">
-                                <img src="./images/products/AT1_do.jpg" alt="" class="img_swap">
-                            </label>
-                            <label for="image_color-white" class="label_color">
-                                <img src="./images/products/AK2_nau.jpg" alt="" class="img_swap">
-                            </label>
+                                <div class="color active" onclick="changeimg(this)">
+                                    <img src="./images/products/AT2_avt.jpg" alt="" class="img_swap">
+                                </div>
+                                <div class="color" onclick="changeimg(this)">
+                                    <img src="./images/products/AT2_kem.jpg" alt="" class="img_swap">
+                                </div>
+                                <div class="color" onclick="changeimg(this)">
+                                    <img src="./images/products/AT2_xam.jpg" alt="" class="img_swap">
+                                </div>
+                                <div class="color" onclick="changeimg(this)">
+                                    <img src="./images/products/AT2_xanh.jpg" alt="" class="img_swap">
+                                </div>
+                                <div class="color" onclick="changeimg(this)">
+                                    <img src="./images/products/AT2_avt.jpg" alt="" class="img_swap">
+                                </div>
                             </div>
                         </div>
                         <div class="select_swatch mb24">

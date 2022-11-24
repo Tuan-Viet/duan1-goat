@@ -52,16 +52,7 @@
             <div class="col-lg-5 row_left-detail">
                 <div class="section_pro-top">
                     <div class="photo_pro-main">
-                        <input type="radio" name="color" id="image_color-blue" class="image_color" checked>
-                        <img src="./images/products/AK2_avt.jpg" alt="" class="img_pro-main">
-                    </div>
-                    <div class="photo_pro-main">
-                        <input type="radio" name="color" id="image_color-black" class="image_color">
-                        <img src="./images/products/AT1_do.jpg" alt="" class="img_pro-main">
-                    </div>
-                    <div class="photo_pro-main">
-                        <input type="radio" name="color" id="image_color-white" class="image_color">
-                        <img src="./images/products/AK2_nau.jpg" alt="" class="img_pro-main">
+                        <img src="./images/products/AT2_avt.jpg" alt="" class="img_pro-main">
                     </div>
                 </div>
             </div>
@@ -75,19 +66,25 @@
                     </div>
                     <form action="" class="form_pro">
                         <div class="select_swatch mb24">
-                            <span class="header_swatch mb8">Màu sắc:</span>
-                            <div class="colors_pro">
-                                <label for="image_color-blue" class="label_color">
-                                    <img src="./images/products/AK2_avt.jpg" alt="" class="img_swap">
-                                </label>
-                                <label for="image_color-black" class="label_color">
-                                    <img src="./images/products/AT1_do.jpg" alt="" class="img_swap">
-                                </label>
-                                <label for="image_color-white" class="label_color">
-                                    <img src="./images/products/AK2_nau.jpg" alt="" class="img_swap">
-                                </label>
+                        <span class="header_swatch mb8">Màu sắc:</span>
+                        <div class="colors_pro">
+                            <div class="color color_avt active_color">
+                                <img src="./images/products/AT2_avt.jpg" alt="" class="img_swap">
+                            </div>
+                            <div class="color color_kem">
+                                <img src="./images/products/AT2_kem.jpg" alt="" class="img_swap">
+                            </div>
+                            <div class="color color_xam">
+                                <img src="./images/products/AT2_xam.jpg" alt="" class="img_swap">
+                            </div>
+                            <div class="color color_xanh">
+                                <img src="./images/products/AT2_xanh.jpg" alt="" class="img_swap">
+                            </div>
+                            <div class="color color_avt">
+                                <img src="./images/products/AT2_avt.jpg" alt="" class="img_swap">
                             </div>
                         </div>
+                    </div>
                 </div>
                 <div class="select_swatch mb24">
                     <span class="header_swatch mb8">Kích thước</span>
