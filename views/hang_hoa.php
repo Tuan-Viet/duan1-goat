@@ -35,11 +35,11 @@
                         <div class="cart_nav">
                             <p class="cart_name"><?= $hanghoa['product_name'] ?></p>
                             <p class="cart_price"><?= $hanghoa['total'] ?> <del class="sale" style="color:#6666"><?= $hanghoa['product_price'] ?></del></p>
-                            <ul class="cart_color mt8">
+                            <!-- <ul class="cart_color mt8">
                                 <li class="not_swap"><img src="./images/products/AK2_avt.jpg" alt="" class="img_not-swap"></li>
                                 <li class="not_swap"><img src="./images/products/AK2_avt.jpg" alt="" class="img_not-swap"></li>
                                 <li class="not_swap"><img src="./images/products/AK2_avt.jpg" alt="" class="img_not-swap"></li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                 <?php endforeach ?>
