@@ -13,11 +13,14 @@
                         <?php endif ?>
                         <form action="index.php?act=bill_pttt" method="post" class="form_info">
                             <input type="text" name="name" id="" class="form_control-section name pform ph6" placeholder="Họ và tên">
+                            <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['name']) ? $errors['name'] : '' ?></small>
                             <!-- <div class="address_contact ph6"> -->
                                 <!-- <input type="text" name="email" class="email_contact pform" placeholder="Email"> -->
                             <input type="text" name="tel" class="tel_contact pfrom" placeholder="Số điện thoại">
+                            <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['tel']) ? $errors['tel'] : '' ?></small>
                             <!-- </div> -->
                             <input type="text" name="address" id="" class="form_control-section address pform ph6" placeholder="Địa chỉ">
+                            <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['address']) ? $errors['address'] : '' ?></small>
                             <div class="btn_buttons-footer">
                                 <a href="index.php?act=cart" class="rerturn_bill">Giỏ hàng</a>
                                 <a href="index.php?act=bill_pttt" class="continue_pay">

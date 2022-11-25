@@ -12,7 +12,7 @@
     if (!isset($_SESSION['my_cart'])) {
         $_SESSION['my_cart'] = [];
       }
-    $error = [];
+    $errors = [];
     if((isset($_GET['act'])) && ($_GET['act']!="")) {
         $act = $_GET['act'];
         switch ($act) {
@@ -30,11 +30,11 @@
                 if (isset($_POST['btn_submit'])) {
                     $user_name = $_POST['user_name'];
                     if (trim($user_name) == '') {
-                        $error['user_name'] = "Vui lòng nhập tên đăng nhập";
+                        $errors['user_name'] = "Vui lòng nhập tên đăng nhập";
                     }
                     $user_email = $_POST['user_email'];
                     if (trim($user_email) == '') {
-                        $error['user_email'] = "Vui lòng nhập tên đăng nhập";
+                        $errors['user_email'] = "Vui lòng nhập tên đăng nhập";
                     }
                     $user_tel = $_POST['user_tel'];
                     $user_password = $_POST['user_password'];
@@ -48,11 +48,11 @@
                 if (isset($_POST['btn_submit'])) {
                     $user_name = $_POST['user_name'];
                     if (trim($user_name) == '') {
-                        $error['user_name'] = "Vui lòng nhập tên đăng nhập";
+                        $errors['user_name'] = "Vui lòng nhập tên đăng nhập";
                     }
                     $user_password = $_POST['user_password'];
                     if (trim($user_password) == '') {
-                        $error['user$user_password'] = "Vui lòng nhập tên đăng nhập";
+                        $errors['user_password'] = "Vui lòng nhập tên đăng nhập";
                     }
                     $check_user = check_user($user_name,$user_password);
                     if (is_array($check_user)) {
@@ -88,12 +88,20 @@
                     $product_detail_id = $_POST['product_detail_id'];
                     // $image = $_POST['image'];
                     // $product_color = $_POST['product_color'];
+                    if (!isset($_POST['product_detail_id'])) {
+                        $errors['product_detail_id'] = "Bạn vui lòng chọn màu";
+                    }
                     $product_detail_one = products_detail_one($product_detail_id);
                     $product_color = $product_detail_one['product_color'];
                     $image = $product_detail_one['image'];
-                    $size = $_POST['size'];
                     $quantity = $_POST['quantity'];
                     $tongtien = $total * $quantity;
+                    $size = $_POST['size'];
+                    if (!isset($_POST['size'])) {
+                        $errors['size'] = "Bạn vui lòng chọn size";
+                        echo $errors['size'];
+                    }
+                    
                     // tạo ra 1 mảng cart để chứa thông tin sản phẩm đã thêm vào giỏ hàng
                     $cart = [$product_id,$product_name,$total,$product_detail_id,$image,$product_color,$size,$quantity,$tongtien];
                     // array_push($_SESSION['mycart'], $cart);
@@ -155,8 +163,17 @@
                 if (isset($_POST['btn_submit'])) {
                     $user_id = $_SESSION['user']['id'];
                     $name = $_POST['name'];
+                    if ($name == '') {
+                        $errors['name'] = "Bạn vui lòng nhập tên";
+                    }
                     $tel = $_POST['tel'];
+                    if ($tel == '') {
+                        $errors['tel'] = "Bạn vui lòng nhập tên";
+                    }
                     $address = $_POST['address'];
+                    if ($address == '') {
+                        $errors['address'] = "Bạn vui lòng nhập tên";
+                    }
                     $date_time = date('h:i:sa d/m/Y');
                     $thanh_tien = tongtien();
                     $id_order = insert_order($user_id, $name, $address, $tel, $date_time,$thanh_tien);

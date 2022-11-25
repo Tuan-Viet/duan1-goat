@@ -1,4 +1,13 @@
 <main>
+    <?php
+        // $errors = [];
+        // if ($_POST['size'] == '') {
+        //     $errors['size'] = "Bạn vui lòng chọn size";
+        // }
+        // if ($_POST['product_detail_id'] == '') {
+        //     $errors['product_detail_id'] = "Bạn vui lòng chọn màu";
+        // }
+    ?>
     <div class="fade_tab">
         <ul class="list_tab container"></ul>
     </div>
@@ -55,6 +64,7 @@
                                     </label>
                                 <?php endforeach ?>
                             </div>
+                            <!-- <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['product_detail_id']) ? $errors['product_detail_id'] : '' ?></small> -->
                         </div>
                         <div class="select_swatch mb24">
                             <span class="header_swatch mb8">Kích thước</span>
@@ -79,8 +89,8 @@
                                     <div class="ellipse"></div>
                                     <name class="size-S">XL</name>
                                 </label>
-
                             </div>
+                            <!-- <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['size']) ? $errors['size'] : '' ?></small> -->
                         </div>
                         <div class="select_watch">
                             <input type="number" name="quantity" min="1" value="1" id="" class="form_control-quantity">
