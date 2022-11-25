@@ -16,24 +16,20 @@
             <div class="col-lg-5 left_detail">
                 <div class="row row_left_detail">
                     <div class="col-lg-12 box_pro-main">
-                            <?php extract($listhanghoa)?>
-                            <div class="photo_pro-main">
-                                <!-- <input type="radio" name="color" id="<?= $id ?>" class="image_color" checked> -->
-                                <!-- <input type="hidden" name="image" value="<?= $image ?>"> -->
-                                <!-- <img src="./images/products/<?= $image ?>" alt="" class="img_pro-main"> -->
-                            </div>
-                            <!-- <div class="photo_pro-main">
-                                <input type="radio" name="color" id="image_color-black" class="image_color">
-                                <img src="./images/products/AT1_do.jpg" alt="" class="img_pro-main">
-                            </div>
-                            <div class="photo_pro-main">
-                                <input type="radio" name="color" id="image_color-white" class="image_color">
-                                <img src="./images/products/AK2_nau.jpg" alt="" class="img_pro-main">
-                            </div> -->
                         <div class="photo_pro-main">
-                            <img src="./images/products/<?= $image ?>" alt="" class="img_pro-main">
+                            <img src="./images/products/AK1_avt.jpg" alt="" class="img_pro-main">
                         </div>
-                        <!-- <img src="" alt="" class="img_pro-main"> -->
+                        <div class="list_thumbs">
+                            <div class="thumb_photo" onclick="changeimg(this)">
+                                <img src="./images/products/AK1_avt.jpg" alt="">
+                            </div>
+                            <div class="thumb_photo active" onclick="changeimg(this)">
+                                <img src="./images/products/AK1_vang.jpg" alt="">
+                            </div>
+                            <div class="thumb_photo" onclick="changeimg(this)">
+                                <img src="./images/products/AK1_xam.jpg" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -98,48 +94,74 @@
                             <!-- <a href="" name="btn_buynow" class="btn_cart">
                                 <button type="submit" class="btn_cart">Mua ngay</button>    
                             </a> -->
-                            <input type="submit" name="btn_addtocart"  class="btn_cart" value="Thêm vào giỏ hàng">
-                            <input type="submit" name="btn_buynow" class="btn_cart" value="Mua ngay">
+                            <a href="" class="btn_cart"><input type="submit" name="btn_addtocart" value="Thêm vào giỏ hàng"></a>
+                            <a href="" class="btn_cart"><input type="submit" name="btn_buynow" value="Mua ngay"></a>
                         </div>
                     </form>
                 </div>
-                <div class="dsc_pro-detail">
-                    <p class="title_dsc-detail">Chọn size phù hợp</p>
-                    <div class="nav_dsc-detail">
-                        <p>Size S dài 69 rộng 50cm
-                            <br>
-                            Size M dài 70 rộng 54cm
-                            <br>
-                            Size L dài 71 rộng 57cm
-                        </p>
-                        <p>S dưới 52kg - 1m6
-                            <br>
-                            M dưới 70kg - 1m7
-                            <br>
-                            L dưới 85kg - 1m8
-                        </p>
+                <ul class="nav_tabs-menu">
+                    <li class="tab active">Mô tả</li>
+                    <li class="tab">Điều khoản dịch vụ</li>
+                    <li class="tab">Chính sách đổi trả</li>
+                    <div class="line"></div>
+                </ul>
+                <div class="table_content">
+                    <div class="tab_panel active">
+                        <div class="dsc_pro-detail">
+                            <div class="title_dsc-detail">Chọn size phù hợp</div>
+                            <div class="nav_dsc-detail">
+                                <p>Size S dài 69 rộng 50cm
+                                    <br>
+                                    Size M dài 70 rộng 54cm
+                                    <br>
+                                    Size L dài 71 rộng 57cm
+                                </p>
+                                <p>S dưới 52kg - 1m6
+                                    <br>
+                                    M dưới 70kg - 1m7
+                                    <br>
+                                    L dưới 85kg - 1m8
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab_panel">
+                        <div class="title_dsc-detail">Lưu ý khi đặt hàng</div>
+                        <p>*Các bạn check lại thông tin , kiểm tra lại thông tin đơn hàng trong Email .</p>
+                        <p>* Các đơn hàng sẽ được gọi xác nhận trong 48h kể từ lúc đặt .</p>
+                        <p>*    Thời gian nhận hàng tầm 2-3 ngày (nội thành),3 - 4 ngày (ngoại thành)</p>
+                        <p style="color:red">* Vào thời điểm khuyến mại thời gian nhận hàng tầm 3-4 ngày (nội thành),7 - 10 ngày (ngoại thành)</p>
+
+                    </div>
+                    <div class="tab_panel">
+                        <div class="title_dsc-detail">1.Điều kiện đổi trả</div>
+                        <p>Quý Khách hàng cần kiểm tra tình trạng hàng hóa và có thể đổi hàng/ trả lại hàng ngay tại thời điểm giao/nhận hàng trong những trường hợp sau:</p>
+                        <p>Hàng không đúng chủng loại, mẫu mã trong đơn hàng đã đặt hoặc như trên website tại thời điểm đặt hàng.</p>
+                        <p>Không đủ số lượng, không đủ bộ như trong đơn hàng.</p>
+                        <p>Tình trạng bên ngoài bị ảnh hưởng như rách bao bì, bong tróc, bể vỡ…</p>
+                        <div class="title_dsc-detail">2.Quy định về thời gian</div>
+                        <p><strong>Thời gian thông báo đổi </strong>: trong vòng 48h kể từ khi nhận sản phẩm đối với trường hợp sản phẩm bị bong tróc hình in , loang màu.</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="list_product-related mt40">
-            <h1 class="title_pro-related">Sản phẩm liên quan</h1>
+            <h1 class="title_pro-related mb24   ">Sản phẩm liên quan</h1>
             <div class="carts carts_related">
                 <div class="cart cart_related">
                     <a href="./product_detail.html" class="img_href">
                         <div class="cart_photo">
                             <img src="//product.hstatic.net/200000136061/product/274880931_4918536151560697_4517164232254841609_n_42233f347d1b4b26b3c4847b40a37d3d_large.jpg" alt="" class="cart_img">
                             <img src="//product.hstatic.net/200000136061/product/274247983_366248368454609_1600481175588658934_n_104d962cc6994ce4a556a90e50186ad9_master.jpg" alt="" class="cart_img-bottom">
+                        </a>
+                            <div class="cart_icon-plus">
+                                <img class="cart_img-icon" src="./icons/add-circle-outline.svg" alt="">
+                            </div>
                         </div>
-                    </a>
                     <div class="cart_nav">
                         <p class="cart_name">Jacket Basic SS2</p>
                         <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                        <ul class="cart_color mt8">
-                            <li class="not_swap"><img src="./images/products/AK2_avt.jpg" alt="" class="img_not-swap"></li>
-                            <li class="not_swap"><img src="./images/products/AK2_avt.jpg" alt="" class="img_not-swap"></li>
-                            <li class="not_swap"><img src="./images/products/AK2_avt.jpg" alt="" class="img_not-swap"></li>
-                        </ul>
+                        
                     </div>
                 </div>
                 <div class="cart cart_related">
@@ -152,11 +174,6 @@
                     <div class="cart_nav">
                         <p class="cart_name">Jacket Basic SS2</p>
                         <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                        <ul class="cart_color mt8">
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="cart cart_related">
@@ -169,11 +186,6 @@
                     <div class="cart_nav">
                         <p class="cart_name">Jacket Basic SS2</p>
                         <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                        <ul class="cart_color mt8">
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="cart cart_related">
@@ -186,11 +198,6 @@
                     <div class="cart_nav">
                         <p class="cart_name">Jacket Basic SS2</p>
                         <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                        <ul class="cart_color mt8">
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="cart cart_related">
@@ -203,16 +210,12 @@
                     <div class="cart_nav">
                         <p class="cart_name">Jacket Basic SS2</p>
                         <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                        <ul class="cart_color mt8">
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <?php include "overlay_detail.php" ?>
+                            
 </main>
 

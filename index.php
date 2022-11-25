@@ -9,6 +9,7 @@
     include "models/orders_detail.php";
     include "models/accounts.php";
     include "views/header.php";
+    // include "views/overlay_detail.php";
     if (!isset($_SESSION['my_cart'])) {
         $_SESSION['my_cart'] = [];
       }
@@ -191,6 +192,12 @@
                 $load_one_order = load_one_order($id_order);
                 $load_all_order_detail = load_all_order_detail($id_order);
                 include "views/bill/bill_access.php";
+                break;
+            case 'cart':
+                include "views/bill/cart.php";
+                break;
+            case 'mycart':
+                include "views/bill/mycart.php";
                 break;
             default:
                 include "views/home.php";
