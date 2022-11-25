@@ -1,4 +1,4 @@
-<div class="main">
+<div class="main_bill">
     <div class="row row_confirm">
         <div class="main_left col-lg-7">
             <div class="price_ship">

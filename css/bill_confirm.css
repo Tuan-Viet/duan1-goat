@@ -16,7 +16,7 @@
     padding: 6px 0;
 }
 
-.main{
+.main_bill{
     background-color: #FAFAFA;
     padding: 0 100px;
     width: 100%;
@@ -24,7 +24,7 @@
 }
 
 .row_confirm {
-    height: 100%;
+    /* height: 100%; */
 }
 
 /* left */
@@ -63,12 +63,42 @@
     margin: 12px 0;
 }
 
+.form_info .form {
+    position: relative;
+}
+
+.form_info .form label {
+    position: absolute;
+    left: 0.9em;
+    top: 55%;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+    /* display: flex; */
+    transition: .25s linear;
+}
+
+.form_info .form .form_control-section:focus {
+    border:1px solid #6a5af9;
+}
+
+.form_control-section:not(:placeholder-shown) + label,
+.form_control-section:focus + label {
+    top: 6px;
+    left: 1.2em;
+    padding: 0 10px;
+    background-color: #FAFAFA;
+    color: #6a5af9;
+}
+
 .email_contact , .tel_contact,
 .section_content-infomation .form_control-section{
     width: 100%;
+    height: 100%;
     border: 1px solid #ccc;
     border-radius: 0.6rem;
     padding: 0.94em 2.8em 0.94em 0.8em;
+    background-color: #FAFAFA;
 }
 
 .address_contact {
@@ -76,7 +106,7 @@
 }
 
 .tel_contact {
-    margin-left: 3px;
+    /* margin-left: 3px; */
 
 }
 
@@ -101,7 +131,6 @@
 .continue_pay{
     padding: 20px 24px;
     background-color: #338dbc;
-    color: #fff;
     border-radius: 10px;
     font-size: 14px;
     font-family:Arial, Helvetica, sans-serif;
@@ -113,6 +142,12 @@
     /* font-weight: 600; */
     color: #fff;
     text-decoration: none;
+}
+
+.continue_pay > button {
+    border: none;
+    background-color: transparent;
+    color: #Fff;
 }
 
 .rerturn_bill:hover{
