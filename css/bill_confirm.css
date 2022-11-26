@@ -129,11 +129,12 @@
     font-weight: 600;
 }
 .continue_pay{
-    padding: 20px 24px;
+    /* padding: 20px 24px; */
     background-color: #338dbc;
     border-radius: 10px;
     font-size: 14px;
     font-family:Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
 
 
@@ -144,10 +145,12 @@
     text-decoration: none;
 }
 
+
 .continue_pay > button {
     border: none;
     background-color: transparent;
     color: #Fff;
+    padding: 20px 24px;
 }
 
 .rerturn_bill:hover{
