@@ -17,10 +17,12 @@
             <div class="form-group">
                 <i class="far fa-user"></i>
                 <input type="text" class="form-input" name="user_name" placeholder="Tên đăng nhập">
+                <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['user_name']) ? $errors['user_name'] : '' ?></small>
             </div>
             <div class="form-group">
                 <i class="fas fa-key"></i>
                 <input type="password" class="form-input" name="user_password" placeholder="Mật khẩu">
+                <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['ten_loai_tour']) ? $errors['ten_loai_tour'] : '' ?></small>
                 <div id="eye">
                     <i class="far fa-eye"></i>
                 </div>

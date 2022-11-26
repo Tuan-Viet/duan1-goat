@@ -4,7 +4,7 @@ body{
     font-size: 14px;    
     font-family: tahoma;
     background-size: cover;
-    display: flex;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
 }

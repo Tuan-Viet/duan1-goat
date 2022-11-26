@@ -1,0 +1,86 @@
+.main{
+    /* width: 100%; */
+}
+
+.title_info-account{
+    text-align: center;
+    padding: 24px 0 40px 0;
+    margin-bottom: 40px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.account_sidebar{
+    /* display: flex;
+    flex-direction: column; */
+}
+.account_title{
+    font-family: 'font_main-medium';
+    font-weight: 600;
+    font-size: 17px;
+}
+.account_content{
+    /* display: block; */
+    /* color: #666666; */
+}
+.accountList{
+    color: #666666;
+}
+
+.accountList li a {
+    color: #666666;
+}
+
+.accountList li a:hover {
+    text-decoration: none;
+}
+.current{
+
+}
+.last{
+
+}
+
+.title_detail{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: 'font_main-medium';
+    color: #666666;
+    text-transform: uppercase;
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+.name_account{
+    /* font-size: 18px; */
+    font-weight: 600;
+    font-family: 'font_main-medium';
+    font-size: 15px;
+}
+.email_account{
+    font-family: 'font_main-medium';
+    font-size: 14px;
+    color: #666666;
+    font-weight: 600;
+
+}
+.address_account{
+    font-family: 'font_main-medium';
+    font-size: 14px;
+    color: #666666;
+    font-weight: 600;
+}
+
+.table .title_table {
+    font-size: 18px;
+    font-family: 'font_main-bold';
+}
+.table{
+    border: 3px solid #ccc;
+    font-size: 14px;
+    margin-top: 24px;
+    /* border: 1px ; */
+}
+
+.table tr th {
+    font-weight: 600;
+}

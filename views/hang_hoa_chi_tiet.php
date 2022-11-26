@@ -1,4 +1,13 @@
 <main>
+    <?php
+        // $errors = [];
+        // if ($_POST['size'] == '') {
+        //     $errors['size'] = "Bạn vui lòng chọn size";
+        // }
+        // if ($_POST['product_detail_id'] == '') {
+        //     $errors['product_detail_id'] = "Bạn vui lòng chọn màu";
+        // }
+    ?>
     <div class="fade_tab">
         <ul class="list_tab container"></ul>
     </div>
@@ -8,16 +17,16 @@
                 <div class="row row_left_detail">
                     <div class="col-lg-12 box_pro-main">
                         <div class="photo_pro-main">
-                            <input type="radio" name="color" id="image_color-blue" class="image_color" checked>
-                            <img src="./images/products/AK2_avt.jpg" alt="" class="img_pro-main">
+                            <?php extract($listhanghoa) ?>
+                            <img src="./images/products/<?= $image ?>" alt="" class="img_pro-main">
                         </div>
-                        <div class="photo_pro-main">
-                            <input type="radio" name="color" id="image_color-black" class="image_color">
-                            <img src="./images/products/AT1_do.jpg" alt="" class="img_pro-main">
-                        </div>
-                        <div class="photo_pro-main">
-                            <input type="radio" name="color" id="image_color-white" class="image_color">
-                            <img src="./images/products/AK2_nau.jpg" alt="" class="img_pro-main">
+                        <div class="list_thumbs">
+                            <?php foreach($listproduct as $product): ?>
+                            <?php extract($product) ?>
+                            <div class="thumb_photo" onclick="changeimg(this)">
+                                <img src="./images/products/<?= $image ?>" alt="">
+                            </div>
+                            <?php endforeach ?>
                         </div>
                     </div>
                 </div>
@@ -32,20 +41,24 @@
                         <h1><?= $total ?><del class="price_pro-sale"><?= $product_price ?></del></h1>
                     </div>
                     <form action="index.php?act=addtocart" method="post" class="form_pro">
-                        <input type="hidden" name="product_id">
+                        <input type="hidden" name="product_id" value="<?= $product_id ?>">
+                        <input type="hidden" name="product_name" value="<?= $product_name ?>">
+                        <input type="hidden" name="product_price" value="<?= $product_price ?>">
+                        <input type="hidden" name="sale" value="<?= $sale ?>">
+                        <input type="hidden" name="total" value="<?= $total ?>">
                         <div class="select_swatch mb24">
                             <span class="header_swatch mb8">Màu sắc:</span>
-                            <div class="colors_pro">
-                            <label for="image_color-blue" class="label_color">
-                                <img src="./images/products/AK2_avt.jpg" alt="" class="img_swap">
-                            </label>
-                            <label for="image_color-black" class="label_color">
-                                <img src="./images/products/AT1_do.jpg" alt="" class="img_swap">
-                            </label>
-                            <label for="image_color-white" class="label_color">
-                                <img src="./images/products/AK2_nau.jpg" alt="" class="img_swap">
-                            </label>
+                            <div class="select_swap">
+                                <?php foreach($listproduct as $product): ?>
+                                    <?php extract($product) ?>
+                                    <label class="swap_element" for="radio_color<?= $id ?>">
+                                        <input type="radio" name="product_detail_id" value="<?=  $id ?>" id="radio_color<?= $id ?>" class="size_0-1">
+                                        <div class="ellipse"></div>
+                                        <name class="size-S"><?= $product_color ?></name>
+                                    </label>
+                                <?php endforeach ?>
                             </div>
+                            <!-- <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['product_detail_id']) ? $errors['product_detail_id'] : '' ?></small> -->
                         </div>
                         <div class="select_swatch mb24">
                             <span class="header_swatch mb8">Kích thước</span>
@@ -70,53 +83,88 @@
                                     <div class="ellipse"></div>
                                     <name class="size-S">XL</name>
                                 </label>
-
                             </div>
+                            <!-- <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['size']) ? $errors['size'] : '' ?></small> -->
                         </div>
                         <div class="select_watch">
                             <input type="number" name="quantity" min="1" value="1" id="" class="form_control-quantity">
-                            <a href="" class="btn_cart">Thêm vào giỏ hàng</a>
-                            <a href="" class="btn_cart">Mua ngay</a>
+                            <!-- <a href="" class="btn_cart">Thêm vào giỏ hàng</a> -->
+                            <!-- <a href="" name="btn_buynow" class="btn_cart">
+                                <button type="submit" class="btn_cart">Mua ngay</button>    
+                            </a> -->
+                            <?php if(isset($_SESSION['user'])) { ?>
+                                <a href="" class="btn_cart"><input type="submit" name="btn_addtocart" value="Thêm vào giỏ hàng"></a>
+                                <a href="" class="btn_cart"><input type="submit" name="btn_buynow" value="Mua ngay"></a>
+                            <?php } else{ ?>
+                                <a href="index.php?act=dang_nhap" class="btn_cart"><input type="" name="" value="Thêm vào giỏ hàng"></a>
+                                <a href="index.php?act=dang_nhap" class="btn_cart"><input type="" name="" value="Mua ngay"></a>
+                            <?php } ?>
                         </div>
                     </form>
                 </div>
-                <div class="dsc_pro-detail">
-                    <p class="title_dsc-detail">Chọn size phù hợp</p>
-                    <div class="nav_dsc-detail">
-                        <p>Size S dài 69 rộng 50cm
-                            <br>
-                            Size M dài 70 rộng 54cm
-                            <br>
-                            Size L dài 71 rộng 57cm
-                        </p>
-                        <p>S dưới 52kg - 1m6
-                            <br>
-                            M dưới 70kg - 1m7
-                            <br>
-                            L dưới 85kg - 1m8
-                        </p>
+                <ul class="nav_tabs-menu">
+                    <li class="tab active">Mô tả</li>
+                    <li class="tab">Điều khoản dịch vụ</li>
+                    <li class="tab">Chính sách đổi trả</li>
+                    <div class="line"></div>
+                </ul>
+                <div class="table_content">
+                    <div class="tab_panel active">
+                        <div class="dsc_pro-detail">
+                            <div class="title_dsc-detail">Chọn size phù hợp</div>
+                            <div class="nav_dsc-detail">
+                                <p>Size S dài 69 rộng 50cm
+                                    <br>
+                                    Size M dài 70 rộng 54cm
+                                    <br>
+                                    Size L dài 71 rộng 57cm
+                                </p>
+                                <p>S dưới 52kg - 1m6
+                                    <br>
+                                    M dưới 70kg - 1m7
+                                    <br>
+                                    L dưới 85kg - 1m8
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab_panel">
+                        <div class="title_dsc-detail">Lưu ý khi đặt hàng</div>
+                        <p>*Các bạn check lại thông tin , kiểm tra lại thông tin đơn hàng trong Email .</p>
+                        <p>* Các đơn hàng sẽ được gọi xác nhận trong 48h kể từ lúc đặt .</p>
+                        <p>*    Thời gian nhận hàng tầm 2-3 ngày (nội thành),3 - 4 ngày (ngoại thành)</p>
+                        <p style="color:red">* Vào thời điểm khuyến mại thời gian nhận hàng tầm 3-4 ngày (nội thành),7 - 10 ngày (ngoại thành)</p>
+
+                    </div>
+                    <div class="tab_panel">
+                        <div class="title_dsc-detail">1.Điều kiện đổi trả</div>
+                        <p>Quý Khách hàng cần kiểm tra tình trạng hàng hóa và có thể đổi hàng/ trả lại hàng ngay tại thời điểm giao/nhận hàng trong những trường hợp sau:</p>
+                        <p>Hàng không đúng chủng loại, mẫu mã trong đơn hàng đã đặt hoặc như trên website tại thời điểm đặt hàng.</p>
+                        <p>Không đủ số lượng, không đủ bộ như trong đơn hàng.</p>
+                        <p>Tình trạng bên ngoài bị ảnh hưởng như rách bao bì, bong tróc, bể vỡ…</p>
+                        <div class="title_dsc-detail">2.Quy định về thời gian</div>
+                        <p><strong>Thời gian thông báo đổi </strong>: trong vòng 48h kể từ khi nhận sản phẩm đối với trường hợp sản phẩm bị bong tróc hình in , loang màu.</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="list_product-related mt40">
-            <h1 class="title_pro-related">Sản phẩm liên quan</h1>
+            <h1 class="title_pro-related mb24   ">Sản phẩm liên quan</h1>
             <div class="carts carts_related">
                 <div class="cart cart_related">
                     <a href="./product_detail.html" class="img_href">
                         <div class="cart_photo">
                             <img src="//product.hstatic.net/200000136061/product/274880931_4918536151560697_4517164232254841609_n_42233f347d1b4b26b3c4847b40a37d3d_large.jpg" alt="" class="cart_img">
                             <img src="//product.hstatic.net/200000136061/product/274247983_366248368454609_1600481175588658934_n_104d962cc6994ce4a556a90e50186ad9_master.jpg" alt="" class="cart_img-bottom">
+                        </a>
+                            <div class="cart_icon-plus">
+                                <img class="cart_img-icon" src="./icons/add-circle-outline.svg" alt="">
+                            </div>
                         </div>
-                    </a>
                     <div class="cart_nav">
                         <p class="cart_name">Jacket Basic SS2</p>
                         <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                        <ul class="cart_color mt8">
-                            <li class="not_swap"><img src="./images/products/AK2_avt.jpg" alt="" class="img_not-swap"></li>
-                            <li class="not_swap"><img src="./images/products/AK2_avt.jpg" alt="" class="img_not-swap"></li>
-                            <li class="not_swap"><img src="./images/products/AK2_avt.jpg" alt="" class="img_not-swap"></li>
-                        </ul>
+                        
                     </div>
                 </div>
                 <div class="cart cart_related">
@@ -129,11 +177,6 @@
                     <div class="cart_nav">
                         <p class="cart_name">Jacket Basic SS2</p>
                         <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                        <ul class="cart_color mt8">
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="cart cart_related">
@@ -146,11 +189,6 @@
                     <div class="cart_nav">
                         <p class="cart_name">Jacket Basic SS2</p>
                         <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                        <ul class="cart_color mt8">
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="cart cart_related">
@@ -163,11 +201,6 @@
                     <div class="cart_nav">
                         <p class="cart_name">Jacket Basic SS2</p>
                         <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                        <ul class="cart_color mt8">
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                        </ul>
                     </div>
                 </div>
                 <div class="cart cart_related">
@@ -180,15 +213,12 @@
                     <div class="cart_nav">
                         <p class="cart_name">Jacket Basic SS2</p>
                         <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                        <ul class="cart_color mt8">
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                            <li class="not_swap"><span class="black"></span></li>
-                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <?php include "overlay_detail.php" ?>
+                            
 </main>
+
