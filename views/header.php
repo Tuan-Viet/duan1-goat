@@ -81,26 +81,26 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon_close-cart ionicon" viewBox="0 0 512 512"><title>Close</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
                 </div>
                 <?php if(isset($_SESSION['my_cart'])): ?>
-                <?php foreach($_SESSION['my_cart'] as $cart): ?>
-                <table id="view_cart" class="mt50">
-                    <tbody>
-                        <tr class="item_id-pro">
-                            <td class="photo_pro-view">
-                                <a href="">
-                                    <img src="./images/products/<?= $cart[4] ?>" alt="" class="img_pro-view">
-                                </a>
-                            </td>
-                            <td class="info_pro-view">
-                                <a href="" class="pro_title-view"><?= $cart[1] ?></a>
-                                <span class="pro_cate-view"><?= $cart[5] ?> / <?= $cart[6] ?></span>
-                                <div class=""><span class="pro_quantity-view"><?= $cart[7] ?></span>
-                                <span class="pro_price-view"><?= $cart[2] ?> <sup>đ</sup></span></div>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon_close-viewcart ionicon" viewBox="0 0 512 512"><title>Close</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <?php endforeach ?>
+                    <?php foreach($_SESSION['my_cart'] as $cart): ?>
+                    <table id="view_cart" class="mt50">
+                        <tbody>
+                            <tr class="item_id-pro">
+                                <td class="photo_pro-view">
+                                    <a href="">
+                                        <img src="./images/products/<?= $cart[4] ?>" alt="" class="img_pro-view">
+                                    </a>
+                                </td>
+                                <td class="info_pro-view">
+                                    <a href="" class="pro_title-view"><?= $cart[1] ?></a>
+                                    <span class="pro_cate-view"><?= $cart[5] ?> / <?= $cart[6] ?></span>
+                                    <div class=""><span class="pro_quantity-view"><?= $cart[7] ?></span>
+                                    <span class="pro_price-view"><?= $cart[2] ?> <sup>đ</sup></span></div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon_close-viewcart ionicon" viewBox="0 0 512 512"><title>Close</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <?php endforeach ?>
                 <?php endif ?>
                 <hr class="inline"></hr>
                 <div class="total_cart mt28">

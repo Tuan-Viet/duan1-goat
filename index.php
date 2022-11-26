@@ -123,8 +123,10 @@
                     // $sale = $_POST['sale'];
                     $total = $_POST['total'];
                     $product_detail_id = $_POST['product_detail_id'];
-                    $image = $_POST['image'];
-                    $product_color = $_POST['product_color'];
+                    $product_detail_one = products_detail_one($product_detail_id);
+                    $product_color = $product_detail_one['product_color'];
+                    $image = $product_detail_one['image'];
+                    $quantity = $_POST['quantity'];
                     $size = $_POST['size'];
                     $quantity = $_POST['quantity'];
                     $tongtien = $total * $quantity;
@@ -197,6 +199,8 @@
                 include "views/bill/cart.php";
                 break;
             case 'mycart':
+                $load_all_order = load_all_order($_SESSION['user']['id']);
+                
                 include "views/bill/mycart.php";
                 break;
             default:

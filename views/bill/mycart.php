@@ -36,7 +36,9 @@
                                 </tr>
                                 <tr>
                                     <th>Mã đơn hàng</th>
+                                    <th>Người nhận hàng</th>
                                     <th>Ngày đặt hàng</th>
+                                    <th>Nơi nhận</th>
                                     <th>Thành tiền</th>
                                     <th>Trạng thái thanh toán</th>
                                     <th>Phương thức thanh toán</th>
@@ -44,14 +46,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>HelloBaby</td>
-                                    <td>24/11/2022</td>
-                                    <td>399,000 <sup>đ</sup></td>
-                                    <td>pending</td>
-                                    <td>Thanh toán khi nhận hàng</td>
-                                    <td>Đang vận chuyển</td>
-                                </tr>
+                                <?php foreach($load_all_order as $order): ?>
+                                    <?php extract($order) ?>
+                                    <tr>
+                                        <td>GOAT-<?= $id ?></td>
+                                        <td><?= $name ?></td>
+                                        <td><?= $date_time ?></td>
+                                        <td><?= $address ?></td>
+                                        <td><?= $total ?> <sup>đ</sup></td>
+                                        <td>pending</td>
+                                        <td><?= $pttt = check_pttt($pay_methods) ?></td>
+                                        <td>Đang vận chuyển</td>
+                                    </tr>
+                                <?php endforeach ?>
                             </tbody>
                         </table>
                     </div>

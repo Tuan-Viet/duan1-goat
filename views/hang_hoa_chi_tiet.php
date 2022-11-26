@@ -17,18 +17,16 @@
                 <div class="row row_left_detail">
                     <div class="col-lg-12 box_pro-main">
                         <div class="photo_pro-main">
-                            <img src="./images/products/AK1_avt.jpg" alt="" class="img_pro-main">
+                            <?php extract($listhanghoa) ?>
+                            <img src="./images/products/<?= $image ?>" alt="" class="img_pro-main">
                         </div>
                         <div class="list_thumbs">
+                            <?php foreach($listproduct as $product): ?>
+                            <?php extract($product) ?>
                             <div class="thumb_photo" onclick="changeimg(this)">
-                                <img src="./images/products/AK1_avt.jpg" alt="">
+                                <img src="./images/products/<?= $image ?>" alt="">
                             </div>
-                            <div class="thumb_photo active" onclick="changeimg(this)">
-                                <img src="./images/products/AK1_vang.jpg" alt="">
-                            </div>
-                            <div class="thumb_photo" onclick="changeimg(this)">
-                                <img src="./images/products/AK1_xam.jpg" alt="">
-                            </div>
+                            <?php endforeach ?>
                         </div>
                     </div>
                 </div>
@@ -94,8 +92,13 @@
                             <!-- <a href="" name="btn_buynow" class="btn_cart">
                                 <button type="submit" class="btn_cart">Mua ngay</button>    
                             </a> -->
-                            <a href="" class="btn_cart"><input type="submit" name="btn_addtocart" value="Thêm vào giỏ hàng"></a>
-                            <a href="" class="btn_cart"><input type="submit" name="btn_buynow" value="Mua ngay"></a>
+                            <?php if(isset($_SESSION['user'])) { ?>
+                                <a href="" class="btn_cart"><input type="submit" name="btn_addtocart" value="Thêm vào giỏ hàng"></a>
+                                <a href="" class="btn_cart"><input type="submit" name="btn_buynow" value="Mua ngay"></a>
+                            <?php } else{ ?>
+                                <a href="index.php?act=dang_nhap" class="btn_cart"><input type="" name="" value="Thêm vào giỏ hàng"></a>
+                                <a href="index.php?act=dang_nhap" class="btn_cart"><input type="" name="" value="Mua ngay"></a>
+                            <?php } ?>
                         </div>
                     </form>
                 </div>
