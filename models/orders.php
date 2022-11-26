@@ -19,6 +19,11 @@
         $load_one_order = pdo_query_one($sql);
         return $load_one_order;
     }
+    function load_all_order($user_id){
+        $sql = "select * from orders where user_id=$user_id";
+        $load_all_order = pdo_query($sql);
+        return $load_all_order;
+    }
     function check_pttt($pay_method) {
         switch ($pay_method) {
             case '0':

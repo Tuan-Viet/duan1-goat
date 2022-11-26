@@ -12,7 +12,7 @@
                             <p class="section_content-text">Bạn đã có tài khoản? <a href="">Đăng nhập</a></p>
                         <?php endif ?>
                         <form action="index.php?act=bill_pttt" method="post" class="form_info">
-                            <div class="form mt8">
+                        <div class="form mt8">
                                 <input type="text" name="name" id="" class="form_control-section name pform ph6 mt8" placeholder=" ">
                                 <label for="">Họ và tên</label>
                             </div>
