@@ -21,4 +21,14 @@ function product_one($id){
     $hanghoa = pdo_query($sql);
     return $hanghoa;
 }
+//Xóa sản phẩm
+function delete_product($id){
+    $sql = "DELETE FROM products WHERE id ='$id'";
+    pdo_execute($sql);
+}
+//Thêm mới sản phẩm
+function insert_product($product_name,$product_price,$sale,$image,$cate_id,$description,$date,$views){
+    $sql = "INSERT INTO products (product_name,product_price,sale,image,cate_id,description,date,views) VALUES ('$product_name','$product_price','$sale','$image','$cate_id','$description','$date','$view')";
+    pdo_execute($sql);
+}
 ?>

@@ -1,21 +1,43 @@
-<div class="m_content">
+
+
+
+
+<?php
+
+    if(isset($_POST['btn'])){
+        $errors = [];
+        extract($_POST);
+        if ($cate_name =='') {
+            $errors['cate_name'] = "vui lòng nhập thông tin";
+        }
+    }
+?>
+<div class="mainContent">
     <div class="title">
-        <h3>CHI TIẾT SẢN PHẨM</h3>
+        <p>CHI TIẾT SẢN PHẨM</p>
     </div>
-    <div class="frmcontent">
-        <?php foreach ($hanghoa as $hh) : ?>
-            <div class="row">
+    <div class="main">
+    <?php foreach ($hanghoa as $hh) : ?>
+            <div class="box-input">
                 <label class="">MÃ SP</label>
                 <input type="text" name="id" readonly value="<?= $hh['id'] ?>" disabled>
                 <!-- <label for="" class="note">*ID tự động tăng</label> -->
             </div>
-            <div class="row">
+            <div class="box-input">
                 <label class="">Tên sản phẩm</label>
                 <input type="text" class="" id="" name="ten_hh" readonly value="<?= $hh['product_name'] ?>" disabled>
             </div>
-            <div class="row">
+            <div class="box-input">
                 <label class="">Đơn giá</label>
-                <input type="text" class="" id="" name="ten_hh" readonly value="<?= $hh['product_price'] ?>" disabled>
+                <input type="text" class="" id="" name="product_price" readonly value="<?= $hh['product_price'] ?>" disabled>
+            </div>
+            <div class="box-input">
+                <label class="">Giảm giá</label>
+                <input type="text" class="" id="" name="sale" readonly value="<?= $hh['sale'] ?>" disabled>
+            </div>
+            <div class="box-input">
+                <label class="">Mô tả</label>
+                <textarea name="description" id="" cols="30" rows="10"><?= $hh['description'] ?></textarea>
             </div>
         <?php endforeach ?>
         <table class="table">
