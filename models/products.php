@@ -1,7 +1,7 @@
 <?php
     function show_product($product_id) {
         if ($product_id==0) {
-            $sql = "select *, (100-sale)/100*product_price as total from products where 1";
+            $sql = "select *, (100-sale)/100*product_price as total from products ORDER BY id DESC";
             $listhanghoa = pdo_query($sql);
         } else {
             $sql = "select *,(100-sale)/100*product_price as total from products where id = $product_id";
@@ -20,5 +20,10 @@
         $sql="SELECT * FROM products WHERE id=$id";
         $hanghoa = pdo_query($sql);
         return $hanghoa;
+    }
+    function product_cate($product_id,$cate_id) {
+        $sql = "select *,(100-sale)/100*product_price as total from products where cate_id = $cate_id and id <> $product_id";
+        $product_cate = pdo_query($sql);
+        return $product_cate;
     }
 ?>

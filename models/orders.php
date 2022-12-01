@@ -20,7 +20,7 @@
         return $load_one_order;
     }
     function load_all_order($user_id){
-        $sql = "select * from orders where user_id=$user_id";
+        $sql = "select * from orders where user_id=$user_id order by id desc";
         $load_all_order = pdo_query($sql);
         return $load_all_order;
     }

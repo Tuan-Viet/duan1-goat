@@ -1,7 +1,7 @@
 <?php
-    function insert_orders_detail($order_id,$product_id,$product_detail_id,$product_name,$image,$quantity,$size,$product_color,$total) {
-        $sql = "insert into orders_detail (order_id,product_id,product_detail_id,product_name,image,quantity,size,product_color,total)
-         values('$order_id','$product_id','$product_detail_id','$product_name','$image','$quantity','$size','$product_color','$total')";
+    function insert_orders_detail($order_id,$product_code,$product_detail_id,$product_name,$image,$quantity,$size,$product_color,$total) {
+        $sql = "insert into orders_detail (order_id,product_code,product_detail_id,product_name,image,quantity,size,product_color,total)
+         values('$order_id','$product_code','$product_detail_id','$product_name','$image','$quantity','$size','$product_color','$total')";
          pdo_execute($sql);
     }
     function load_all_order_detail($id_order){
