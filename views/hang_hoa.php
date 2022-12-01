@@ -23,7 +23,7 @@
                 <?php foreach ($listhanghoa as $hanghoa) : ?>
                     <div class="cart">
                         <div class="cart_photo">
-                            <div class="sale_pro">-30%</div>
+                            <div class="sale_pro">-<?= $hanghoa['sale'] ?>%</div>
                             <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $hanghoa['id'] ?>" class="img_href">
                                 <img src="./images/products/<?= $hanghoa['image'] ?>" alt="" class="cart_img">
                                 <!-- <img src="//product.hstatic.net/200000136061/product/274247983_366248368454609_1600481175588658934_n_104d962cc6994ce4a556a90e50186ad9_master.jpg" alt="" class="cart_img-bottom"> -->

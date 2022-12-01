@@ -1,6 +1,6 @@
 <?php
-    function show_products_details($product_id){
-        $sql = "select * from products_detail where product_id = $product_id";
+    function show_products_details($product_code){
+        $sql = "select * from products_detail where product_code = $product_code";
         $listproducts = pdo_query($sql);
         return $listproducts;
     }
