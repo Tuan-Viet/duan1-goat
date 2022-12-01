@@ -214,8 +214,7 @@
 
 
 .select_watch .btn_cart{
-    width: 80%;
-    
+    width: 100%;
     margin-left: 15px;
     border: none;
     background-color: #D61114;
@@ -233,6 +232,8 @@
 
 .btn_cart > input {
     padding: 12px;
+    width: 100%;
+    text-align: center;
 }
 
 .btn_cart::before {

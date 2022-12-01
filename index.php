@@ -21,6 +21,11 @@
                 $listhanghoa = show_product(0);
                 include "views/hang_hoa.php";
                 break;
+            case 'blog':
+                $listhanghoa = show_product(0);
+                echo $listhanghoa;
+                include "views/blog.php";   
+                break;
             case 'hang_hoa_chi_tiet':
                 $product_id = $_GET['id'];
                 $listhanghoa = show_product($product_id);
