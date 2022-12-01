@@ -24,7 +24,7 @@
                             <?php foreach($listproduct as $product): ?>
                             <?php extract($product) ?>
                             <div class="thumb_photo" onclick="changeimg(this)">
-                                <img src="./images/products/<?= $image ?>" alt="">
+                                <img src="./images/products/<?= $image_detail ?>" alt="">
                             </div>
                             <?php endforeach ?>
                         </div>
@@ -41,7 +41,8 @@
                         <h1><?= $total ?><del class="price_pro-sale"><?= $product_price ?></del></h1>
                     </div>
                     <form action="index.php?act=addtocart" method="post" class="form_pro">
-                        <input type="hidden" name="product_id" value="<?= $product_id ?>">
+                        <input type="hidden" name="product_id" value="<?= $id ?>">
+                        <input type="hidden" name="product_code" value="<?= $product_code ?>">
                         <input type="hidden" name="product_name" value="<?= $product_name ?>">
                         <input type="hidden" name="product_price" value="<?= $product_price ?>">
                         <input type="hidden" name="sale" value="<?= $sale ?>">
@@ -58,7 +59,7 @@
                                     </label>
                                 <?php endforeach ?>
                             </div>
-                            <!-- <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['product_detail_id']) ? $errors['product_detail_id'] : '' ?></small> -->
+                            <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['product_detail_id']) ? $errors['product_detail_id'] : '' ?></small>
                         </div>
                         <div class="select_swatch mb24">
                             <span class="header_swatch mb8">Kích thước</span>
@@ -84,7 +85,7 @@
                                     <name class="size-S">XL</name>
                                 </label>
                             </div>
-                            <!-- <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['size']) ? $errors['size'] : '' ?></small> -->
+                            <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['size']) ? $errors['size'] : '' ?></small>
                         </div>
                         <div class="select_watch">
                             <input type="number" name="quantity" min="1" value="1" id="" class="form_control-quantity">
@@ -151,23 +152,25 @@
         <div class="list_product-related mt40">
             <h1 class="title_pro-related mb24   ">Sản phẩm liên quan</h1>
             <div class="carts carts_related">
+                <?php foreach($product_cate as $product) : ?>
+                    <?php extract($product) ?>
                 <div class="cart cart_related">
-                    <a href="./product_detail.html" class="img_href">
+                    <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $id?>" class="img_href">
                         <div class="cart_photo">
-                            <img src="//product.hstatic.net/200000136061/product/274880931_4918536151560697_4517164232254841609_n_42233f347d1b4b26b3c4847b40a37d3d_large.jpg" alt="" class="cart_img">
-                            <img src="//product.hstatic.net/200000136061/product/274247983_366248368454609_1600481175588658934_n_104d962cc6994ce4a556a90e50186ad9_master.jpg" alt="" class="cart_img-bottom">
+                            <img src="images/products/<?= $image ?>" alt="" class="cart_img">
+                            <!-- <img src="//product.hstatic.net/200000136061/product/274247983_366248368454609_1600481175588658934_n_104d962cc6994ce4a556a90e50186ad9_master.jpg" alt="" class="cart_img-bottom"> -->
                         </a>
                             <div class="cart_icon-plus">
                                 <img class="cart_img-icon" src="./icons/add-circle-outline.svg" alt="">
                             </div>
                         </div>
                     <div class="cart_nav">
-                        <p class="cart_name">Jacket Basic SS2</p>
-                        <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
+                        <p class="cart_name"><?= $product_name ?></p>
+                        <p class="cart_price"><?= $total ?> <del class="sale" style="color:#6666"><?= $product_price ?></del></p>
                         
                     </div>
                 </div>
-                <div class="cart cart_related">
+                <!-- <div class="cart cart_related">
                     <a href="./product_detail.html" class="img_href">
                         <div class="cart_photo">
                             <img src="//product.hstatic.net/200000136061/product/z3225156601016_f4e0d943da963f8b10b47af64135fc49_f9a81148e90f45c6bf0217a055a35e23_large.jpg" alt="" class="cart_img">
@@ -214,7 +217,8 @@
                         <p class="cart_name">Jacket Basic SS2</p>
                         <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
                     </div>
-                </div>
+                </div> -->
+                <?php endforeach ?>
             </div>
         </div>
     </div>
