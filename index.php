@@ -29,8 +29,8 @@
             case 'hang_hoa_chi_tiet':
                 $product_id = $_GET['id'];
                 $listhanghoa = show_product($product_id);
-                $product_code = $listhanghoa['product_code'];
-                $listproduct = show_products_details($product_code);
+                $product_id = $listhanghoa['product_id'];
+                $listproduct = show_products_details($product_id);
                     // if (!isset($product_detail_id)) {
                     //     $errors['product_detail_id'] = "Bạn vui lòng chọn màu";
                     // }
@@ -121,7 +121,7 @@
                 if (isset($_POST['btn_buynow']) && $_POST['btn_buynow']) {
                     if(isset($_POST['product_detail_id']) && isset($_POST['size'])){
                         $product_id = $_POST['product_id'];
-                        $product_code = $_POST['product_code'];
+                        $product_id = $_POST['product_id'];
                         $product_name = $_POST['product_name'];
                         // $product_price = $_POST['product_price'];
                         // $sale = $_POST['sale'];
@@ -161,7 +161,7 @@
                                 // thêm mới sản phẩm vào giỏ hàng
                                 // $hhaddtocart=[$ma_hh,$ten_hh,$hinh,$don_gia,$so_luong,$thanh_tien];
                                 // array_push($_SESSION['mycart'],$hhaddtocart);
-                                $cart = [$product_code,$product_name,$total,$product_detail_id,$image,$product_color,$size,$quantity,$tongtien];
+                                $cart = [$product_id,$product_name,$total,$product_detail_id,$image,$product_color,$size,$quantity,$tongtien];
                                 $_SESSION['my_cart'][] = $cart;
                             }
                         } else {
@@ -198,7 +198,7 @@
                 if (isset($_POST['btn_addtocart']) && $_POST['btn_addtocart']) {
                     if(isset($_POST['product_detail_id']) && isset($_POST['size'])){
                     $product_id = $_POST['product_id'];
-                    $product_code = $_POST['product_code'];
+                    $product_id = $_POST['product_id'];
                     $product_name = $_POST['product_name'];
                     // $product_price = $_POST['product_price'];
                     // $sale = $_POST['sale'];
@@ -224,7 +224,7 @@
                         // thêm mới sản phẩm vào giỏ hàng
                         // $hhaddtocart=[$ma_hh,$ten_hh,$hinh,$don_gia,$so_luong,$thanh_tien];
                         // array_push($_SESSION['mycart'],$hhaddtocart);
-                        $cart = [$product_code,$product_name,$total,$product_detail_id,$image,$product_color,$size,$quantity,$tongtien];
+                        $cart = [$product_id,$product_name,$total,$product_detail_id,$image,$product_color,$size,$quantity,$tongtien];
                         $_SESSION['my_cart'][] = $cart;
                     }
                     echo "
@@ -303,13 +303,16 @@
                     include "views/bill/bill_pttt.php";
                 }
                 break;
+            case 'pttt_ATM':     
+                include "views/bill/pttt_ATM.php";
+                break;
             case 'bill_access':
                     $pay_methods = $_POST['check'];
-                    $id_order = $_POST['id_order'];
+                    $id_order = $_POST['id_order']; 
                     update_order($pay_methods,$id_order);
                     foreach ($_SESSION['my_cart'] as $cart) {
                         insert_orders_detail($id_order,$cart['0'],$cart['3'],$cart[1],$cart['4'],$cart[7],$cart[6],$cart[5],$cart[8]);
-                    }
+                    }   
                     $_SESSION['my_cart']=[];
                     $load_one_order = load_one_order($id_order);
                     $load_all_order_detail = load_all_order_detail($id_order);
@@ -317,6 +320,18 @@
                 break;
             case 'cart':
                 include "views/bill/cart.php";
+                break;
+            case 'blog':
+                include "views/blog.php";
+                break;
+            case 'intro':
+                include "views/intro.php";
+                break;
+            case 'contact':
+                include "views/contact.php";
+                break;
+            case 'list_address':
+                include "views/bill/list_address.php";
                 break;
             case 'mycart':
                 $load_all_order = load_all_order($_SESSION['user']['id']);

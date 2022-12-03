@@ -1,12 +1,12 @@
 <main>
     <?php
-        // $errors = [];
-        // if ($_POST['size'] == '') {
-        //     $errors['size'] = "Bạn vui lòng chọn size";
-        // }
-        // if ($_POST['product_detail_id'] == '') {
-        //     $errors['product_detail_id'] = "Bạn vui lòng chọn màu";
-        // }
+    // $errors = [];
+    // if ($_POST['size'] == '') {
+    //     $errors['size'] = "Bạn vui lòng chọn size";
+    // }
+    // if ($_POST['product_detail_id'] == '') {
+    //     $errors['product_detail_id'] = "Bạn vui lòng chọn màu";
+    // }
     ?>
     <div class="fade_tab">
         <ul class="list_tab container"></ul>
@@ -21,11 +21,11 @@
                             <img src="./images/products/<?= $image ?>" alt="" class="img_pro-main">
                         </div>
                         <div class="list_thumbs">
-                            <?php foreach($listproduct as $product): ?>
-                            <?php extract($product) ?>
-                            <div class="thumb_photo" onclick="changeimg(this)">
-                                <img src="./images/products/<?= $image_detail ?>" alt="">
-                            </div>
+                            <?php foreach ($listproduct as $product) : ?>
+                                <?php extract($product) ?>
+                                <div class="thumb_photo" onclick="changeimg(this)">
+                                    <img src="./images/products/<?= $image_detail ?>" alt="">
+                                </div>
                             <?php endforeach ?>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                     </div>
                     <form action="index.php?act=addtocart" method="post" class="form_pro">
                         <input type="hidden" name="product_id" value="<?= $id ?>">
-                        <input type="hidden" name="product_code" value="<?= $product_code ?>">
+                        <input type="hidden" name="product_id" value="<?= $product_id ?>">
                         <input type="hidden" name="product_name" value="<?= $product_name ?>">
                         <input type="hidden" name="product_price" value="<?= $product_price ?>">
                         <input type="hidden" name="sale" value="<?= $sale ?>">
@@ -50,10 +50,10 @@
                         <div class="select_swatch mb24">
                             <span class="header_swatch mb8">Màu sắc:</span>
                             <div class="select_swap">
-                                <?php foreach($listproduct as $product): ?>
+                                <?php foreach ($listproduct as $product) : ?>
                                     <?php extract($product) ?>
                                     <label class="swap_element" for="radio_color<?= $id ?>">
-                                        <input type="radio" name="product_detail_id" value="<?=  $id ?>" id="radio_color<?= $id ?>" class="size_0-1">
+                                        <input type="radio" name="product_detail_id" value="<?= $id ?>" id="radio_color<?= $id ?>" class="size_0-1">
                                         <div class="ellipse"></div>
                                         <name class="size-S"><?= $product_color ?></name>
                                     </label>
@@ -93,10 +93,10 @@
                             <!-- <a href="" name="btn_buynow" class="btn_cart">
                                 <button type="submit" class="btn_cart">Mua ngay</button>    
                             </a> -->
-                            <?php if(isset($_SESSION['user'])) { ?>
+                            <?php if (isset($_SESSION['user'])) { ?>
                                 <a href="" class="btn_cart"><input type="submit" name="btn_addtocart" value="Thêm vào giỏ hàng"></a>
                                 <a href="" class="btn_cart"><input type="submit" name="btn_buynow" value="Mua ngay"></a>
-                            <?php } else{ ?>
+                            <?php } else { ?>
                                 <a href="index.php?act=dang_nhap" class="btn_cart"><input type="" name="" value="Thêm vào giỏ hàng"></a>
                                 <a href="index.php?act=dang_nhap" class="btn_cart"><input type="" name="" value="Mua ngay"></a>
                             <?php } ?>
@@ -133,7 +133,7 @@
                         <div class="title_dsc-detail">Lưu ý khi đặt hàng</div>
                         <p>*Các bạn check lại thông tin , kiểm tra lại thông tin đơn hàng trong Email .</p>
                         <p>* Các đơn hàng sẽ được gọi xác nhận trong 48h kể từ lúc đặt .</p>
-                        <p>*    Thời gian nhận hàng tầm 2-3 ngày (nội thành),3 - 4 ngày (ngoại thành)</p>
+                        <p>* Thời gian nhận hàng tầm 2-3 ngày (nội thành),3 - 4 ngày (ngoại thành)</p>
                         <p style="color:red">* Vào thời điểm khuyến mại thời gian nhận hàng tầm 3-4 ngày (nội thành),7 - 10 ngày (ngoại thành)</p>
 
                     </div>
@@ -150,27 +150,25 @@
             </div>
         </div>
         <div class="list_product-related mt40">
-            <h1 class="title_pro-related mb24   ">Sản phẩm liên quan</h1>
-            <div class="carts carts_related">
-                <?php foreach($product_cate as $product) : ?>
+            <h1 class="title_pro-related mb24">Sản phẩm liên quan</h1>
+            <div class="carts carts_related row">
+                <?php foreach ($product_cate as $product) : ?>
                     <?php extract($product) ?>
-                <div class="cart cart_related">
-                    <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $id?>" class="img_href">
-                        <div class="cart_photo">
-                            <img src="images/products/<?= $image ?>" alt="" class="cart_img">
-                            <!-- <img src="//product.hstatic.net/200000136061/product/274247983_366248368454609_1600481175588658934_n_104d962cc6994ce4a556a90e50186ad9_master.jpg" alt="" class="cart_img-bottom"> -->
-                        </a>
-                            <div class="cart_icon-plus">
-                                <img class="cart_img-icon" src="./icons/add-circle-outline.svg" alt="">
+                    <div class="cart cart_related col-lg-3 col-md-4">
+                        <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $id ?>" class="img_href">
+                            <div class="cart_photo">
+                                <img src="images/products/<?= $image ?>" alt="" class="cart_img">
+                                <div class="cart_icon-plus">
+                                    <img class="cart_img-icon" src="./icons/add-circle-outline.svg" alt="">
+                                </div>
                             </div>
+                        </a>
+                        <div class="cart_nav">
+                            <p class="cart_name"><?= $product_name ?></p>
+                            <p class="cart_price"><?= $total ?> <del class="sale" style="color:#6666"><?= $product_price ?></del></p>
                         </div>
-                    <div class="cart_nav">
-                        <p class="cart_name"><?= $product_name ?></p>
-                        <p class="cart_price"><?= $total ?> <del class="sale" style="color:#6666"><?= $product_price ?></del></p>
-                        
                     </div>
-                </div>
-                <!-- <div class="cart cart_related">
+                    <!-- <div class="cart cart_related">
                     <a href="./product_detail.html" class="img_href">
                         <div class="cart_photo">
                             <img src="//product.hstatic.net/200000136061/product/z3225156601016_f4e0d943da963f8b10b47af64135fc49_f9a81148e90f45c6bf0217a055a35e23_large.jpg" alt="" class="cart_img">
@@ -220,9 +218,152 @@
                 </div> -->
                 <?php endforeach ?>
             </div>
+            <div class="row_comments mt28">
+                <form action="" class="form_comments">
+                    <input type="text" name="" id="" class="form_control-comment" placeholder="Viết bình luận của bạn ...">
+                    <button type="submit" class="btn_comment">Gửi</button>
+                </form>
+            </div>
+            <h3 class="title_comment mt8">Bình luận</h3>
+            <div class="box_user-comments">
+                <div class="nav_comments mt28">
+                    <div class="user_comment">
+                        <p>Q</p><strong>Nguyễn Công Quyền</strong>
+                    </div>
+                    <p class="question">Sản phẩm này được đấy</p>
+                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
+                    <div class="action_question">
+                        <a href="" class="reply_question">Trả lời</a>
+                        <a href="" class="timestamp_question">1 ngày trước</a>
+                    </div>
+                    <div class="row_comments row_subcomments">
+                        <form action="" class="form_comments">
+                            <input type="text" name="" id="" class="form_control-comment" placeholder="Trả lời bình luận của Quyền ... ">
+                            <button type="submit" class="btn_comment">Gửi</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="nav_comments mt28">
+                    <div class="user_comment">
+                        <p>Q</p><strong>Nguyễn Công Quyền</strong>
+                    </div>
+                    <p class="question">Sản phẩm này được đấy</p>
+                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
+                    <div class="action_question">
+                        <a href="" class="reply_question">Trả lời</a>
+                        <a href="" class="timestamp_question">1 ngày trước</a>
+                    </div>
+                    <div class="row_comments row_subcomments">
+                        <form action="" class="form_comments">
+                            <input type="text" name="" id="" class="form_control-comment" placeholder="Trả lời bình luận của Quyền ... ">
+                            <button type="submit" class="btn_comment">Gửi</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="nav_comments mt28">
+                    <div class="user_comment">
+                        <p>Q</p><strong>Nguyễn Công Quyền</strong>
+                    </div>
+                    <p class="question">Sản phẩm này được đấy</p>
+                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
+                    <div class="action_question">
+                        <a href="" class="reply_question">Trả lời</a>
+                        <a href="" class="timestamp_question">1 ngày trước</a>
+                    </div>
+                    <div class="row_comments row_subcomments">
+                        <form action="" class="form_comments">
+                            <input type="text" name="" id="" class="form_control-comment" placeholder="Trả lời bình luận của Quyền ... ">
+                            <button type="submit" class="btn_comment">Gửi</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="nav_comments mt28">
+                    <div class="user_comment">
+                        <p>Q</p><strong>Nguyễn Công Quyền</strong>
+                    </div>
+                    <p class="question">Sản phẩm này được đấy</p>
+                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
+                    <div class="action_question">
+                        <a href="" class="reply_question">Trả lời</a>
+                        <a href="" class="timestamp_question">1 ngày trước</a>
+                    </div>
+                    <div class="row_comments row_subcomments">
+                        <form action="" class="form_comments">
+                            <input type="text" name="" id="" class="form_control-comment" placeholder="Trả lời bình luận của Quyền ... ">
+                            <button type="submit" class="btn_comment">Gửi</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="nav_comments mt28">
+                    <div class="user_comment">
+                        <p>Q</p><strong>Nguyễn Công Quyền</strong>
+                    </div>
+                    <p class="question">Sản phẩm này được đấy</p>
+                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
+                    <div class="action_question">
+                        <a href="" class="reply_question">Trả lời</a>
+                        <a href="" class="timestamp_question">1 ngày trước</a>
+                    </div>
+                    <div class="row_comments row_subcomments">
+                        <form action="" class="form_comments">
+                            <input type="text" name="" id="" class="form_control-comment" placeholder="Trả lời bình luận của Quyền ... ">
+                            <button type="submit" class="btn_comment">Gửi</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="nav_comments mt28">
+                    <div class="user_comment">
+                        <p>Q</p><strong>Nguyễn Công Quyền</strong>
+                    </div>
+                    <p class="question">Sản phẩm này được đấy</p>
+                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
+                    <div class="action_question">
+                        <a href="" class="reply_question">Trả lời</a>
+                        <a href="" class="timestamp_question">1 ngày trước</a>
+                    </div>
+                    <div class="row_comments row_subcomments">
+                        <form action="" class="form_comments">
+                            <input type="text" name="" id="" class="form_control-comment" placeholder="Trả lời bình luận của Quyền ... ">
+                            <button type="submit" class="btn_comment">Gửi</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="nav_comments mt28">
+                    <div class="user_comment">
+                        <p>Q</p><strong>Nguyễn Công Quyền</strong>
+                    </div>
+                    <p class="question">Sản phẩm này được đấy</p>
+                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
+                    <div class="action_question">
+                        <a href="" class="reply_question">Trả lời</a>
+                        <a href="" class="timestamp_question">1 ngày trước</a>
+                    </div>
+                    <div class="row_comments row_subcomments">
+                        <form action="" class="form_comments">
+                            <input type="text" name="" id="" class="form_control-comment" placeholder="Trả lời bình luận của Quyền ... ">
+                            <button type="submit" class="btn_comment">Gửi</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="nav_comments mt28">
+                    <div class="user_comment">
+                        <p>Q</p><strong>Nguyễn Công Quyền</strong>
+                    </div>
+                    <p class="question">Sản phẩm này được đấy</p>
+                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
+                    <div class="action_question">
+                        <a href="" class="reply_question">Trả lời</a>
+                        <a href="" class="timestamp_question">1 ngày trước</a>
+                    </div>
+                    <div class="row_comments row_subcomments">
+                        <form action="" class="form_comments">
+                            <input type="text" name="" id="" class="form_control-comment" placeholder="Trả lời bình luận của Quyền ... ">
+                            <button type="submit" class="btn_comment">Gửi</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <?php include "overlay_detail.php" ?>
-                            
 </main>
-

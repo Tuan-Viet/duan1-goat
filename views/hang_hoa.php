@@ -18,10 +18,10 @@
                 </select>
             </form>
         </div>
-        <div class="content_collections">
-            <div class="carts">
+        <div class="container">
+            <div class="carts row">
                 <?php foreach ($listhanghoa as $hanghoa) : ?>
-                    <div class="cart">
+                    <div class="cart col-lg-3 col-sm-4">
                         <div class="cart_photo">
                             <div class="sale_pro">-<?= $hanghoa['sale'] ?>%</div>
                             <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $hanghoa['id'] ?>" class="img_href">

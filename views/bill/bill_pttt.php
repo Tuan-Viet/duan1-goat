@@ -33,7 +33,7 @@
                 <div class="btn_buttons-footer">
                     <a href="index.php?act=cart" class="rerturn_bill">Giỏ hàng</a>
                     <a href="index.php?act=bill_access" class="continue_pay">
-                        <button name="completed" type="submit">Hoàn tất đơn hàng</button>    
+                        <button name="completed" type="submit">Tiếp tục thanh toán</button>    
                     </a>
                 </div>
             </form>

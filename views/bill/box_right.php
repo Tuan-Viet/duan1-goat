@@ -6,12 +6,12 @@
             <div class="photo_pro-view">
                 <a href="">
                     <img src="./images/products/<?= $cart[4] ?>" alt="" class="img_pro-view">
+                    <span class="pro_quantity-cart clear_fix-quantity"><span class="pro_quantity-view"><?= $cart[7] ?></span></span>
                 </a>
             </div>
             <div class="info_pro-view">
                 <a href="" class="pro_title-view"><?= $cart[1] ?></a>
                 <span class="pro_cate-view"><?= $cart[5] ?> /<?= $cart[6]?></span>
-                <span class="pro_quantity-view pro_quantity-cart"><span class="pro_quantity-view"><?= $cart[7] ?></span></span>
             </div>
         </div>
         <span class="pro_price-view pro_price-cart"><?= $cart[8] ?> <sup>đ</sup></span>

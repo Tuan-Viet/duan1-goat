@@ -12,7 +12,7 @@
                     <div class="account_content">
                         <ul class="accountList">
                             <li class="current"><a href="">Thông tin tài khoản</a></li>
-                            <li class=""><a href="">Danh sách địa chỉ</a></li>
+                            <li><a href="index.php?act=list_address">Danh sách địa chỉ</a></li>
                             <li class="last"><a href="index.php?act=dang_xuat">Đăng xuất</a></li>
                         </ul>
                     </div>
@@ -31,7 +31,7 @@
                         <table class="table table-light">
                             <thead class="thead-light">
                                 <tr>
-                                    <th colspan="6">Danh sách đơn hàng mới nhất</th>
+                                    <th colspan="8">Danh sách đơn hàng mới nhất</th>
                                     
                                 </tr>
                                 <tr>
@@ -53,7 +53,7 @@
                                         <td><?= $name ?></td>
                                         <td><?= $date_time ?></td>
                                         <td><?= $address ?></td>
-                                        <td><?= $total ?> <sup>đ</sup></td>
+                                        <td style="width: 100px;"><?= $total ?> <sup>đ</sup></td>
                                         <td>pending</td>
                                         <td><?= $pttt = check_pttt($pay_methods) ?></td>
                                         <td>Đang vận chuyển</td>
