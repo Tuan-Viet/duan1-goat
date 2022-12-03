@@ -18,15 +18,14 @@
                 </select>
             </form>
         </div>
-        <div class="content_collections">
-            <div class="carts">
+        <div class="container">
+            <div class="carts row">
                 <?php foreach ($listhanghoa as $hanghoa) : ?>
-                    <div class="cart">
+                    <div class="cart col-lg-3 col-sm-4">
                         <div class="cart_photo">
                             <div class="sale_pro">-<?= $hanghoa['sale'] ?>%</div>
                             <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $hanghoa['id'] ?>" class="img_href">
                                 <img src="./images/products/<?= $hanghoa['image'] ?>" alt="" class="cart_img">
-                                <!-- <img src="//product.hstatic.net/200000136061/product/274247983_366248368454609_1600481175588658934_n_104d962cc6994ce4a556a90e50186ad9_master.jpg" alt="" class="cart_img-bottom"> -->
                             </a>
                             <div class="cart_icon-plus">
                                 <img class="cart_img-icon" src="./icons/add-circle-outline.svg" alt="">
@@ -35,11 +34,6 @@
                         <div class="cart_nav">
                             <p class="cart_name"><?= $hanghoa['product_name'] ?></p>
                             <p class="cart_price"><?= $hanghoa['total'] ?> <del class="sale" style="color:#6666"><?= $hanghoa['product_price'] ?></del></p>
-                            <!-- <ul class="cart_color mt8">
-                                <li class="not_swap"><img src="./images/products/AK2_avt.jpg" alt="" class="img_not-swap"></li>
-                                <li class="not_swap"><img src="./images/products/AK2_avt.jpg" alt="" class="img_not-swap"></li>
-                                <li class="not_swap"><img src="./images/products/AK2_avt.jpg" alt="" class="img_not-swap"></li>
-                            </ul> -->
                         </div>
                     </div>
                 <?php endforeach ?>

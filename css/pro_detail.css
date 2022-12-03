@@ -2,6 +2,7 @@
     margin-bottom: 24px;
 }
 
+
 .mb8 {
     margin-bottom: 8px;
 }
@@ -214,8 +215,7 @@
 
 
 .select_watch .btn_cart{
-    width: 80%;
-    padding: 12px;
+    width: 100%;
     margin-left: 15px;
     border: none;
     background-color: #D61114;
@@ -229,6 +229,12 @@
     justify-content: center;
     text-decoration: none;
     overflow: hidden;
+}
+
+.btn_cart > input {
+    padding: 12px;
+    width: 100%;
+    text-align: center;
 }
 
 .btn_cart::before {
@@ -269,6 +275,7 @@
     display: flex;
     margin-top: 20px;
     position: relative;
+    /* overflow-y: scroll; */
     /* justify-content: space-between; */
 }
 
@@ -303,9 +310,34 @@
     text-decoration: none;
 }
 
+.table_content {
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
 .tab_panel {
     display: none;
+    height: 220px;
+    /* overflow-y: hidden; */
+    /* overflow-y: sc; */
     /* height: 150px; */
+}
+
+.table_content::-webkit-scrollbar {
+ display: none;
+}
+
+::-webkit-scrollbar {
+  width: 1em;
+}
+ 
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+ 
+::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
 }
 
 .tab_panel.active {
@@ -370,7 +402,8 @@
 }
 
 .cart_related {
-
+    /* border-radius: 10px;
+    overflow: hidden; */
 }
 
 .cart_related .cart_photo {
@@ -386,7 +419,7 @@
 }
 
 .slick-track {
-    height: 100%;
+    height: auto;
 }
 
 .slick-slide {
@@ -417,6 +450,50 @@
     right: 0;
 }
 
+.slick-slider {
+    /* display: inline-block; */
+    /* height: auto; */
+}
+
 .color {
     margin-right: 10px;
 } 
+
+.row_comments {
+    
+}
+
+.form_comments .form_control-comment {
+    height: 35px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 63%;
+    padding: 5px 25px;
+}
+.row_comments .form_comments .btn_comment {
+    border: none;
+    color: #fff;
+    background-color: #288ad6;
+    padding: 5px 25px;
+    border-radius: 5px;
+    height: 35px;
+}
+
+.title_comment {
+    font-size: 18px;
+    font-family: 'font_main-bold';
+}
+
+
+.box_user-comments {
+    height: 500px;
+    width: 70%;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    /* border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc; */
+}
+.box_user-comments::-webkit-scrollbar {
+    display: none;
+}
