@@ -26,4 +26,14 @@
         $product_cate = pdo_query($sql);
         return $product_cate;
     }
+    function show_product_total() {
+        $sql = "select *, (100-sale)/100*product_price as total from products ORDER BY total ASC";
+        $listhanghoa = pdo_query($sql);
+        return $listhanghoa;
+    }
+    function show_product_total_desc() {
+        $sql = "select *, (100-sale)/100*product_price as total from products ORDER BY total desc";
+        $listhanghoa = pdo_query($sql);
+        return $listhanghoa;
+    }
 ?>

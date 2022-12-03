@@ -38,11 +38,15 @@
                         <h1><?= $product_name ?></h1>
                     </div>
                     <div class="price_pro">
-                        <h1><?= $total ?><del class="price_pro-sale"><?= $product_price ?></del></h1>
+                        <?php if($sale != 0){ ?>
+                            <h1><?= $total ?><del class="price_pro-sale"><?= $product_price ?></del></h1>
+                        <?php } else { ?>
+                            <h1><?= $product_price ?></h1>
+                        <?php }  ?>
                     </div>
                     <form action="index.php?act=addtocart" method="post" class="form_pro">
                         <input type="hidden" name="product_id" value="<?= $id ?>">
-                        <input type="hidden" name="product_code" value="<?= $product_code ?>">
+                        <!-- <input type="hidden" name="product_code" value="<?= $product_code ?>"> -->
                         <input type="hidden" name="product_name" value="<?= $product_name ?>">
                         <input type="hidden" name="product_price" value="<?= $product_price ?>">
                         <input type="hidden" name="sale" value="<?= $sale ?>">
@@ -65,22 +69,22 @@
                             <span class="header_swatch mb8">Kích thước</span>
                             <div class="select_swap">
                                 <label class="swap_element" for="radio_size0">
-                                    <input type="radio" name="size" value="S" id="radio_size0" class="size_0-1">
+                                    <input type="radio" name="size" value="S" id="radio_size0" class="size_0-1" <?= $quantity_size_S<=0 ? 'disabled' : '' ?>>
                                     <div class="ellipse"></div>
                                     <name class="size-S">S</name>
                                 </label>
                                 <label class="swap_element" for="radio_size1">
-                                    <input type="radio" name="size" value="M" id="radio_size1" class="size_0-1">
+                                    <input type="radio" name="size" value="M" id="radio_size1" class="size_0-1" <?= $quantity_size_M<=0 ? 'disabled' : '' ?>>
                                     <div class="ellipse"></div>
                                     <name class="size-S">M</name>
                                 </label>
                                 <label class="swap_element" for="radio_size2">
-                                    <input type="radio" name="size" value="L" id="radio_size2" class="size_0-1">
+                                    <input type="radio" name="size" value="L" id="radio_size2" class="size_0-1" <?= $quantity_size_L<=0 ? 'disabled' : '' ?>>
                                     <div class="ellipse"></div>
                                     <name class="size-S">L</name>
                                 </label>
                                 <label class="swap_element" for="radio_size3">
-                                    <input type="radio" name="size" value="XL" id="radio_size3" class="size_0-1">
+                                    <input type="radio" name="size" value="XL" id="radio_size3" class="size_0-1" <?= $quantity_size_XL<=0 ? 'disabled' : '' ?>>
                                     <div class="ellipse"></div>
                                     <name class="size-S">XL</name>
                                 </label>
@@ -89,6 +93,7 @@
                         </div>
                         <div class="select_watch">
                             <input type="number" name="quantity" min="1" value="1" id="" class="form_control-quantity">
+                            <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['quantity']) ? $errors['quantity'] : '' ?></small>
                             <!-- <a href="" class="btn_cart">Thêm vào giỏ hàng</a> -->
                             <!-- <a href="" name="btn_buynow" class="btn_cart">
                                 <button type="submit" class="btn_cart">Mua ngay</button>    
