@@ -22,7 +22,7 @@
     margin-top: 10px;
 }
 .photo_pro-view{
-
+    position: relative;
 }
 .img_pro-view{
 
@@ -38,6 +38,23 @@
 }
 .pro_quantity-cart{
     background-color: transparent;
+}
+
+.clear_fix-quantity {
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;  
+    right: -10px;
+    top: -10px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
 }
 .quantity_count{
     width: 30px;

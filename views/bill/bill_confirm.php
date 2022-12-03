@@ -9,7 +9,14 @@
                     <h3 class="section_title pdh20">Thông tin giao hàng</h3>
                     <div class="section_content-infomation">
                         <form action="index.php?act=bill_pttt" method="post" class="form_info">
-                        <div class="form mt8">
+                            <div class="form mt8">
+                                <select name="" id="" class="form_control-section pform ph6 mt8">
+                                    <option value="" class="">Địa chỉ mặc định</option>
+                                    <option value="">Bắc Ninh</option>
+                                </select>
+                                <label for="">Địa chỉ</label>
+                            </div>
+                            <div class="form mt8">
                                 <input type="text" name="name" id="" class="form_control-section name pform ph6 mt8" placeholder=" ">
                                 <label for="">Họ và tên</label>
                             </div>

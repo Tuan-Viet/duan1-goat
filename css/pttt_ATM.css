@@ -1,0 +1,34 @@
+.row_confirm {
+    position: relative;
+    /* height: 200px; */
+}
+.row_method-ATM {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    /* position: absolute;
+    top: 0; */
+}
+
+.box_center-ATM  {
+    text-align: center;
+}
+.box_center-ATM h4{
+    font-family: 'font_main-bold';
+    font-size: 18px;
+}
+
+.btn_ATM {
+    /* float: right; */
+    /* position: relative;
+    right: 0; */
+    position: absolute;
+    bottom: 0;
+    display: block;
+    /* right: 50%; */
+    left: 50%;
+    transform: translateX(-50%);
+    /* margin-top: 40px; */
+    /* transform: translateX(-50%); */
+}
