@@ -36,4 +36,33 @@
         $list_user = pdo_query($sql);
         return $list_user;
     }
+
+    //Lấy ra danh sách khách hàng
+    function user_all(){
+        $sql="SELECT * FROM users WHERE status = 0 ORDER BY id DESC";
+        $users = pdo_query($sql);
+        return $users;
+    }
+    //lock user
+    function lock_user($id,$status){
+        $sql = "UPDATE users SET status = '$status' WHERE id =$id";
+        pdo_execute($sql);
+    }
+    //Unlock user
+    function user_lock(){
+        $sql="SELECT * FROM users WHERE status = 1 ORDER BY id DESC";
+        $users = pdo_query($sql);
+        return $users;
+    }
+    //Xóa user
+    function delete_user($id){
+        $sql = "DELETE FROM users WHERE id ='$id'";
+        pdo_execute($sql);
+    }
+    //Lấy ra 1 khách hàng theo id
+    function user_one($id){
+        $sql="SELECT * FROM users WHERE id='$id'";
+        $users = pdo_query($sql);
+        return $users;
+    }
 ?>
