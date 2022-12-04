@@ -40,3 +40,23 @@ nav_overlay_cart.addEventListener('click',function(event){
     event.stopPropagation(); 
 })
 
+
+
+const lists = document.querySelectorAll('.select_list');
+const listActive = document.querySelector('.select_list.active');
+const line_style = document.querySelector('.nav_list-section .line');
+console.log(line_style);
+
+line_style.style.left = listActive.offsetLeft + 'px';
+line_style.style.width = listActive.offsetWidth + 'px';
+
+lists.forEach((list,index) => {
+    list.onclick = function(event){
+        event.preventDefault();
+        document.querySelector('.select_list.active').classList.remove('active');
+        line_style.style.left = this.offsetLeft + 'px';
+        line_style.style.width = this.offsetWidth + 'px';
+
+        this.classList.add('active');
+    }
+})

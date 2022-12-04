@@ -338,6 +338,9 @@
                 
                 include "views/bill/mycart.php";
                 break;
+            case 'mycart_detail':
+                include "views/bill/mycart_detail.php";
+                break;
             default:
                 include "views/home.php";
                 break; 

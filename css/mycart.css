@@ -81,6 +81,22 @@
     /* border: 1px ; */
 }
 
+.row_mycard tr td {
+    font-family: 'font_main-medium';
+    color: #666666;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.row_mycard tr td .mycart_id-pro {
+    color: #212529;
+}
+
+.row_mycard tr td .mycart_id-pro:hover {
+    opacity: 0.7;
+    text-decoration: none;
+}
+
 .table tr th {
     font-weight: 600;
 }

@@ -6,6 +6,14 @@ $('.carts_related').slick({
   nextArrow:"<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
 });
 
+// $('.list_thumbs').slick({
+//   infinite: true,
+//   slidesToShow: 3,
+//   slidesToScroll: 1,
+//   prevArrow:"<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+//   nextArrow:"<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+// });
+
 
 const tabs = document.querySelectorAll('.tab');
 const panels = document.querySelectorAll('.tab_panel');

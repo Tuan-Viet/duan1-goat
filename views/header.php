@@ -9,11 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="./fonts/Montserrat-VariableFont_wght.ttf">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/blog.css">
-    <link rel="stylesheet" href="./css/intro.css">
     <link rel="stylesheet" href="./css/contact.css">
-    <link rel="stylesheet" href="./css/product.css">
     <link rel="stylesheet" href="./css/pro_detail.css">
     <link rel="stylesheet" href="./css/comments.css">
     <link rel="stylesheet" href="./css/cart.css">
@@ -22,7 +18,13 @@
     <link rel="stylesheet" href="./css/pttt_ATM.css">
     <link rel="stylesheet" href="./css/bill_access.css">
     <link rel="stylesheet" href="./css/mycart.css">
+    <link rel="stylesheet" href="./css/mycart_detail.css">
     <link rel="stylesheet" href="./css/list_address.css">
+    <link rel="stylesheet" href="./css/intro.css">
+    <link rel="stylesheet" href="./css/blog.css">
+    <link rel="stylesheet" href="./css/product.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/reponsive/rp_header.css">
 </head>
 <body class="main">
         <header>

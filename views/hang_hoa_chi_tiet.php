@@ -15,18 +15,18 @@
         <div class="row">
             <div class="col-lg-5 left_detail">
                 <div class="row row_left_detail">
-                    <div class="col-lg-12 box_pro-main">
-                        <div class="photo_pro-main">
-                            <?php extract($listhanghoa) ?>
-                            <img src="./images/products/<?= $image ?>" alt="" class="img_pro-main">
-                        </div>
-                        <div class="list_thumbs">
+                    <div class="col-lg-12 box_pro-main row">
+                        <div class="list_thumbs col-lg-2 col-xs-12">
                             <?php foreach ($listproduct as $product) : ?>
                                 <?php extract($product) ?>
-                                <div class="thumb_photo" onclick="changeimg(this)">
+                                <div class="thumb_photo row" onclick="changeimg(this)">
                                     <img src="./images/products/<?= $image_detail ?>" alt="">
                                 </div>
                             <?php endforeach ?>
+                        </div>
+                        <div class="photo_pro-main col-lg-10">
+                            <?php extract($listhanghoa) ?>
+                            <img src="./images/products/<?= $image ?>" alt="" class="img_pro-main">
                         </div>
                     </div>
                 </div>
@@ -89,10 +89,6 @@
                         </div>
                         <div class="select_watch">
                             <input type="number" name="quantity" min="1" value="1" id="" class="form_control-quantity">
-                            <!-- <a href="" class="btn_cart">Thêm vào giỏ hàng</a> -->
-                            <!-- <a href="" name="btn_buynow" class="btn_cart">
-                                <button type="submit" class="btn_cart">Mua ngay</button>    
-                            </a> -->
                             <?php if (isset($_SESSION['user'])) { ?>
                                 <a href="" class="btn_cart"><input type="submit" name="btn_addtocart" value="Thêm vào giỏ hàng"></a>
                                 <a href="" class="btn_cart"><input type="submit" name="btn_buynow" value="Mua ngay"></a>
@@ -155,67 +151,20 @@
                 <?php foreach ($product_cate as $product) : ?>
                     <?php extract($product) ?>
                     <div class="cart cart_related col-lg-3 col-md-4">
-                        <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $id ?>" class="img_href">
-                            <div class="cart_photo">
+                        <div class="cart_photo">
+                            <div class="sale_pro">-<?= $sale?>%</div>
+                            <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $id ?>" class="img_href">
                                 <img src="images/products/<?= $image ?>" alt="" class="cart_img">
-                                <div class="cart_icon-plus">
-                                    <img class="cart_img-icon" src="./icons/add-circle-outline.svg" alt="">
-                                </div>
+                            </a>
+                            <div class="overlay_addtocard">
+                                <input type="submit" class="btn_addtocard" value="Thêm vào giỏ hàng">
                             </div>
-                        </a>
+                            </div>
                         <div class="cart_nav">
-                            <p class="cart_name"><?= $product_name ?></p>
+                            <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $id ?>" class="cart_name"><?= $product_name?></a>
                             <p class="cart_price"><?= $total ?> <del class="sale" style="color:#6666"><?= $product_price ?></del></p>
                         </div>
                     </div>
-                    <!-- <div class="cart cart_related">
-                    <a href="./product_detail.html" class="img_href">
-                        <div class="cart_photo">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156601016_f4e0d943da963f8b10b47af64135fc49_f9a81148e90f45c6bf0217a055a35e23_large.jpg" alt="" class="cart_img">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156607652_c1b382e8ddf32802251a18084db63be0_5a5a24376c064a2aa91c3b5fa5fabacc_master.jpg" alt="" class="cart_img-bottom">
-                        </div>
-                    </a>
-                    <div class="cart_nav">
-                        <p class="cart_name">Jacket Basic SS2</p>
-                        <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                    </div>
-                </div>
-                <div class="cart cart_related">
-                    <a href="./product_detail.html" class="img_href">
-                        <div class="cart_photo">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156601016_f4e0d943da963f8b10b47af64135fc49_f9a81148e90f45c6bf0217a055a35e23_large.jpg" alt="" class="cart_img">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156607652_c1b382e8ddf32802251a18084db63be0_5a5a24376c064a2aa91c3b5fa5fabacc_master.jpg" alt="" class="cart_img-bottom">
-                        </div>
-                    </a>
-                    <div class="cart_nav">
-                        <p class="cart_name">Jacket Basic SS2</p>
-                        <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                    </div>
-                </div>
-                <div class="cart cart_related">
-                    <a href="./product_detail.html" class="img_href">
-                        <div class="cart_photo">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156601016_f4e0d943da963f8b10b47af64135fc49_f9a81148e90f45c6bf0217a055a35e23_large.jpg" alt="" class="cart_img">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156607652_c1b382e8ddf32802251a18084db63be0_5a5a24376c064a2aa91c3b5fa5fabacc_master.jpg" alt="" class="cart_img-bottom">
-                        </div>
-                    </a>
-                    <div class="cart_nav">
-                        <p class="cart_name">Jacket Basic SS2</p>
-                        <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                    </div>
-                </div>
-                <div class="cart cart_related">
-                    <a href="./product_detail.html" class="img_href">
-                        <div class="cart_photo">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156601016_f4e0d943da963f8b10b47af64135fc49_f9a81148e90f45c6bf0217a055a35e23_large.jpg" alt="" class="cart_img">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156607652_c1b382e8ddf32802251a18084db63be0_5a5a24376c064a2aa91c3b5fa5fabacc_master.jpg" alt="" class="cart_img-bottom">
-                        </div>
-                    </a>
-                    <div class="cart_nav">
-                        <p class="cart_name">Jacket Basic SS2</p>
-                        <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                    </div>
-                </div> -->
                 <?php endforeach ?>
             </div>
             <div class="row_comments mt28">
