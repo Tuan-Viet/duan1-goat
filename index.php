@@ -43,6 +43,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             // $listhanghoa = show_product_total_desc();
             include "views/hang_hoa.php";
             break;
+        case 'blog':
+            $listhanghoa = show_product(0);
+            // echo $listhanghoa;
+            include "views/blog.php";   
+            break;
         case 'hang_hoa_chi_tiet':
             $product_id = $_GET['id'];
             $listhanghoa = show_product($product_id);
@@ -75,6 +80,20 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             // }
             extract($listhanghoa);
             $product_cate = product_cate($product_id, $cate_id);
+            if (isset($_POST['btn_send'])) {
+                $content = $_POST['content'];
+                $product_id = $_POST['product_id'];
+                $user_id = $_SESSION['user']['id'];
+                $time_sent = date('h:i:sa d/m/Y');
+                if(trim($content) != '') {
+                    insert_comment($product_id,$user_id,$content,$time_sent);
+                }
+                // echo $content;
+                // echo $product_id;
+                // echo $user_id;
+            }
+            $listcomment = show_comment($product_id);
+            $list_user = show_user();
             include "views/hang_hoa_chi_tiet.php";
             break;
         case 'dang_ky':
@@ -373,56 +392,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     echo "
                             <script>window.open('index.php?act=bill_confirm','_self')</script>";
                 }
-                break;
-            case 'pttt_ATM':     
-                include "views/bill/pttt_ATM.php";
-                break;
-            case 'bill_access':
-                    $pay_methods = $_POST['check'];
-                    $id_order = $_POST['id_order']; 
-                    update_order($pay_methods,$id_order);
-                    foreach ($_SESSION['my_cart'] as $cart) {
-                        insert_orders_detail($id_order,$cart['0'],$cart['3'],$cart[1],$cart['4'],$cart[7],$cart[6],$cart[5],$cart[8]);
-                    }   
-                    $_SESSION['my_cart']=[];
-                    $load_one_order = load_one_order($id_order);
-                    $load_all_order_detail = load_all_order_detail($id_order);
-                    include "views/bill/bill_access.php";
-                break;
-            case 'cart':
-                include "views/bill/cart.php";
-                break;
-            case 'blog':
-                include "views/blog.php";
-                break;
-            case 'intro':
-                include "views/intro.php";
-                break;
-            case 'contact':
-                include "views/contact.php";
-                break;
-            case 'list_address':
-                include "views/bill/list_address.php";
-                break;
-            case 'mycart':
-                $load_all_order = load_all_order($_SESSION['user']['id']);
-                
-                include "views/bill/mycart.php";
-                break;
-            case 'mycart_detail':
-                include "views/bill/mycart_detail.php";
-                break;
-            default:
-                include "views/home.php";
-                break; 
-        }
-    }
-    else {
-     include "views/home.php";
-
                 include "views/bill/bill_pttt.php";
             }
             break;
+    
         case 'bill_access':
             $pay_methods = $_POST['check'];
             $id_order = $_POST['id_order'];
@@ -452,6 +425,18 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'cart':
             include "views/bill/cart.php";
+            break;
+        case 'blog':
+            include "views/blog.php";
+            break;
+        case 'intro':
+            include "views/intro.php";
+            break;
+        case 'contact':
+            include "views/contact.php";
+            break;
+        case 'list_address':
+            include "views/bill/list_address.php";
             break;
         case 'mycart':
             $load_all_order = load_all_order($_SESSION['user']['id']);
