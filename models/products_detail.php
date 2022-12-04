@@ -15,5 +15,20 @@
         $product_detail_one = pdo_query_one($sql);
         return $product_detail_one;
     }
+    function update_quantity($size,$quantity_new,$product_detail_id) {
+        if ($size == 'S') {
+            $sql="update products_detail set quantity_size_S = '$quantity_new' where id=$product_detail_id ";
+        } 
+         if($size == 'M') {
+            $sql="update products_detail set quantity_size_M = '$quantity_new' where id=$product_detail_id ";
+        }
+         if($size == 'L') {
+            $sql="update products_detail set quantity_size_L = '$quantity_new' where id=$product_detail_id ";
+        }
+        if($size == 'XL') {
+            $sql="update products_detail set quantity_size_XL = '$quantity_new' where id=$product_detail_id ";
+        }
+        pdo_execute($sql);
+    }
 ?>
 
