@@ -173,70 +173,50 @@
                             <p class="cart_price"><?= $total ?> <del class="sale" style="color:#6666"><?= $product_price ?></del></p>
                         </div>
                     </div>
-                    <!-- <div class="cart cart_related">
-                    <a href="./product_detail.html" class="img_href">
-                        <div class="cart_photo">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156601016_f4e0d943da963f8b10b47af64135fc49_f9a81148e90f45c6bf0217a055a35e23_large.jpg" alt="" class="cart_img">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156607652_c1b382e8ddf32802251a18084db63be0_5a5a24376c064a2aa91c3b5fa5fabacc_master.jpg" alt="" class="cart_img-bottom">
-                        </div>
-                    </a>
-                    <div class="cart_nav">
-                        <p class="cart_name">Jacket Basic SS2</p>
-                        <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                    </div>
-                </div>
-                <div class="cart cart_related">
-                    <a href="./product_detail.html" class="img_href">
-                        <div class="cart_photo">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156601016_f4e0d943da963f8b10b47af64135fc49_f9a81148e90f45c6bf0217a055a35e23_large.jpg" alt="" class="cart_img">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156607652_c1b382e8ddf32802251a18084db63be0_5a5a24376c064a2aa91c3b5fa5fabacc_master.jpg" alt="" class="cart_img-bottom">
-                        </div>
-                    </a>
-                    <div class="cart_nav">
-                        <p class="cart_name">Jacket Basic SS2</p>
-                        <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                    </div>
-                </div>
-                <div class="cart cart_related">
-                    <a href="./product_detail.html" class="img_href">
-                        <div class="cart_photo">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156601016_f4e0d943da963f8b10b47af64135fc49_f9a81148e90f45c6bf0217a055a35e23_large.jpg" alt="" class="cart_img">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156607652_c1b382e8ddf32802251a18084db63be0_5a5a24376c064a2aa91c3b5fa5fabacc_master.jpg" alt="" class="cart_img-bottom">
-                        </div>
-                    </a>
-                    <div class="cart_nav">
-                        <p class="cart_name">Jacket Basic SS2</p>
-                        <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                    </div>
-                </div>
-                <div class="cart cart_related">
-                    <a href="./product_detail.html" class="img_href">
-                        <div class="cart_photo">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156601016_f4e0d943da963f8b10b47af64135fc49_f9a81148e90f45c6bf0217a055a35e23_large.jpg" alt="" class="cart_img">
-                            <img src="//product.hstatic.net/200000136061/product/z3225156607652_c1b382e8ddf32802251a18084db63be0_5a5a24376c064a2aa91c3b5fa5fabacc_master.jpg" alt="" class="cart_img-bottom">
-                        </div>
-                    </a>
-                    <div class="cart_nav">
-                        <p class="cart_name">Jacket Basic SS2</p>
-                        <p class="cart_price">225,000đ <del class="sale" style="color:#6666">450,000đ</del></p>
-                    </div>
-                </div> -->
                 <?php endforeach ?>
             </div>
             <div class="row_comments mt28">
-                <form action="" class="form_comments">
-                    <input type="text" name="" id="" class="form_control-comment" placeholder="Viết bình luận của bạn ...">
-                    <button type="submit" class="btn_comment">Gửi</button>
-                </form>
+                <?php if(isset($_SESSION['user'])) { ?>
+                    <?php extract($listhanghoa) ?>
+                    <form action="index.php?act=hang_hoa_chi_tiet&id=<?= $id ?>" method="post" class="form_comments">
+                        <input type="hidden" name="product_id" value="<?= $id ?>">
+                        <input type="text" name="content" id="" class="form_control-comment" placeholder="Viết bình luận của bạn ...">
+                        <button type="submit" name="btn_send" class="btn_comment">Gửi</button>
+                    </form>
+                <?php } else { ?>
+                    <small style="margin: 10px 15px 0; display: block; font-size: 24px;" class="text-danger">Vui lòng đăng nhập để bình luận</small>
+                <?php } ?>
             </div>
             <h3 class="title_comment mt8">Bình luận</h3>
             <div class="box_user-comments">
-                <div class="nav_comments mt28">
+                <?php foreach($listcomment as $comment): ?>
+                    <div class="nav_comments mt28">
+                        <div class="user_comment">
+                            <?php foreach($list_user as $user): ?>
+                                <?php if($user['id'] == $comment['user_id']): ?>
+                                    <strong><?= $user['full_name'] ?></strong>
+                                <?php endif ?>
+                            <?php endforeach ?>
+                        </div>
+                        <p class="question"><?= $comment['content'] ?></p>
+                        <div class="action_question">
+                            <a href="" class="reply_question">Trả lời</a>
+                            <?php $time_ago = strtotime($comment['time_sent']) ?>
+                            <a href="" class="timestamp_question"><?= time_stamp($time_ago) ?></a>
+                        </div>
+                        <div class="row_comments row_subcomments">
+                            <form action="" class="form_comments">
+                                <input type="text" name="" id="" class="form_control-comment" placeholder="Trả lời bình luận của Quyền ... ">
+                                <button type="submit" class="btn_comment">Gửi</button>
+                            </form>
+                        </div>
+                    </div>
+                <?php endforeach ?>
+                <!-- <div class="nav_comments mt28">
                     <div class="user_comment">
                         <p>Q</p><strong>Nguyễn Công Quyền</strong>
                     </div>
                     <p class="question">Sản phẩm này được đấy</p>
-                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
                     <div class="action_question">
                         <a href="" class="reply_question">Trả lời</a>
                         <a href="" class="timestamp_question">1 ngày trước</a>
@@ -253,7 +233,6 @@
                         <p>Q</p><strong>Nguyễn Công Quyền</strong>
                     </div>
                     <p class="question">Sản phẩm này được đấy</p>
-                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
                     <div class="action_question">
                         <a href="" class="reply_question">Trả lời</a>
                         <a href="" class="timestamp_question">1 ngày trước</a>
@@ -270,7 +249,6 @@
                         <p>Q</p><strong>Nguyễn Công Quyền</strong>
                     </div>
                     <p class="question">Sản phẩm này được đấy</p>
-                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
                     <div class="action_question">
                         <a href="" class="reply_question">Trả lời</a>
                         <a href="" class="timestamp_question">1 ngày trước</a>
@@ -287,7 +265,6 @@
                         <p>Q</p><strong>Nguyễn Công Quyền</strong>
                     </div>
                     <p class="question">Sản phẩm này được đấy</p>
-                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
                     <div class="action_question">
                         <a href="" class="reply_question">Trả lời</a>
                         <a href="" class="timestamp_question">1 ngày trước</a>
@@ -304,7 +281,6 @@
                         <p>Q</p><strong>Nguyễn Công Quyền</strong>
                     </div>
                     <p class="question">Sản phẩm này được đấy</p>
-                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
                     <div class="action_question">
                         <a href="" class="reply_question">Trả lời</a>
                         <a href="" class="timestamp_question">1 ngày trước</a>
@@ -321,7 +297,6 @@
                         <p>Q</p><strong>Nguyễn Công Quyền</strong>
                     </div>
                     <p class="question">Sản phẩm này được đấy</p>
-                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
                     <div class="action_question">
                         <a href="" class="reply_question">Trả lời</a>
                         <a href="" class="timestamp_question">1 ngày trước</a>
@@ -338,7 +313,6 @@
                         <p>Q</p><strong>Nguyễn Công Quyền</strong>
                     </div>
                     <p class="question">Sản phẩm này được đấy</p>
-                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
                     <div class="action_question">
                         <a href="" class="reply_question">Trả lời</a>
                         <a href="" class="timestamp_question">1 ngày trước</a>
@@ -349,24 +323,7 @@
                             <button type="submit" class="btn_comment">Gửi</button>
                         </form>
                     </div>
-                </div>
-                <div class="nav_comments mt28">
-                    <div class="user_comment">
-                        <p>Q</p><strong>Nguyễn Công Quyền</strong>
-                    </div>
-                    <p class="question">Sản phẩm này được đấy</p>
-                    <!-- <p class="question">Sản phẩm này được đấy</p> -->
-                    <div class="action_question">
-                        <a href="" class="reply_question">Trả lời</a>
-                        <a href="" class="timestamp_question">1 ngày trước</a>
-                    </div>
-                    <div class="row_comments row_subcomments">
-                        <form action="" class="form_comments">
-                            <input type="text" name="" id="" class="form_control-comment" placeholder="Trả lời bình luận của Quyền ... ">
-                            <button type="submit" class="btn_comment">Gửi</button>
-                        </form>
-                    </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

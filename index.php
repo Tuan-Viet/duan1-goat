@@ -43,6 +43,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             // $listhanghoa = show_product_total_desc();
             include "views/hang_hoa.php";
             break;
+        case 'blog':
+            $listhanghoa = show_product(0);
+            // echo $listhanghoa;
+            include "views/blog.php";   
+            break;
         case 'hang_hoa_chi_tiet':
             $product_id = $_GET['id'];
             $listhanghoa = show_product($product_id);
@@ -75,6 +80,20 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             // }
             extract($listhanghoa);
             $product_cate = product_cate($product_id, $cate_id);
+            if (isset($_POST['btn_send'])) {
+                $content = $_POST['content'];
+                $product_id = $_POST['product_id'];
+                $user_id = $_SESSION['user']['id'];
+                $time_sent = date('h:i:sa d/m/Y');
+                if(trim($content) != '') {
+                    insert_comment($product_id,$user_id,$content,$time_sent);
+                }
+                // echo $content;
+                // echo $product_id;
+                // echo $user_id;
+            }
+            $listcomment = show_comment($product_id);
+            $list_user = show_user();
             include "views/hang_hoa_chi_tiet.php";
             break;
         case 'dang_ky':
@@ -405,6 +424,18 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'cart':
             include "views/bill/cart.php";
+            break;
+        case 'blog':
+            include "views/blog.php";
+            break;
+        case 'intro':
+            include "views/intro.php";
+            break;
+        case 'contact':
+            include "views/contact.php";
+            break;
+        case 'list_address':
+            include "views/bill/list_address.php";
             break;
         case 'mycart':
             $load_all_order = load_all_order($_SESSION['user']['id']);
