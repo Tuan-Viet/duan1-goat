@@ -1,0 +1,31 @@
+.text-center {
+    text-align: center;
+}
+.email_account:hover {
+    color: #666666;
+    text-decoration: none;
+}
+
+.row_mycard-detail tr .mycart_title {
+    padding: 12px 0;
+
+}
+
+.row_mycard-detail tr td {
+    /* text-align: center; */
+    font-family: 'font_main-medium';
+    font-weight: 600;   
+    color: #666666;
+    /* font-size: 12px; */
+}
+
+.row_mycard-detail .title_mycart-detail {
+    font-size: 12px;
+    font-family: 'font_main-medium';
+    font-weight: 600;
+}
+
+.row_mycard-detail .title_mycart-detail:hover {
+    text-decoration: none;
+    opacity: 0.7;
+}

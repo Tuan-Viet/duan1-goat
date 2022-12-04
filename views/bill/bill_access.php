@@ -24,12 +24,12 @@
                     <p>Ngày đặt hàng:</p>
                     <span><?= $date_time ?></span>
                 </div>
-                <div class="user_confirm user_order-methods">
+                <div class="user_confirm user_order-methods mb24">
                     <p>Phương thức thanh toán:</p>
                     <span><?= $pt = check_pttt($pay_methods); ?></span>
                 </div>
+                <?php atm($pay_methods,$name,$user_id,$id) ?>
             </div>
-            <?php atm($pay_methods,$name,$user_id,$id) ?>
             <h1 class="title_order-success">
                 Cảm ơn quý khách đã ủng hộ!
             </h1>

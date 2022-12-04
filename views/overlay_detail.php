@@ -1,4 +1,4 @@
-<div class="overlay_cart pro_details">
+<!-- <div class="overlay_cart pro_details">
         <div class="row nav_overlay-cart">
             <svg xmlns="http://www.w3.org/2000/svg" class="icon_close ionicon" viewBox="0 0 512 512"><title>Close</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>      
             <div class="col-lg-5 row_left-detail">
@@ -66,4 +66,4 @@
                 
             </div>
         </div>
-    </div>
+    </div> -->

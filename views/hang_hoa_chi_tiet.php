@@ -15,18 +15,18 @@
         <div class="row">
             <div class="col-lg-5 left_detail">
                 <div class="row row_left_detail">
-                    <div class="col-lg-12 box_pro-main">
-                        <div class="photo_pro-main">
-                            <?php extract($listhanghoa) ?>
-                            <img src="./images/products/<?= $image ?>" alt="" class="img_pro-main">
-                        </div>
-                        <div class="list_thumbs">
+                    <div class="col-lg-12 box_pro-main row">
+                        <div class="list_thumbs col-lg-2 col-xs-12">
                             <?php foreach ($listproduct as $product) : ?>
                                 <?php extract($product) ?>
-                                <div class="thumb_photo" onclick="changeimg(this)">
+                                <div class="thumb_photo row" onclick="changeimg(this)">
                                     <img src="./images/products/<?= $image_detail ?>" alt="">
                                 </div>
                             <?php endforeach ?>
+                        </div>
+                        <div class="photo_pro-main col-lg-10">
+                            <?php extract($listhanghoa) ?>
+                            <img src="./images/products/<?= $image ?>" alt="" class="img_pro-main">
                         </div>
                     </div>
                 </div>
@@ -160,16 +160,17 @@
                 <?php foreach ($product_cate as $product) : ?>
                     <?php extract($product) ?>
                     <div class="cart cart_related col-lg-3 col-md-4">
-                        <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $id ?>" class="img_href">
-                            <div class="cart_photo">
+                        <div class="cart_photo">
+                            <div class="sale_pro">-<?= $sale?>%</div>
+                            <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $id ?>" class="img_href">
                                 <img src="images/products/<?= $image ?>" alt="" class="cart_img">
-                                <div class="cart_icon-plus">
-                                    <img class="cart_img-icon" src="./icons/add-circle-outline.svg" alt="">
-                                </div>
+                            </a>
+                            <div class="overlay_addtocard">
+                                <input type="submit" class="btn_addtocard" value="Thêm vào giỏ hàng">
                             </div>
-                        </a>
+                            </div>
                         <div class="cart_nav">
-                            <p class="cart_name"><?= $product_name ?></p>
+                            <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $id ?>" class="cart_name"><?= $product_name?></a>
                             <p class="cart_price"><?= $total ?> <del class="sale" style="color:#6666"><?= $product_price ?></del></p>
                         </div>
                     </div>

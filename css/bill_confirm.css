@@ -78,6 +78,10 @@
     transition: .25s linear;
 }
 
+/* .form_control-section {
+    overflow: hidden;
+} */
+
 .form_info .form .form_control-section:focus {
     border:1px solid #6a5af9;
 }

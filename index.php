@@ -392,6 +392,53 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     echo "
                             <script>window.open('index.php?act=bill_confirm','_self')</script>";
                 }
+                break;
+            case 'pttt_ATM':     
+                include "views/bill/pttt_ATM.php";
+                break;
+            case 'bill_access':
+                    $pay_methods = $_POST['check'];
+                    $id_order = $_POST['id_order']; 
+                    update_order($pay_methods,$id_order);
+                    foreach ($_SESSION['my_cart'] as $cart) {
+                        insert_orders_detail($id_order,$cart['0'],$cart['3'],$cart[1],$cart['4'],$cart[7],$cart[6],$cart[5],$cart[8]);
+                    }   
+                    $_SESSION['my_cart']=[];
+                    $load_one_order = load_one_order($id_order);
+                    $load_all_order_detail = load_all_order_detail($id_order);
+                    include "views/bill/bill_access.php";
+                break;
+            case 'cart':
+                include "views/bill/cart.php";
+                break;
+            case 'blog':
+                include "views/blog.php";
+                break;
+            case 'intro':
+                include "views/intro.php";
+                break;
+            case 'contact':
+                include "views/contact.php";
+                break;
+            case 'list_address':
+                include "views/bill/list_address.php";
+                break;
+            case 'mycart':
+                $load_all_order = load_all_order($_SESSION['user']['id']);
+                
+                include "views/bill/mycart.php";
+                break;
+            case 'mycart_detail':
+                include "views/bill/mycart_detail.php";
+                break;
+            default:
+                include "views/home.php";
+                break; 
+        }
+    }
+    else {
+     include "views/home.php";
+
                 include "views/bill/bill_pttt.php";
             }
             break;
