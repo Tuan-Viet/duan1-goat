@@ -31,6 +31,11 @@
     //         </a>																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																											
     //     ';
     // }
+    function show_user() {
+        $sql ="select * from users";
+        $list_user = pdo_query($sql);
+        return $list_user;
+    }
 
     //Lấy ra danh sách khách hàng
     function user_all(){

@@ -18,14 +18,17 @@
                 <i class="far fa-user"></i>
                 <input type="text" class="form-input" placeholder="Tên tài khoản" name="user_name">
             </div>
+            <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['user_name']) ? $errors['user_name'] : '' ?></small>
             <div class="form-group">
                 <i class="far fa-envelope"></i>
                 <input type="email" class="form-input" placeholder="Email" name="user_email">
             </div>
+            <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['user_email']) ? $errors['user_email'] : '' ?></small>
             <div class="form-group">
                 <i class="fas fa-phone"></i>
                 <input type="text" class="form-input" placeholder="Số điện thoại" name="user_tel">
             </div>
+            <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['user_tel']) ? $errors['user_tel'] : '' ?></small>
             <div class="form-group">
                 <i class="fas fa-key"></i>
                 <input type="password" class="form-input" placeholder="Mật khẩu" name="user_password">
@@ -33,6 +36,7 @@
                     <i class="far fa-eye"></i>
                 </div>
             </div>
+            <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['user_password']) ? $errors['user_password'] : '' ?></small>
             <input type="submit" value="Đăng ký" class="form-submit" name="btn_submit">
         </form>
     </div>

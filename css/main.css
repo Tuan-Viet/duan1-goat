@@ -454,6 +454,16 @@ footer {
     overflow-y: scroll;
 }
 
+.nav_addtocart {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+}
+
+.nav_addtocart::-webkit-scrollbar {
+ display: none;
+}
+
 .view_overlay-cart {
 
 }
@@ -527,7 +537,7 @@ footer {
 }
 .pro_quantity-view{
     padding: 2px 12px;
-    background-color: #ededed;
+    /* background-color: #ededed; */
 }
 
 #view_cart .total_pro-cart,

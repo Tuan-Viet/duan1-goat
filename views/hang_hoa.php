@@ -9,32 +9,52 @@
                 <span>Bộ lọc</span>
             </div>
             <p class="title_content-main">Tất cả sản phẩm</p>
-            <form action="" class="form_content-main">
+            <form action="index.php?act=hang_hoa" method="post" class="form_content-main">
                 <ion-icon name="list-outline" class="option_cate"></ion-icon>
-                <select name="" id="" class="select_content-main">
-                    <option value="Mới nhất">Mới nhất</option>
-                    <option value="">Giá thấp đến cao</option>
-                    <option value="">Bán chạy nhất</option>
+                <select name="select_product" id="" class="select_content-main">
+                    <option value="0">Mới nhất</option>
+                    <option value="1">Giá thấp đến cao</option>
+                    <option value="2">Giá cao đến thấp</option>
+                    <option value="3">Bán chạy nhất</option>
                 </select>
+                <button type="submit" name="check" >lọc</button>
             </form>
         </div>
-        <div class="content_collections">
-            <div class="carts">
+        <div class="nav_list">
+                <!-- <h3 class="title_list">Danh mục sản phẩm</h3> -->
+                <!-- <div class="line_list"></div> -->
+                <ul class="nav_list-section mt8">
+                    <li><a href="" class="select_list active">Tât cả sản phẩm</a></li>
+                    <li><a href="" class="select_list">Quần áo</a></li>
+                    <li><a href="" class="select_list">Giày</a></li>
+                    <li><a href="" class="select_list">Balo</a></li>
+                    <li><a href="" class="select_list">Túi xách</a></li>
+                    <div class="line"></div>
+                </ul>
+                <!-- <div class="line_list"></div> -->
+            </div>
+        <div class="container mt40">
+            <div class="carts row">
                 <?php foreach ($listhanghoa as $hanghoa) : ?>
-                    <div class="cart">
+                    <div class="cart col-lg-3 col-sm-4">
                         <div class="cart_photo">
-                            <div class="sale_pro">-30%</div>
+                            <?php if($hanghoa['sale'] != 0) { ?>
+                                <div class="sale_pro">-<?= $hanghoa['sale'] ?>%</div>
+                            <?php }  ?>
                             <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $hanghoa['id'] ?>" class="img_href">
                                 <img src="./images/products/<?= $hanghoa['image'] ?>" alt="" class="cart_img">
-                                <!-- <img src="//product.hstatic.net/200000136061/product/274247983_366248368454609_1600481175588658934_n_104d962cc6994ce4a556a90e50186ad9_master.jpg" alt="" class="cart_img-bottom"> -->
                             </a>
-                            <div class="cart_icon-plus">
-                                <img class="cart_img-icon" src="./icons/add-circle-outline.svg" alt="">
+                            <div class="overlay_addtocard">
+                                <input type="submit" class="btn_addtocard" value="Thêm vào giỏ hàng">
                             </div>
                         </div>
                         <div class="cart_nav">
-                            <p class="cart_name"><?= $hanghoa['product_name'] ?></p>
-                            <p class="cart_price"><?= $hanghoa['total'] ?> <del class="sale" style="color:#6666"><?= $hanghoa['product_price'] ?></del></p>
+                            <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $hanghoa['id'] ?>" class="cart_name"><?= $hanghoa['product_name'] ?></a>
+                            <?php if($hanghoa['sale'] != 0) { ?>
+                                <p class="cart_price"><?= $hanghoa['total'] ?> <del class="sale" style="color:#6666"><?= $hanghoa['product_price'] ?></del></p>
+                            <?php } else { ?>
+                                <p class="cart_price"><?= $hanghoa['product_price'] ?></p>
+                            <?php } ?>
                             <!-- <ul class="cart_color mt8">
                                 <li class="not_swap"><img src="./images/products/AK2_avt.jpg" alt="" class="img_not-swap"></li>
                                 <li class="not_swap"><img src="./images/products/AK2_avt.jpg" alt="" class="img_not-swap"></li>
@@ -46,7 +66,6 @@
             </div>
         </div>
     </div>
-    <?php include "overlay_detail.php" ?>
 </div>
 </div>
 

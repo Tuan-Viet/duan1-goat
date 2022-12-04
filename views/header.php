@@ -9,14 +9,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="./fonts/Montserrat-VariableFont_wght.ttf">
-    <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/product.css">
+    <link rel="stylesheet" href="./css/contact.css">
     <link rel="stylesheet" href="./css/pro_detail.css">
+    <link rel="stylesheet" href="./css/comments.css">
     <link rel="stylesheet" href="./css/cart.css">
     <link rel="stylesheet" href="./css/bill_confirm.css">
     <link rel="stylesheet" href="./css/bill_pttt.css">
+    <link rel="stylesheet" href="./css/pttt_ATM.css">
     <link rel="stylesheet" href="./css/bill_access.css">
     <link rel="stylesheet" href="./css/mycart.css">
+    <link rel="stylesheet" href="./css/mycart_detail.css">
+    <link rel="stylesheet" href="./css/list_address.css">
+    <link rel="stylesheet" href="./css/intro.css">
+    <link rel="stylesheet" href="./css/blog.css">
+    <link rel="stylesheet" href="./css/product.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/reponsive/rp_header.css">
 </head>
 <body class="main">
         <header>
@@ -43,9 +51,9 @@
                     <ul class="menu">
                         <li><a href="./index.php">Trang chủ</a></li>
                         <li><a href="index.php?act=hang_hoa">Sản phẩm</a></li>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">Giới thiệu</a></li>
-                        <li><a href="">Liên hệ</a></li>
+                        <li><a href="index.php?act=blog">Blog</a></li>
+                        <li><a href="index.php?act=intro">Giới thiệu</a></li>
+                        <li><a href="index.php?act=contact">Liên hệ</a></li>
                     </ul>
                     <div class="header_right">
                         <div class="user">
@@ -88,12 +96,12 @@
                                 <td class="photo_pro-view">
                                     <a href="">
                                         <img src="./images/products/<?= $cart[4] ?>" alt="" class="img_pro-view">
+                                        <span class="pro_quantity-cart clear_fix-quantity"><span class="pro_quantity-view"><?= $cart[7] ?></span></span>
                                     </a>
                                 </td>
                                 <td class="info_pro-view">
                                     <a href="" class="pro_title-view"><?= $cart[1] ?></a>
                                     <span class="pro_cate-view"><?= $cart[5] ?> / <?= $cart[6] ?></span>
-                                    <div class=""><span class="pro_quantity-view"><?= $cart[7] ?></span>
                                     <span class="pro_price-view"><?= $cart[2] ?> <sup>đ</sup></span></div>
                                     <svg xmlns="http://www.w3.org/2000/svg" class="icon_close-viewcart ionicon" viewBox="0 0 512 512"><title>Close</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
                                 </td>

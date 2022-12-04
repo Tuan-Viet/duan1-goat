@@ -78,6 +78,10 @@
     transition: .25s linear;
 }
 
+/* .form_control-section {
+    overflow: hidden;
+} */
+
 .form_info .form .form_control-section:focus {
     border:1px solid #6a5af9;
 }
@@ -129,11 +133,11 @@
     font-weight: 600;
 }
 .continue_pay{
-    
     background-color: #338dbc;
     border-radius: 10px;
     font-size: 14px;
     font-family:Arial, Helvetica, sans-serif;
+    overflow: hidden;
 }
 
 
@@ -144,11 +148,12 @@
     text-decoration: none;
 }
 
+
 .continue_pay > button {
     border: none;
     background-color: transparent;
     color: #Fff;
-    padding: 20px 24px;
+    padding: 12px 16px;
 }
 
 .rerturn_bill:hover{
@@ -228,3 +233,4 @@
     opacity: 0.6;
     font-size: 18px;
 }
+

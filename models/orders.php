@@ -20,7 +20,7 @@
         return $load_one_order;
     }
     function load_all_order($user_id){
-        $sql = "select * from orders where user_id=$user_id";
+        $sql = "select * from orders where user_id=$user_id order by id desc";
         $load_all_order = pdo_query($sql);
         return $load_all_order;
     }
@@ -41,9 +41,10 @@
     function atm($pay_method,$name,$user_id,$order_id) {
         if ($pay_method == 1) {
             echo '
-                <h2>bạn vui lòng chuyển khoản tới stk 030720032906 người nhận Vũ Tiến Thành</h2>
-                <img src="./images/logo/z3905348577496_6410dc30b319e253c086b49a1372a1de.jpg" alt="">
-                <p>Nội dung chuyển khoản: '.$name.' KH_'.$user_id.' chuyen khoan don hang GOAT-'.$order_id.' </p>
+            <div class="photo_qr mb8"><img src="./images/logo/z3905348577496_6410dc30b319e253c086b49a1372a1de.jpg" alt="" class="qr"></div>
+            <h2 class="title_qr">Hoặc stk 030720032906</h2>
+            <h2 class="title_qr">người nhận Vũ Tiến Thành</h2>
+            <h2 class="title_qr">Nội dung chuyển khoản: <div>"'.$name.' KH_'.$user_id.' chuyen khoan don hang GOAT-'.$order_id.'"</div> </h2>
             ';
         }
     }
@@ -71,3 +72,23 @@
     }
 ?>
 
+
+
+<style>
+    h2.title_qr {
+    font-size: 15px;
+    text-align: center;
+    }
+
+    .photo_qr {
+        width: 100%;
+        text-align: center;
+        /* height: 230px; */
+    }
+    .qr {
+        width: 200px;
+        height: 200px;
+        /* text-align: center; */
+        
+    }
+</style>
