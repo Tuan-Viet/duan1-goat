@@ -59,29 +59,30 @@
 } */
 
 .photo_pro-main{
-    position: absolute;
-    height: 100%;
-    width: 95%;
+    /* position: absolute; */
+    /* height: 100%;
+    width: 100%; */
 }
 
 .photo_pro-main .img_pro-main{
-    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* position: absolute; */
     /* display: none; */
-    /* height: 500px; */
+    height: 550px;
     /* bottom: 0; */
 }
 
 .list_thumbs {
-    position: absolute;
+    /* position: absolute; */
     z-index: 1;
+    /* bottom: 0; */
 }
 
 .thumb_photo {
-    width: 100px;
-    height: 120px;
+    /* width: 100px; */
+    height: 80px;
     border: 1px solid #ccc;
     margin-bottom: 10px;
     opacity: 0.5;
@@ -235,6 +236,8 @@
     padding: 12px;
     width: 100%;
     text-align: center;
+    /* pointer-events: none; */
+    cursor: pointer;
 }
 
 .btn_cart::before {
@@ -275,13 +278,11 @@
     display: flex;
     margin-top: 20px;
     position: relative;
-    /* overflow-y: scroll; */
-    /* justify-content: space-between; */
 }
 
 .line {
     height: 4px;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     position: absolute;
     bottom: 0;
@@ -431,14 +432,14 @@
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
-    padding: 10px 20px;
+    padding: 15px 20px;
     background-color: rgba(0, 0, 0, 0.1);
     border: none;
     border-radius: 50%;
 }
 
 .slick-arrow:hover {
-    background-color: rgba(0, 0, 0, 0.4);
+    /* background-color: rgba(0, 0, 0, 0.4); */
     /* transform: scale(1.1,1.1); */
 }
 

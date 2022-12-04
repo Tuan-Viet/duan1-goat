@@ -45,11 +45,11 @@
                                     <th>Vận chuyển</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="row_mycard">
                                 <?php foreach($load_all_order as $order): ?>
                                     <?php extract($order) ?>
                                     <tr>
-                                        <td>GOAT-<?= $id ?></td>
+                                        <td><a href="index.php?act=mycart_detail" class="mycart_id-pro">GOAT-<?= $id ?></a></td>
                                         <td><?= $name ?></td>
                                         <td><?= $date_time ?></td>
                                         <td><?= $address ?></td>
