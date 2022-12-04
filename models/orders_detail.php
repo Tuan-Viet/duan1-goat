@@ -9,4 +9,5 @@
         $load_all_order_detail = pdo_query($sql);
         return $load_all_order_detail;
     }
+  
 ?>

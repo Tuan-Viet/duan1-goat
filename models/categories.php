@@ -23,7 +23,7 @@
     }
     //Xóa loại
     function delete_categories($id){
-        $sql = "DELETE FROM categories WHERE id =$id";
+        $sql = "DELETE FROM categories WHERE id ='$id'";
         pdo_execute($sql);
     }
 ?>

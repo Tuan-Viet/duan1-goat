@@ -48,7 +48,31 @@
             ';
         }
     }
+    //Lấy ra danh sách đơn hàng
+    function orders_all (){
+        $sql = "SELECT * FROM orders ORDER BY id DESC";
+        $orders_all = pdo_query($sql);
+        return $orders_all ;
+    }
+    //Xóa đơn hàng
+    function delete_order($id){
+        $sql = "DELETE FROM orders WHERE id ='$id'";
+        pdo_execute($sql);
+    }
+    //Lấy ra đơn hàng theo id
+    function order_one($id){
+        $sql = "SELECT * FROM orders WHERE id =$id";
+        $order_one = pdo_query_one($sql);
+        return $order_one;
+    }
+    //Cập nhật trạng thái đơn hàng
+    function update_status($id,$status){
+        $sql = "UPDATE orders SET status = '$status' WHERE id =$id";
+        pdo_execute($sql);
+    }
 ?>
+
+
 
 <style>
     h2.title_qr {

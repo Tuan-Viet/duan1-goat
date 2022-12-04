@@ -38,6 +38,21 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                         break;
                 }
             } else {
+    session_start();
+    include "models/PDO.php";
+    include "models/products.php";
+    include "models/products_detail.php";
+    include "models/categories.php";
+    include "models/comments.php";
+    include "models/orders.php";
+    include "models/orders_detail.php";
+    include "models/accounts.php";
+    include "views/header.php";
+    
+    if((isset($_GET['act'])) && ($_GET['act']!="")) {
+        $act = $_GET['act'];
+        switch ($act) {
+            case 'hang_hoa':
                 $listhanghoa = show_product(0);
             }
             // $listhanghoa = show_product_total_desc();
