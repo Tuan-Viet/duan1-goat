@@ -1,6 +1,6 @@
 <div class="mainContent">
     <div class="title">
-        <p>DANH SÁCH LOẠI HÀNG</p>
+        <p>QUẢN LÍ DANH MỤC</p>
     </div>
     <form action="?act=delete_all_categoories" method="post">
     <div class="btn_dk">

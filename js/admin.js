@@ -120,7 +120,7 @@ window.onclick = function () {
 
 // FILTER
 if (elm('.btnFilter') != undefined) {
-    for (var i = 0, len = elm('.btnFilter').length; i < len; i++) {
+    for (var i = 0, len = elm('.btnFilter').length; i < len; i++) { 
         elm('.btnFilter')[i].onclick = function () {
             elm('.boxFilter')[0].classList.toggle('is-active');
         }
@@ -330,10 +330,10 @@ function Pager(tableName, itemsPerPage) {
         }
         var element = document.getElementById(positionId);
 
-        var pagerHtml = '<span onclick="' + pagerName + '.prev();" class="pg-normal"> &#171 Prev </span>';
+        var pagerHtml = '<span onclick="' + pagerName + '.prev();" class="pg-normal"> &#171 Trước </span>';
         for (var page = 1; page <= this.pages; page++)
             pagerHtml += '<span id="pg' + page + '" class="pg-normal" onclick="' + pagerName + '.showPage(' + page + ');">' + page + '</span> ';
-        pagerHtml += '<span onclick="' + pagerName + '.next();" class="pg-normal"> Next &#187;</span>';
+        pagerHtml += '<span onclick="' + pagerName + '.next();" class="pg-normal"> Sau &#187;</span>';
 
         element.innerHTML = pagerHtml;
     }

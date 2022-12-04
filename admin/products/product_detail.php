@@ -1,23 +1,10 @@
-
-
-
-
-<?php
-
-    if(isset($_POST['btn'])){
-        $errors = [];
-        extract($_POST);
-        if ($cate_name =='') {
-            $errors['cate_name'] = "vui lòng nhập thông tin";
-        }
-    }
-?>
 <div class="mainContent">
     <div class="title">
         <p>CHI TIẾT SẢN PHẨM</p>
     </div>
-    <div class="main">
-    <?php foreach ($hanghoa as $hh) : ?>
+    <div class="">
+        <div class="box"></div>
+        <?php foreach ($hanghoa as $hh) : ?>
             <div class="box-input">
                 <label class="">MÃ SP</label>
                 <input type="text" name="id" readonly value="<?= $hh['id'] ?>" disabled>
@@ -43,6 +30,7 @@
         <table class="table">
             <tr>
                 <th></th>
+                <th>Màu sắc</th>
                 <th>Size(S)</th>
                 <th>Size(M)</th>
                 <th>Size(L)</th>
@@ -53,11 +41,45 @@
                 if ($hh['id'] == $prd['product_id']) {
                 ?>
                     <tr>
-                        <td><img src="./../images/products/<?= $prd['image'] ?>" alt="" width="100"></td>
-                        <td><?= $prd['quantity_size_S'] ?></td>
-                        <td><?= $prd['quantity_size_M'] ?></td>
-                        <td><?= $prd['quantity_size_L'] ?></td>
-                        <td><?= $prd['quantity_size_XL'] ?></td>
+                        <td><img src="./../images/products/<?= $prd['image_detail'] ?>" alt="" width="100"></td>
+                        <td><?= $prd['product_color'] ?></td>
+                        <td>
+                            <?php
+                            if ($prd['quantity_size_S'] > 0) {
+                                echo $prd['quantity_size_S'];
+                            } else {
+                                echo '<span style="color: #FF0000;">Hết hàng</span>';
+                            }
+                            ?>
+                        </td>
+                        <td>
+                            <?php
+                            if ($prd['quantity_size_M'] > 0) {
+                                echo $prd['quantity_size_M'];
+                            } else {
+                                echo '<span style="color: #FF0000;">Hết hàng</span>';
+                            }
+                            ?>
+                        </td>
+                        <td>
+                            <?php
+                            if ($prd['quantity_size_L'] > 0) {
+                                echo $prd['quantity_size_L'];
+                            } else {
+                                echo '<span style="color: #FF0000;">Hết hàng</span>';
+                            }
+                            ?>
+                        </td>
+                        <td>
+                            <?php
+                            if ($prd['quantity_size_XL'] > 0) {
+                                echo $prd['quantity_size_XL'];
+                            } else {
+                                echo '<span style="color: #FF0000;">Hết hàng</span>';
+                            }
+                            ?>
+                        </td>
+                        
                     </tr>
                 <?php
                 }

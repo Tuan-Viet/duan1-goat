@@ -1,7 +1,7 @@
 
 <div class="mainContent">
     <div class="title">
-        <p>DANH SÁCH BÌNH LUẬN</p>
+        <p>QUẢN LÍ BÌNH LUẬN</p>
     </div>
     <form action="?act=delete_all_comments" method="post">
     <div class="btn_dk">
@@ -13,20 +13,22 @@
         <table class="list_cate">
             <tr>
                 <th style="width: 32px;"></th>
-                <th style="width: 40px;">ID</th>
-                <th>ID sản phẩm </th>
-                <th>ID người dùng</th>
-                <th>Nội dung</th>
-                <th>Ngày bình luận</th>
+                <!-- <th style="width: 40px;">ID</th> -->
+                <th style="width: 10%;" colspan="1">ID sản phẩm </th>
+                <th style="width: 10%;"  colspan="1">ID người dùng</th>
+                <th style="text-align: center;margin-left: 50px;">Nội dung</th>
+                <th style="width: 15%;">Time-sent</th>
                 <th class="active-th">Tác vụ</th>
             </tr>
             <?php foreach ($binhluan as $bl) : ?>
                 <tr>
                     <td><input type="checkbox" name="name[]" id="check_all" value="<?= $bl['id'] ?>"></td>
-                    <td><?= $bl['id'] ?></td>
-                    <td><?= $bl['product_id'] ?> <a href="?act=product_detail&id=<?= $bl['product_id'] ?>"><img src="./../images/logo/eye.png" alt="" width="20px" title="Xem chi tiết"></a></td>
-                    <td><?= $bl['user_id'] ?> <a href="?act=user_detail&id=<?= $bl['product_id'] ?>"><img src="./../images/logo/eye.png" alt="" width="20px" title="Xem chi tiết"></a></td>
-                    <td><?= $bl['content'] ?></td>
+                    <!-- <td><?= $bl['id'] ?></td> -->
+                    <td><?= $bl['product_id'] ?></td>
+                    <!-- <td><a href="?act=product_detail&id=<?= $bl['product_id'] ?>"><img src="./../images/logo/eye.png" alt="" width="20px" title="Xem chi tiết"></a></td> -->
+                    <td><?= $bl['user_id'] ?> </td>
+                    <!-- <td><a href="?act=user_detail&id=<?= $bl['product_id'] ?>"><img src="./../images/logo/eye.png" alt="" width="20px" title="Xem chi tiết"></a></td> -->
+                    <td style="float: left;margin-left: 50px;"><?= $bl['content'] ?></td>
                     <td><?= $bl['time_sent'] ?></td>
                     <td class="active-td">
                         <a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="?act=delete_comement&id=<?= $bl['id'] ?>" title="Xóa"><img src="./../images/logo/delete.png" alt="" width="20"></a>

@@ -28,7 +28,19 @@ function delete_product($id){
 }
 //Thêm mới sản phẩm
 function insert_product($product_name,$product_price,$sale,$image,$cate_id,$description,$date,$views){
-    $sql = "INSERT INTO products (product_name,product_price,sale,image,cate_id,description,date,views) VALUES ('$product_name','$product_price','$sale','$image','$cate_id','$description','$date','$view')";
+    $sql = "INSERT INTO products (product_name,product_price,sale,image,cate_id,description,date,views) VALUES ('$product_name','$product_price','$sale','$image','$cate_id','$description','$date','$views')";
+    // pdo_execute($sql);
+    return pdo_execute_lastInsertId($sql);
+}
+//Edit sản phẩm
+function edit_product($id,$product_name,$product_price,$sale,$image,$cate_id,$description){
+    $sql = "UPDATE products SET product_name = '$product_name', product_price = '$product_price', sale = '$sale',image = '$image', cate_id = '$cate_id', description = '$description' WHERE id = $id ";
     pdo_execute($sql);
+}
+// show all 
+function search_products($keyword,$condition_sort){
+    $sql="SELECT * FROM products WHERE product_name  LIKE '%$keyword%' OR id LIKE '%$keyword%' ".$condition_sort." ";
+    $hanghoa = pdo_query($sql);
+    return $hanghoa;
 }
 ?>
