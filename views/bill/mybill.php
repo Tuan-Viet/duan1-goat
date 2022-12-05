@@ -22,11 +22,11 @@
                                         </div>
                                         <div class="nav_address">
                                             <div class="info_pro mb24 row_mybill">
-                                                <div class="col-xs-12" style="margin-top: -28px">
+                                                <div class="col-xs-12">
                                                 <!-- BOX-ROW-BILL -->
                                                 <?php $load_all_order_detail = load_all_order_detail($order['id']) ?>
                                                 <?php foreach($load_all_order_detail as $order_detail): ?>
-                                                    <div class="info_pro-id row_mybill-nav mt28">
+                                                    <div class="info_pro-id row_mybill-nav">
                                                         <div class="section_mybill-left">
                                                             <div class="photo_pro-view">
                                                                 <a href="">
@@ -44,9 +44,10 @@
                                                         </div>
                                                     </div>
                                                 <?php endforeach ?>
+                                                <!-- </div> -->
                                                 <!-- BOX-ROW-BILL -->
-                                                    <p class="mt8"><?= $pttt = check_pttt($order['pay_methods']) ?></p>
-                                                </div>
+                                            </div>
+                                            <p class="mt8"><?= $pttt = check_pttt($order['pay_methods']) ?></p>
                                                 <div class="col-xs-12 price_mycart">
                                                     <span class="mt8">Phí vận chuyển</span>
                                                     <span class="pro_price-view pro_price-cart price_mycart-section mt8" style="display: block;" >30.000đ</span>
