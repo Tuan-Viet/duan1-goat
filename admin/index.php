@@ -9,17 +9,15 @@ include "../models/accounts.php";
 include "../models/products_detail.php";
 include "header.php";
 date_default_timezone_set('Asia/Ho_Chi_Minh');
-// $_SESSION['prroducts_detail'] = array();
 
 // controller
+
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
   $act = $_GET['act'];
   switch ($act) {
       //Danh sách sản phẩm
     case 'list_products':
       $now = date('d-m-Y');
-     
-      
       if ((isset($_POST['keyword'])) && ($_POST['keyword'] != "")) {
         $keyword = $_POST['keyword'];
       } else {
@@ -54,17 +52,17 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       include_once "./products/list_products.php";
       break;
       //Lọc sản phẩm
-    case 'filter_products':
-      if ((isset($_GET['btn-filter'])) && ($_GET['btn-filter'] != "")) {
-        extract($_POST);
-        $cate_id = $filter_cate;
-        $hanghoa = product_filter($cate_id);
-        $num_product = count($hanghoa);
-        include_once "./products/list_products.php";
-      } else {
-        include_once "./products/list_products.php";
-      }
-      break;
+    // case 'filter_products':
+    //   if ((isset($_GET['btn-filter'])) && ($_GET['btn-filter'] != "")) {
+    //     extract($_POST);
+    //     $cate_id = $filter_cate;
+    //     $hanghoa = product_filter($cate_id);
+    //     $num_product = count($hanghoa);
+    //     include_once "./products/list_products.php";
+    //   } else {
+    //     include_once "./products/list_products.php";
+    //   }
+    //   break;
 
       //Chi tiết sản phẩm
     case 'product_detail':
@@ -430,6 +428,20 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
       break;
       //Xóa đơn hàng
+    case "update_status":
+      $id= $_GET['id'];
+      $status_order = $_GET['status'] ;
+      if($status_order == 0){
+        $status = 1;
+      }elseif($status_order == 1){
+        $status = 2;
+      } 
+      update_status($id,$status);
+      echo "
+            <script>window.open('?act=list_orders','_self')</script>
+            ";
+      exit;
+      break;
     case 'delete_order':
       $id = $_GET['id'];
       delete_order($id);
@@ -465,7 +477,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
 
     default:
-      include "home.php";
+      // include "home.php";
       break;
   }
 }

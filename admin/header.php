@@ -52,7 +52,7 @@
                     <a href="javascript:void(0)" class="has-submenu"><span class="fa fa-angle-down"></span>Quản lí đơn hàng</a>
                     <ul class="submenu">
                         <li><a href="?act=list_orders"><i class="fa fa-list"></i>Quản lí đơn hàng</a></li>
-                        <li><a href="?act=order_status"><span class="fa fa-tags"></span>Trạng thái đơn hàng</a></li>
+                        <!-- <li><a href="?act=order_status"><span class="fa fa-tags"></span>Trạng thái đơn hàng</a></li> -->
                     </ul>
                 </li>
                 <li>

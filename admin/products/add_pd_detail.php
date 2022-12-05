@@ -27,15 +27,15 @@
                             <input type="text" class="form-control" id="" name="quantity_size_S" placeholder="<?= $errors['quantity_size_S'] ?? '' ?>" required>
                         </div>
                         <div class="box-input">
-                            <label for="formGroupExampleInput" class="form-label">Size(S)</label>
+                            <label for="formGroupExampleInput" class="form-label">Size(M)</label>
                             <input type="text" class="form-control" id="" name="quantity_size_M" placeholder="<?= $errors['quantity_size_M'] ?? '' ?>" required>
                         </div>
                         <div class="box-input">
-                            <label for="formGroupExampleInput" class="form-label">Size(S)</label>
+                            <label for="formGroupExampleInput" class="form-label">Size(L)</label>
                             <input type="text" class="form-control" id="" name="quantity_size_L" placeholder="<?= $errors['quantity_size_L'] ?? '' ?>" required>
                         </div>
                         <div class="box-input">
-                            <label for="formGroupExampleInput" class="form-label">Size(S)</label>
+                            <label for="formGroupExampleInput" class="form-label">Size(XL)</label>
                             <input type="text" class="form-control" id="" name="quantity_size_XL" placeholder="<?= $errors['quantity_size_XL'] ?? '' ?>" required>
                         </div>
                     </div>
