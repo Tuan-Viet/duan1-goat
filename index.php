@@ -41,9 +41,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                             $listhanghoa = show_product_total_desc(0);
                         }
                         break;
-                    case '3':
-
-                        break;
                     default:
                         $listhanghoa = show_product(0);
                         break;
@@ -57,6 +54,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             if (isset($_POST['btn_search'])) {
                 $keyword = $_POST['keyword'];
+                $listhanghoa = search_product($keyword);
             }
             // $listhanghoa = show_product_total_desc();
             include "views/hang_hoa.php";
@@ -105,6 +103,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $time_sent = date('h:i:sa d/m/Y');
                 if(trim($content) != '') {
                     insert_comment($product_id,$user_id,$content,$time_sent);
+                } else {
+                    $errors['comment'] = "Bạn vui lòng nhập nội dung";
                 }
                 // echo $content;
                 // echo $product_id;
@@ -119,22 +119,43 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $user_name = $_POST['user_name'];
                 if (trim($user_name) == '') {
                     $errors['user_name'] = "Vui lòng nhập tên đăng nhập";
+                } else {
+                    $check_username = check_username($user_name);
+                    if (is_array($check_username)) {
+                        $errors['user_name'] = "Tên đăng nhập đã tồn tại";
+                    }
                 }
+                $full_name = $_POST['full_name'];
+                if (trim($full_name) == '') {
+                    $errors['full_name'] = "Vui lòng nhập họ và tên";
+                } 
                 $user_email = $_POST['user_email'];
                 if (trim($user_email) == '') {
                     $errors['user_email'] = "Vui lòng nhập email";
+                } else {
+                    $check_useremail = check_useremail($user_email);
+                    if (is_array($check_useremail)) {
+                        $errors['user_email'] = "Email đã tồn tại";
+                    }
                 }
                 $user_tel = $_POST['user_tel'];
                 if (trim($user_tel) == '') {
                     $errors['user_tel'] = "Vui lòng nhập số điện thoại";
+                } else {
+                    $check_usertel = check_usertel($user_tel);
+                    if (is_array($check_usertel)) {
+                        $errors['user_tel'] = "Số điện thoại đã tồn tại";
+                    }
                 }
                 $user_password = $_POST['user_password'];
                 if (trim($user_password) == '') {
                     $errors['user_password'] = "Vui lòng nhập mật khẩu";
                 }
-                if (!isset($errors['user_name']) && !isset($errors['user_email']) && !isset($errors['user_tel']) && !isset($errors['user_password'])) {
-                    insert_account($user_name, $user_password, $user_email, $user_tel, '0');
-                    header('location:index.php?act=dang_nhap');
+                if (!isset($errors['user_name']) && !isset($errors['full_name']) && !isset($errors['user_email']) && !isset($errors['user_tel']) && !isset($errors['user_password'])) {
+                    insert_account($user_name,$full_name, $user_password, $user_email, $user_tel, '0');
+                    echo "
+                        <script>window.open('index.php','_self')</script>
+                        ";
                 }
                 // $thongbao = "Chúc mừng bạn đã đăng ký thành công";
             }
@@ -156,9 +177,14 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     if (is_array($check_user)) {
                         $_SESSION['user'] = $check_user;
                         if ($role == 0) {
-                            echo "
-                                <script>window.open('index.php','_self')</script>
-                                ";
+                            if ($status ==1) {
+                                $thongbao = "Tài khoản của bạn đã bị khóa";
+                            } else {
+
+                                echo "
+                                    <script>window.open('index.php','_self')</script>
+                                    ";
+                            }
                         } elseif ($role == 1) {
                             echo "
                                 <script>window.open('admin/index.php','_self')</script>
@@ -174,6 +200,19 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "views/accounts/dang_nhap.php";
             break;
         case 'quen_mat_khau':
+            if (isset($_POST['forget_password'])) {
+                $email = $_POST['email'];
+                $check_user = forget_password($email);
+                if (is_array($check_user)) {
+                    $to = $check_user['user_email'];
+                    $subject = "Mật khẩu của bạn là:";
+                    $message = $check_user['user_password'];
+                    
+                    $check = mail($to ,$subject ,$message);
+                } else {
+                    $errors['thong_bao'] = "Email bạn nhập chưa chính xác";
+                }
+            }
             include "views/accounts/quen_mat_khau.php";
             break;
         case 'dang_xuat':
@@ -385,6 +424,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 // echo "<script>alert('$address')</script>";
                 unset($_SESSION['address']);
             }
+            $users =user_one($_SESSION['user']['id']);
             include "views/bill/bill_confirm.php";
             break;
         case 'bill_pttt':
@@ -455,13 +495,52 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             break;
         case 'mybill':
             $load_all_order = load_all_order($_SESSION['user']['id']);
+            if (isset($_POST['completed'])) {
+                $id = $_POST['id'];
+                update_status($id, '3');
+            }
+            // foreach ($load_all_order as $order) {
+            //     $load_all_order_detail = load_all_order_detail($order['id']);
+            // }
             include "views/bill/mybill.php";
             break;
-        case 'mycart_detail':
-            include "views/bill/mycart_detail.php";
-            break;
+        // case 'mycart_detail':
+        //     include "views/bill/mycart_detail.php";
+        //     break;
         case 'mycart':
-            $load_all_order = load_all_order($_SESSION['user']['id']);
+            // $load_all_order = load_all_order($_SESSION['user']['id']);
+            if (isset($_POST['update'])) {
+                $full_name = $_POST['full_name'];
+                $user_email = $_POST['user_email'];
+                $user_tel = $_POST['user_tel'];
+                $address = $_POST['address'];
+                if (trim($full_name) == '') {
+                    $errors['full_name'] = "Vui lòng nhập họ tên";
+                }
+                if (trim($user_email) == '') {
+                    $errors['user_email'] = "Vui lòng nhập email";
+                } else {
+                    $check_useremail = check_useremail($user_email);
+                    if (is_array($check_useremail)) {
+                        $errors['user_email'] = "Email đã tồn tại";
+                    }
+                }
+                if (trim($user_tel) == '') {
+                    $errors['user_tel'] = "Vui lòng nhập số điện thoại";
+                } else {
+                    $check_usertel = check_usertel($user_tel);
+                    if (is_array($check_usertel)) {
+                        $errors['user_tel'] = "Số điện thoại đã tồn tại";
+                    }
+                }
+                if (trim($address) == '') {
+                    $errors['address'] = "Vui lòng nhập địa chỉ";
+                }
+                if (!isset($errors['full_name']) && !isset($errors['user_email']) && !isset($errors['user_tel']) && !isset($errors['address'])) {
+                    update_user($_SESSION['user']['id'],$full_name,$user_email,$user_tel,$address);
+                }
+            }
+            $users =user_one($_SESSION['user']['id']);
             include "views/bill/mycart.php";
             break;
         case 'mycart_detail':

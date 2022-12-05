@@ -1,12 +1,27 @@
 <?php
-    function insert_account($user_name,$user_password,$user_email,$user_tel,$rol){
-        $sql = "insert into users(user_name, user_password, user_email,user_tel,role) values ('$user_name','$user_password','$user_email','$user_tel','$rol')";
+    function insert_account($user_name,$full_name,$user_password,$user_email,$user_tel,$rol){
+        $sql = "insert into users(user_name,full_name, user_password, user_email,user_tel,role) values ('$user_name','$full_name','$user_password','$user_email','$user_tel','$rol')";
         pdo_execute($sql);
     }
     function check_user($user_name, $user_password) {
         $sql = "select * from users where user_name = '$user_name' and user_password = '$user_password'";
         $check_user = pdo_query_one($sql);
         return $check_user;
+    }
+    function check_username($user_name) {
+        $sql = "select * from users where user_name = '$user_name'";
+        $check_username = pdo_query_one($sql);
+        return $check_username;
+    }
+    function check_useremail($user_email) {
+        $sql = "select * from users where user_email = '$user_email'";
+        $check_useremail = pdo_query_one($sql);
+        return $check_useremail;
+    }
+    function check_usertel($user_tel) {
+        $sql = "select * from users where user_tel = '$user_tel'";
+        $check_usertel = pdo_query_one($sql);
+        return $check_usertel;
     }
     // function header_dangnhap() {
     //     echo '
@@ -64,5 +79,14 @@
         $sql="SELECT * FROM users WHERE id='$id'";
         $users = pdo_query($sql);
         return $users;
+    }
+    function forget_password($email) {
+        $sql = " select * from users where user_email like '%$email%'";
+        $check_user = pdo_query_one($sql);
+        return $check_user;
+    }
+    function update_user($id,$full_name,$user_email,$user_tel,$address) {
+        $sql="update users set full_name='$full_name',user_email='$user_email',user_tel='$user_tel',address='$address' where id=$id";
+        pdo_execute($sql);
     }
 ?>
