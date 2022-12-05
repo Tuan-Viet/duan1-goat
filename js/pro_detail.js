@@ -49,58 +49,38 @@ function changeimg(event){
   }}
   event.classList.add("active");
 }
-// thumbss.forEach((thumb,index) => {
-//   thumb.onclick = function() {
-//     document.querySelector('.thumb_photo.active').classList.remove('active');
-//     this.classList.add("active");
-//   }
-// })
-// console.log(tabs,panels);
 
-// $('.box_pro-main').slick({
-//   infinite: true,
-//   slidesToShow: 3,
-//   slidesToScroll: 1,
-//   prevArrow:"<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
-//   nextArrow:"<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
-// });
+let elementNumber = document.querySelector('.form_control-quantity');
+let numberValue = elementNumber.value;
+const amountMinus = document.querySelector('.amountMinus');
+const amountPlus = document.querySelector('.amountPlus');
 
-// $('.box_pro-main').slick({
-//   slidesToShow: 1,
-//   slidesToScroll: 1,
-//   arrows: false,
-//   fade: true,
-  // asNavFor: '.photo_pro-main'
-// });
-// $('.photo_pro-main').slick({
-//   slidesToShow: 3,
-//   slidesToScroll: 1,
-//   asNavFor: '.box_pro-main',
-//   dots: true,
-//   centerMode: true,
-//   focusOnSelect: true
-// });
+amountMinus.addEventListener('click',(event) => {
+  event.preventDefault();
+})   
+amountPlus.addEventListener('click',(event) => {
+  event.preventDefault();
+})   
 
-// const color_btns = document.querySelectorAll('.color');
-// color_btns.forEach(color => {
-// color.addEventListener('click' , () => {
-//   let colorNameClass = color.className;
-//   if(!color.classList.contains('active_color')){
-//     let colorName = colorNameClass.slice(colorNameClass.indexOf('_') + 1, colorNameClass.length);
-//     resetActivebtns();
-//     color.classList.add('active_color');
-//     setNewcolor(colorName);
-//   }
-// })
-// })
 
-// function resetActivebtns(){
-// color_btns.forEach(color => {
-//   color.classList.remove('active_color');
-// });
-// }
+render = (numberValue) => {
+  elementNumber.value = numberValue;
+}
+handleMinus = () => {
+  if(numberValue > 1)
+  numberValue--
+  render(numberValue);
+}
+handlePlus = () => {
+  numberValue++
+  render(numberValue);
+}
 
-// function setNewcolor(color) {
-// document.querySelector('.img_pro-main').src =`./images/products/AT1_${color}.jpg`;
-// }
+elementNumber.addEventListener('input',() => {
+  numberValue = elementNumber.value
+  numberValue = parseInt(numberValue)
+  numberValue = (isNaN(numberValue) || numberValue <= 0) ? 1 : numberValue;
+  render(numberValue)
+  // console.log(numberValue)
+})
 

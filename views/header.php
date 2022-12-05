@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="./css/bill_access.css">
     <link rel="stylesheet" href="./css/mycart.css">
     <link rel="stylesheet" href="./css/mycart_detail.css">
-    <link rel="stylesheet" href="./css/list_address.css">
+    <link rel="stylesheet" href="./css/mybill.css">
     <link rel="stylesheet" href="./css/intro.css">
     <link rel="stylesheet" href="./css/blog.css">
     <link rel="stylesheet" href="./css/product.css">
@@ -38,8 +38,10 @@
                         <a href="" class="title_header-center">GOAT.VN</a>
                     </div>
                     <div class="sub_header-right">
-                        <input type="text" class="form_control-header" placeholder="Tìm kiếm sản phẩm ..." required>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon_search-header" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg>
+                        <form action="index.php?act=hang_hoa" method="post">
+                            <input type="text" name="keyword" class="form_control-header" placeholder="Tìm kiếm sản phẩm ..." required>
+                            <button type="submit" name="btn_search" class="btn_search-header"><svg xmlns="http://www.w3.org/2000/svg" class="icon_search-header" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -58,9 +60,14 @@
                     <div class="header_right">
                         <div class="user">
                             <?php if (isset($_SESSION['user'])){ ?>
+                                <?php
+                                    $users = user_one($_SESSION['user']['id']);
+                                foreach($users as $user) {
+                                    extract($user);
+                                } ?>
                                 <a href="index.php?act=mycart" class="icon_user">        
                                     <ion-icon name="people-outline" class="icon_user-header"></ion-icon>
-                                    <p>Hi! <span>Nguyễn Công Quyền</span></p>
+                                    <p>Hi! <span><?= $full_name ?></span></p>
                                 </a>
                                 <a href="" class="cart_icon">                  
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon_cart-header" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>

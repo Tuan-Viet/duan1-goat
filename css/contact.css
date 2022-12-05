@@ -1,3 +1,10 @@
+.c-orange {
+    color : #dc3545;
+}
+
+.b-orange {
+    background-color: #dc3545;
+}
 .contact {
     margin-left: 0;
     margin-right: 0;
@@ -5,19 +12,48 @@
 .contact_right{
     /* padding: 0 36px 36px 36px; */
     border-left: 1px solid #ccc;
+    background: url("https://yinxx.vn/wp-content/uploads/2020/11/ao-thun-unisex-tay-lo-form-rong-4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.overlay_contact-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    opacity: 0.4;
+}
+
+.title_section-contect {
+    font-weight: 600;
+    /* color: #FAFAFA; */
 }
 .header_page-contact{
+    /* position: static; */
+    /* z-index: 2; */
+    /* position: absolute; */
+    position: relative;
+}
 
+.bottom_page-contact {
+    position: relative;
+    /* position: absolute; */
+    /* bottom: 0; */
 }
 .title_page-contact{
     font-family: 'font_main-bold';
     font-size: 24px;
+    /* color: #FAFAFA; */
 }
 .line-contact{
     width: 50px;
     height: 4px;
     border-radius: 5px;
-    background-color: #000;
+    background-color: #FAFAFA;
 }
 .nav_page-contact{
     color: #666666;
@@ -31,10 +67,11 @@
     list-style-type: none;
 }
 .box_page-contact strong{
-    font-family: 'font_main-bold';
-    font-weight: 700;
+    font-family: 'font_main-medium';
+    font-weight: 600;
     font-size: 14px;
     opacity: 1;
+    color: #FAFAFA;
 }
 
 .form_control-contact {
@@ -46,4 +83,11 @@
     font-weight: 600;
     font-family: 'font_main-medium';
     font-size: 14px;
+}
+
+.btn_contact {
+    border: none;
+    background-color: #dc3545;
+    /* opacity: 0.8; */
+    margin-bottom: 12px;
 }

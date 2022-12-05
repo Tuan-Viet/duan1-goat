@@ -41,6 +41,7 @@
 <script src="./js/main.js"></script>
 <script src="./js/list_address.js"></script>
 <script src="./js/comments.js"></script>
+<script src="./js/mycart.js"></script>
 </body>
 
 </html>

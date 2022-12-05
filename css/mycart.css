@@ -77,19 +77,21 @@
 .table{
     border: 3px solid #ccc;
     font-size: 14px;
-    margin-top: 24px;
+    /* margin-top: 24px; */
     /* border: 1px ; */
 }
 
 .row_mycard tr td {
     font-family: 'font_main-medium';
     color: #666666;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 14px;
 }
 
 .row_mycard tr td .mycart_id-pro {
     color: #212529;
+    font-weight: 600;
+    opacity: 0.5;
 }
 
 .row_mycard tr td .mycart_id-pro:hover {
@@ -99,4 +101,75 @@
 
 .table tr th {
     font-weight: 600;
+}
+
+.btn_mycart {
+    border: none;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 5px 10px;
+    font-weight: 600;
+}
+
+.form_address-add {
+    display: none;
+    animation: address-add .25s linear;
+    /* position: relative; */
+    /* position: absolute; */
+    max-width: 250px;
+}
+
+.form_address-edit {
+    padding: 20px;
+}
+
+.btn_add-address,
+.address_add {
+    padding: 5px 8px;
+    text-transform: uppercase;
+    color: #Fff;
+    background-color: #333e48;
+}
+
+@keyframes address-add{
+    0% {
+        opacity: 0;
+        top: -25px;
+    }
+    100% {
+        opacity: 1;
+        top: 0;
+    }
+}
+
+.box_address-add {
+    position: relative;
+    margin: 15px 0;
+    border: none;
+    overflow: hidden;
+    border: none;
+    display: flex;
+    align-items: center;
+}
+
+.icon_address-add {
+    position: absolute;
+    /* vertical-align: middle; */
+    left: 10px;
+    color: #666666;
+}
+
+.form_control {
+    padding: 6px 12px 6px 32px;
+    border: 1px solid #ccc;
+    width: 100%;
+    transition: .1s all linear;
+}
+
+.form_control:focus {
+    border: 1px solid #333e48;
+}
+
+.bottom_address-add {
+    margin-top: 15px;
 }

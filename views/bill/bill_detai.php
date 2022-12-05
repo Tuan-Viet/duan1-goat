@@ -31,13 +31,13 @@
                 </tr>
                 <tr class="total_line">
                     <td class="total_line-name">Phí vẫn chuyển</td>
-                    <td class="total_line-price">-</td>
+                    <td class="total_line-price">30000</td>
                 </tr>
             </tbody>
             <tfoot class="total_line-footer mt24">
                 <tr class="total_line">
                     <td class="total_line-name">Tổng cộng</td>
-                    <td class="total_line-price"><?= $total ?> <sup>đ</sup> <span>VNĐ</span></td>
+                    <td class="total_line-price"><?= $total+30000 ?> <sup>đ</sup> <span>VNĐ</span></td>
                 </tr>
             </tfoot>
         </table>

@@ -92,7 +92,19 @@
                             <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['size']) ? $errors['size'] : '' ?></small>
                         </div>
                         <div class="select_watch">
-                            <input type="number" name="quantity" min="1" value="1" id="" class="form_control-quantity">
+                            <div class="amount">
+                            <button class="amountMinus" onclick="handleMinus()">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+</svg>
+</button>
+                            <input type="text" name="quantity" min="1" value="1" id="" class="form_control-quantity">
+                            <button class="amountPlus" onclick="handlePlus()">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+</svg>
+</button>
+                            </div>
                             <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['quantity']) ? $errors['quantity'] : '' ?></small>
                             <!-- <a href="" class="btn_cart">Thêm vào giỏ hàng</a> -->
                             <!-- <a href="" name="btn_buynow" class="btn_cart">
@@ -184,6 +196,7 @@
                         <input type="text" name="content" id="" class="form_control-comment" placeholder="Viết bình luận của bạn ...">
                         <button type="submit" name="btn_send" class="btn_comment">Gửi</button>
                     </form>
+                    <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['comment']) ? $errors['comment'] : '' ?></small>
                 <?php } else { ?>
                     <small style="margin: 10px 15px 0; display: block; font-size: 24px;" class="text-danger">Vui lòng đăng nhập để bình luận</small>
                 <?php } ?>

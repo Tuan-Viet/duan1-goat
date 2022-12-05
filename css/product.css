@@ -50,6 +50,8 @@
     font-size: 24px;
     font-family: 'font_main-bold';
     left: 0;
+    margin-left: 180px;
+    color: #666666;
 }
 .form_content-main{
     font-family: 'font_main-medium';
@@ -70,12 +72,21 @@
     font-size: 12px;    
     padding: 4px 24px;
     border: 1px solid #ccc;
+    margin-right: 8px;
 }
 
 .form_content-main .select_content-main > option {
     /* font-size: 12px; */
     padding: 4px 24px;
     /* margin-left: 10px; */
+}
+
+button.btn_list-pro {
+    padding: 2px 12px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    font-family: 'font_main-medium';
+    font-weight: 500;
 }
 
 
@@ -89,35 +100,25 @@
 
 
 .carts {
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    /* display: grid; */
-    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
     --spacing: 20px;
-    /* grid-gap: 10; */
-    /* --column: 4; */
-    /* margin-left: calc(-1* var(--spacing));
-    margin-right: calc(-1* var(--spacing)); */
 }
 
 .cart{
-    /* width: calc(calc(100% / var(--column)) - 2* var(--spacing)); */
-    /* width: 100%; */
     margin-bottom: var(--spacing);
-    /* margin-right: var(--spacing); */
-    /* padding: 0 15px; */
-    /* border: 1px solid #ccc; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     border-radius: 10px;
     overflow: hidden;
-    /* box-shadow:0 0 6px #cccccc; */
-    /* position: relative; */
 }
 
 .carts .cart .img_href {
 
+}
+
+
+.cart_photo .cart_img:hover {
+    transform: scale(1.1);
 }
 
 .cart_photo{
@@ -141,6 +142,10 @@
     align-items: center;
     border-radius: 50%;
     font-family: 'font_main-bold';
+    transition: all .25s ease-in-out;
+    /* flex: 1; */
+    z-index: 1;
+    opacity: 0.8;
 }
 
 .overlay_addtocard {
@@ -149,31 +154,36 @@
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -40px;
-    transition: all .1s linear;
+    bottom: -50px;
+    transition: all .25s linear;
+    width: 100%;
 }
 
 .overlay_addtocard .btn_addtocard {
     border: none;
     text-align: center;
-    color: #000;
+    color: #fff;
     position: relative;
-    padding: 8px 35px;
-    background-color: #fff;
+    width: 100%;
+    padding: 14px 35px;
+    background-color: #000;
     font-family: 'font_main-medium';
     font-weight: 600;
     font-size: 14px;
     box-shadow: 0 0 3px #9f9f9f99;
+    opacity: 0.8;
+    display: block;
     /* border-radius: 5px; */
 }
 
 .overlay_addtocard .btn_addtocard:hover {
-    background-color: #000;
+    background-color: #dc3545;
     color: #fff;
+    text-decoration: none;
 }
 
 .cart:hover .overlay_addtocard {
-    bottom: 20px;
+    bottom: 0;
 }
 
 
@@ -183,6 +193,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    transition: all .25s ease-in-out;
 }
 
 .cart_img-bottom {
