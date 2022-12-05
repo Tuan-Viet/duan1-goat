@@ -9,6 +9,7 @@ include "models/orders.php";
 include "models/orders_detail.php";
 include "models/accounts.php";
 include "views/header.php";
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 // include "views/overlay_detail.php";
 if (!isset($_SESSION['my_cart'])) {
     $_SESSION['my_cart'] = [];
@@ -18,6 +19,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
         case 'hang_hoa':
+            $loaihang = loai_all();
             if (isset($_POST['check'])) {
                 $select_product = $_POST['select_product'];
                 switch ($select_product) {
@@ -25,10 +27,19 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                         $listhanghoa = show_product(0);
                         break;
                     case '1':
-                        $listhanghoa = show_product_total();
+                        if (isset($_GET['cate_id']) && isset($_GET['id'])) {
+                            $listhanghoa = show_product_total($_GET['cate_id']);
+                            // echo $_GET['cate_id'];
+                        } else {
+                            $listhanghoa = show_product_total(0);
+                        }
                         break;
                     case '2':
-                        $listhanghoa = show_product_total_desc();
+                        if (isset($_GET['cate_id']) && isset($_GET['id'])) {
+                            $listhanghoa = show_product_total_desc($_GET['cate_id']);
+                        } else {
+                            $listhanghoa = show_product_total_desc(0);
+                        }
                         break;
                     case '3':
 
@@ -39,6 +50,13 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 }
             } else {
                 $listhanghoa = show_product(0);
+            }
+            if (isset($_GET['id']) && !isset($_GET['cate_id'])) {
+                $cate_id = $_GET['id'];
+                $listhanghoa = show_product_cate($_GET['id']);
+            }
+            if (isset($_POST['btn_search'])) {
+                $keyword = $_POST['keyword'];
             }
             // $listhanghoa = show_product_total_desc();
             include "views/hang_hoa.php";
@@ -445,6 +463,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'mycart':
             $load_all_order = load_all_order($_SESSION['user']['id']);
             include "views/bill/mycart.php";
+            break;
+        case 'mycart_detail':
+            include "views/bill/mycart_detail.php";
             break;
         default:
             include "views/home.php";

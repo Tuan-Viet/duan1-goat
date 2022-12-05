@@ -78,10 +78,9 @@ ul , p , li , a ,label {
 
 
 .main {
-    position: relative;
-    /* right: 380px; */
+    width: 100%;
+    height: 100vh;
 }
-
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
