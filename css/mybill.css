@@ -1,5 +1,8 @@
+.fz24 {
+    font-size: 18px !important;
+}
 .tables_address {
-    width: 450px;
+    width: 80%;
     margin-top: -20px;
 }
 
@@ -21,9 +24,20 @@
 .table_address .title_address {
     background-color: #d9edf7;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 10px;
     position: relative;
+    padding: 10px;
+}
+
+.table_address .date_mybill {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'font_main-medium';
+    display: flex;
+    margin-bottom: 0;
+    /* line-height: 17px; */
+    /* align-items: center; */
 }
 
 .table_address .title_address span {
@@ -50,23 +64,6 @@
     right: 0;
 }
 
-.table_address-icon .icon_open {
-    height: 18px;
-    width: 18px;
-    margin-right: 5px;
-}
-
-.table_address-icon .icon_open:hover {
-    opacity: 0.4;
-}
-
-.table_address-icon .icon_close-fixed-address {
-    height: 20px;
-    width: 20px;
-    right: 15px;
-    margin-right: 10px;
-}
-
 
 .table_address .nav_address {
     padding: 10px;
@@ -75,19 +72,10 @@
     font-weight: 600;
     font-size: 14px;
     color: #666666;
+    position: relative;
+    /* height: 260px; */
 }
 
-.table_address .nav_address p {
-    margin: 5px 0;
-}
-
-.btn_add-address,
-.address_add {
-    padding: 5px 8px;
-    text-transform: uppercase;
-    color: #Fff;
-    background-color: #333e48;
-}
 
 .address_add-none {
 }
@@ -99,49 +87,43 @@
     position: relative;
 }
 
-.form_address-edit {
-    padding: 20px;
-}
-
-@keyframes address-add{
-    0% {
-        opacity: 0;
-        top: -25px;
-    }
-    100% {
-        opacity: 1;
-        top: 0;
-    }
-}
-
-.box_address-add {
-    position: relative;
-    margin: 15px 0;
-    border: none;
-    overflow: hidden;
-    border: none;
+.price_mycart {
     display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+}
+
+.price_mycart-section {
+    text-align: right;
+}
+
+.bottom_mycart {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
-.icon_address-add {
-    position: absolute;
-    /* vertical-align: middle; */
-    left: 10px;
-    color: #666666;
+.btn-success {
+    /* float: right; */
+    /* display: inline-block; */
+    /* right: 0; */
 }
 
-.form_control {
-    padding: 6px 12px 6px 32px;
-    border: 1px solid #ccc;
-    width: 100%;
-    transition: .1s all linear;
+.row_mybill {
+    display: block;
+    /* margin-top: -28px; */
 }
 
-.form_control:focus {
-    border: 1px solid #333e48;
+.section_mybill-left {
+    display: flex;
 }
 
-.bottom_address-add {
-    margin-top: 15px;
+.row_mybill-nav{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.btn-success {
+    
 }

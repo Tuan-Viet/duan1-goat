@@ -73,7 +73,7 @@ ul , p , li , a ,label {
 
 .right {
     right: 480px;
-    animation: fadeMain .25s linear;
+    animation: fadeMain .25s ease-in-out;
 }
 
 
@@ -450,7 +450,7 @@ footer {
     bottom: 0;
     background-color: #fff;
     padding: 60px 70px 100px 70px;
-    animation: fadeCart .25s linear;
+    animation: fadeCart .25s ease-in-out;
     display: none;
     overflow-y: scroll;
 }
