@@ -20,6 +20,11 @@
             </div>
             <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['user_name']) ? $errors['user_name'] : '' ?></small>
             <div class="form-group">
+                <i class="far fa-user"></i>
+                <input type="text" class="form-input" placeholder="Họ và tên" name="full_name">
+            </div>
+            <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['full_name']) ? $errors['full_name'] : '' ?></small>
+            <div class="form-group">
                 <i class="far fa-envelope"></i>
                 <input type="email" class="form-input" placeholder="Email" name="user_email">
             </div>
@@ -38,6 +43,10 @@
             </div>
             <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['user_password']) ? $errors['user_password'] : '' ?></small>
             <input type="submit" value="Đăng ký" class="form-submit" name="btn_submit">
+            <h1 class="or">OR</h1>
+            <div class="dangky">
+                <a href="./index.php?act=dang_nhap">Đăng Nhập</a>
+            </div>
         </form>
     </div>
 </body>
