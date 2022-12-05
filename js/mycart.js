@@ -4,7 +4,7 @@ const address_add = document.querySelector('.address_add');
 const cancel = document.querySelector('.cancel');
 const icon_open = document.querySelector('.icon_open');
 const nav_address = document.querySelector('.nav_address');
-console.log(address_add);
+// console.log(address_add);
 
 if(address_add){
     address_add.addEventListener('click',function(event){
@@ -15,18 +15,7 @@ if(address_add){
             form_address_add.style.display = "none";
         }
     })
-
 }
-
-icon_open.addEventListener('click',function(){
-    if(form_address_edit.style.display == "none"){
-        form_address_edit.style.display = "block"
-        nav_address.style.display = "none";
-    }else {
-        form_address_edit.style.display = "none";
-        nav_address.style.display = "block";
-    }
-})
 
 cancel.addEventListener('click',function(event){
     event.preventDefault();

@@ -471,8 +471,12 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         case 'contact':
             include "views/contact.php";
             break;
-        case 'list_address':
-            include "views/bill/list_address.php";
+        case 'mybill':
+            $load_all_order = load_all_order($_SESSION['user']['id']);
+            include "views/bill/mybill.php";
+            break;
+        case 'mycart_detail':
+            include "views/bill/mycart_detail.php";
             break;
         case 'mycart':
             $load_all_order = load_all_order($_SESSION['user']['id']);

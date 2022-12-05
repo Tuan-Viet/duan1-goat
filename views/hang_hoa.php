@@ -18,7 +18,7 @@
                     <option value="2">Giá cao đến thấp</option>
                     <option value="3">Bán chạy nhất</option>
                 </select>
-                <button type="submit" name="check" >lọc</button>
+                <button type="submit" name="check" class="btn_list-pro">Sắp xếp</button>
             </form>
             <?php } else { ?>
                 <form action="index.php?act=hang_hoa" method="post" class="form_content-main">
@@ -29,7 +29,7 @@
                     <option value="2">Giá cao đến thấp</option>
                     <option value="3">Bán chạy nhất</option>
                 </select>
-                <button type="submit" name="check" >lọc</button>
+                <button type="submit" name="check" class="btn_list-pro">Sắp xếp</button>
             </form>
             <?php } ?>
         </div>

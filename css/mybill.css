@@ -1,0 +1,122 @@
+.fz24 {
+    font-size: 18px !important;
+}
+.tables_bill {
+    width: 80%;
+    margin-top: -20px;
+}
+
+.table_address {
+    /* border: 1px solid #333; */
+    box-shadow: 0 0 6px #ccc;
+    overflow: hidden;
+    transition: .25s all linear;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.table_address:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 6px #666666;
+    /* margin-bottom: 5px; */
+}
+
+.table_address .title_address {
+    background-color: #d9edf7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+}
+
+.table_address .date_mybill {
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'font_main-medium';
+    display: flex;
+    margin-bottom: 0;
+    /* line-height: 17px; */
+    /* align-items: center; */
+}
+
+.table_address .title_address span {
+    margin-left: 10px;
+}
+
+.table_address .title_address .title_address-name {
+    color: #000;
+    font-family: 'font_main-bold';
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.nav_address .name_user-address {
+    font-weight: 700;
+    font-family: 'font_main-bold';
+    /* font-size: px; */
+    font-size: 14px;
+}
+
+.table_address-icon {
+    display: flex;
+    position: absolute;
+    right: 0;
+}
+
+
+.table_address .nav_address {
+    padding: 10px;
+    background-color: #FAFAFA;
+    font-family: 'font_main-medium';
+    font-weight: 600;
+    font-size: 14px;
+    color: #666666;
+    position: relative;
+    /* height: 260px; */
+}
+
+
+.address_add-none {
+}
+
+.price_mycart {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+}
+
+.price_mycart-section {
+    text-align: right;
+}
+
+.bottom_mycart {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-success {
+    /* float: right; */
+    /* display: inline-block; */
+    /* right: 0; */
+}
+
+.row_mybill {
+    display: block;
+    /* margin-top: -28px; */
+}
+
+.section_mybill-left {
+    display: flex;
+}
+
+.row_mybill-nav{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.btn-success {
+    
+}
