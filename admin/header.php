@@ -9,9 +9,10 @@
     <script src="https://kit.fontawesome.com/0f0775b010.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/admin/style.css">
     <script src="../js/admin.js"></script>
+    <script src="../js/pro_detail.js    "></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
     <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
-
+    <link rel="stylesheet" href="../css/">
 </head>
 
 <body>
@@ -22,10 +23,10 @@
                 <div class="avatarName">Welcome,<br>ADMIN</div>
             </div> -->
             <div class="logo">
-                <a href="?act=home"><img src="../images/logo/Logo-final.png" alt=""></a>
+                <a href="?act=list_products"><img src="../images/logo/Logo-final.png" alt=""></a>
             </div>
             <ul class="sideMenu">
-                <li><a href="?act=home">Dashboard</a></li>
+                <!-- <li><a href="?act=home">Dashboard</a></li> -->
                 <li>
                     <a href="javascript:void(0)" class="has-submenu"><span class="fa fa-angle-down"></span>Quản lí sản phẩm</a>
                     <ul class="submenu">
@@ -51,7 +52,7 @@
                     <a href="javascript:void(0)" class="has-submenu"><span class="fa fa-angle-down"></span>Quản lí đơn hàng</a>
                     <ul class="submenu">
                         <li><a href="?act=list_orders"><i class="fa fa-list"></i>Quản lí đơn hàng</a></li>
-                        <li><a href="?act=order_status"><span class="fa fa-tags"></span>Trạng thái đơn hàng</a></li>
+                        <!-- <li><a href="?act=order_status"><span class="fa fa-tags"></span>Trạng thái đơn hàng</a></li> -->
                     </ul>
                 </li>
                 <li>

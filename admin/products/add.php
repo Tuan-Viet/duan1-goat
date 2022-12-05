@@ -25,7 +25,7 @@
                             <input type="text" class="form-control" id="" name="product_name" placeholder="<?= $errors['product_name'] ?? '' ?>">
                         </div>
                         <div class="box-input">
-                            <label for="formGroupExampleInput" class="form-label"></label>
+                            <label for="formGroupExampleInput" class="form-label" style="display: block;">*</label>
                             <div class="box" style="margin: 0;">
                             <select class="" name=cate_id>
                                 <option value="" hidden >Danh mục</option>

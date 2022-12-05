@@ -89,4 +89,10 @@
         $sql="update users set full_name='$full_name',user_email='$user_email',user_tel='$user_tel',address='$address' where id=$id";
         pdo_execute($sql);
     }
+    //Load user
+    function load_user($keyword){
+        $sql="SELECT * FROM users WHERE id LIKE '%$keyword%' OR full_name LIKE '%$keyword%' OR address LIKE '%$keyword%'";
+        $user = pdo_query($sql);
+        return $user;
+    }
 ?>
