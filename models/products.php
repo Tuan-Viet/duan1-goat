@@ -36,18 +36,8 @@
         $listhanghoa = pdo_query($sql);
         return $listhanghoa;
     }
- //Lấy ra danh sách sản phẩm
- function products_all(){
-    $sql="SELECT * FROM products ORDER BY id DESC";
-    $hanghoa = pdo_query($sql);
-    return $hanghoa;
-}
-//Lấy ra 1 sản phẩm
-function product_one($id){
-    $sql="SELECT * FROM products WHERE id=$id";
-    $hanghoa = pdo_query($sql);
-    return $hanghoa;
-}
+
+
 //Xóa sản phẩm
 function delete_product($id){
     $sql = "DELETE FROM products WHERE id ='$id'";
@@ -65,8 +55,15 @@ function edit_product($id,$product_name,$product_price,$sale,$image,$cate_id,$de
     pdo_execute($sql);
 }
 // show all 
-function search_products($keyword,$condition_sort){
+function load_products($keyword,$cate,$condition_sort){
     $sql="SELECT * FROM products WHERE product_name  LIKE '%$keyword%' OR id LIKE '%$keyword%' ".$condition_sort." ";
+    $hanghoa = pdo_query($sql);
+    return $hanghoa;
+}
+
+//Lọc
+function product_filter($cate_id){
+    $sql = "SELECT * FROM products WHERE cate_id = $cate_id";
     $hanghoa = pdo_query($sql);
     return $hanghoa;
 }

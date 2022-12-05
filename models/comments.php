@@ -116,17 +116,20 @@ function time_stamp($time_ago)
         }
     }
 }
-
-<?php
-    //Lấy ra danh sách bình luận
-    function comment_all(){
-        $sql = "SELECT * FROM comments ORDER BY id DESC";
-        $binhluan = pdo_query($sql);
-        return $binhluan;
-    }
-    //Xóa bình luận
-    function delete_comment($id){
-        $sql = "DELETE FROM comments WHERE id ='$id'";
-        pdo_execute($sql);
-    }
-?>
+//Lấy ra danh sách bình luận
+function comment_all(){
+    $sql = "SELECT * FROM comments ORDER BY id DESC";
+    $binhluan = pdo_query($sql);
+    return $binhluan;
+}
+//Xóa bình luận
+function delete_comment($id){
+    $sql = "DELETE FROM comments WHERE id ='$id'";
+    pdo_execute($sql);
+}
+//load bình luận all
+function load_comments($keyword,$condition_sort){
+    $sql="SELECT * FROM comments WHERE  product_id LIKE '%$keyword%' OR user_id LIKE '%$keyword%' OR content LIKE '%$keyword%' ".$condition_sort." ";
+    $orders = pdo_query($sql);
+    return $orders;
+}

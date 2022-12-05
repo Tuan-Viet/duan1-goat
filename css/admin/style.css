@@ -48,7 +48,9 @@ a {
     font-weight: inherit;
     line-height: inherit;
 }
-
+td {
+    font-size: 14px;
+}
 span,
 label {
     display: inline-block;
@@ -837,11 +839,11 @@ label {
 }
 
 .boxFilter {
-    width: 200px;
+    width: 300px;
     position: fixed;
     top: 0;
     bottom: 0;
-    right: -200px;
+    right: -300px;
     background: #fff;
     padding: 20px;
     border-left: 1px solid #ccc;
@@ -1136,3 +1138,29 @@ span.errors {
     align-items: center;
     margin: 0 10px;
 }
+
+.btn-filter{
+    float: right;
+}
+.image_product{
+    
+}
+.list_thumbs{
+
+}
+.photo_pro-main{
+
+}
+.subbox-right{
+    width: 60%;
+    margin: 0 30px;
+}
+.name_product{
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+hr{
+    width: 370px;
+}
+

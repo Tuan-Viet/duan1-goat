@@ -4,8 +4,8 @@
         <p>QUẢN LÍ KHÁCH HÀNG</p>
     </div>
     <div class="row filterGroup">
-        <form action="?act=search_products" method="GET" class="formSearch fl">
-            <input type="text" class="inputSearch" placeholder="Search" name="keyword">
+        <form action="?act=list_users" method="POST" class="formSearch fl">
+            <input type="text" class="inputSearch" value="<?= $keyword ?>" placeholder="Search" name="keyword">
             <button type="submit" class="btnSearch" name="btn-search"><i class="fa fa-search"></i></button>
         </form>
         <!-- <div class="areaFilter fr row">
@@ -60,7 +60,7 @@
                         <th></th>
                         <th>ID</th>
                         <th>Họ và tên</th>
-                        <th>Ảnh</th>
+                        <th>Avatar</th>
                         <th>Địa chỉ</th>
                         <th>Email</th>
                         <th>SĐT</th>
@@ -100,8 +100,11 @@
             </table>
         </div>
     </form>
-
-    <div id="pageNavPosition"></div>
+    <?php
+    if ($num_product > 20) {
+        echo '<div id="pageNavPosition"></div>';
+    }
+    ?>
     <script type="text/javascript">
         var pager = new Pager('results', 20);
         pager.init();

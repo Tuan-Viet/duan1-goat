@@ -1,43 +1,4 @@
 <?php
-session_start();
-include "models/PDO.php";
-include "models/products.php";
-include "models/products_detail.php";
-include "models/categories.php";
-include "models/comments.php";
-include "models/orders.php";
-include "models/orders_detail.php";
-include "models/accounts.php";
-include "views/header.php";
-// include "views/overlay_detail.php";
-if (!isset($_SESSION['my_cart'])) {
-    $_SESSION['my_cart'] = [];
-}
-$errors = [];
-if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
-    $act = $_GET['act'];
-    switch ($act) {
-        case 'hang_hoa':
-            if (isset($_POST['check'])) {
-                $select_product = $_POST['select_product'];
-                switch ($select_product) {
-                    case '0':
-                        $listhanghoa = show_product(0);
-                        break;
-                    case '1':
-                        $listhanghoa = show_product_total();
-                        break;
-                    case '2':
-                        $listhanghoa = show_product_total_desc();
-                        break;
-                    case '3':
-
-                        break;
-                    default:
-                        $listhanghoa = show_product(0);
-                        break;
-                }
-            } else {
     session_start();
     include "models/PDO.php";
     include "models/products.php";
@@ -48,13 +9,17 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     include "models/orders_detail.php";
     include "models/accounts.php";
     include "views/header.php";
-    
+    // include "views/overlay_detail.php";
+    if (!isset($_SESSION['my_cart'])) {
+        $_SESSION['my_cart'] = [];
+      }
+    $errors = [];
     if((isset($_GET['act'])) && ($_GET['act']!="")) {
         $act = $_GET['act'];
         switch ($act) {
             case 'hang_hoa':
                 $listhanghoa = show_product(0);
-            }
+            
             // $listhanghoa = show_product_total_desc();
             include "views/hang_hoa.php";
             break;

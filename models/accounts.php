@@ -65,4 +65,10 @@
         $users = pdo_query($sql);
         return $users;
     }
+    //Load user
+    function load_user($keyword){
+        $sql="SELECT * FROM users WHERE id LIKE '%$keyword%' OR full_name LIKE '%$keyword%' OR address LIKE '%$keyword%'";
+        $user = pdo_query($sql);
+        return $user;
+    }
 ?>
