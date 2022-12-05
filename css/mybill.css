@@ -1,7 +1,7 @@
 .fz24 {
     font-size: 18px !important;
 }
-.tables_address {
+.tables_bill {
     width: 80%;
     margin-top: -20px;
 }
@@ -78,13 +78,6 @@
 
 
 .address_add-none {
-}
-
-.form_address-edit,
-.form_address-add {
-    display: none;
-    animation: address-add .25s linear;
-    position: relative;
 }
 
 .price_mycart {

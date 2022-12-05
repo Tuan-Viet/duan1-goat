@@ -50,6 +50,8 @@
     font-size: 24px;
     font-family: 'font_main-bold';
     left: 0;
+    margin-left: 180px;
+    color: #666666;
 }
 .form_content-main{
     font-family: 'font_main-medium';
@@ -70,12 +72,21 @@
     font-size: 12px;    
     padding: 4px 24px;
     border: 1px solid #ccc;
+    margin-right: 8px;
 }
 
 .form_content-main .select_content-main > option {
     /* font-size: 12px; */
     padding: 4px 24px;
     /* margin-left: 10px; */
+}
+
+button.btn_list-pro {
+    padding: 2px 12px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    font-family: 'font_main-medium';
+    font-weight: 500;
 }
 
 

@@ -4,22 +4,14 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-sm-3 account_sidebar">
-                <div class="account_top">
-                        <h3 class="account_title">Tài khoản</h3>
-                    </div>
-                    <div class="account_content">
-                        <ul class="accountList">
-                            <li class="current"><a href="index.php?act=mycart">Thông tin tài khoản</a></li>
-                            <li><a href="index.php?act=mybill">Đơn hàng của tôi</a></li>
-                            <li class="last"><a href="index.php?act=dang_xuat">Đăng xuất</a></li>
-                        </ul>
-                    </div>
+                 <div class="col-sm-3 account_sidebar">
+                    <?= include "account_sidebar.php"?>
                 </div>
                 <div class="col-sm-9">
                     <!-- <div class="row"> -->
                     <div class="col-xs-12">
-                        <div class="tables_address">
+                        <div class="tables_bill">
+                            <!-- section table -->
                             <div class="table_address">
                                 <div class="title_address">
                                     <h3 class="title_address-name">Nguyễn Công Quyền</h3>
@@ -62,8 +54,8 @@
                                     <input type="submit" value="Đã nhận hàng" class="btn btn-success mb8 mt8">
                                 </div>
                             </div>
+                            <!-- section table  -->
                         </div>
-                        <!-- </div> -->
                     </div>
                 </div>
             </div>
