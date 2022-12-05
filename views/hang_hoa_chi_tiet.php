@@ -184,6 +184,7 @@
                         <input type="text" name="content" id="" class="form_control-comment" placeholder="Viết bình luận của bạn ...">
                         <button type="submit" name="btn_send" class="btn_comment">Gửi</button>
                     </form>
+                    <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['comment']) ? $errors['comment'] : '' ?></small>
                 <?php } else { ?>
                     <small style="margin: 10px 15px 0; display: block; font-size: 24px;" class="text-danger">Vui lòng đăng nhập để bình luận</small>
                 <?php } ?>

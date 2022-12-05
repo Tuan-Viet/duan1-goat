@@ -65,4 +65,9 @@
         $users = pdo_query($sql);
         return $users;
     }
+    function forget_password($email) {
+        $sql = " select * from users where user_email like '%$email%'";
+        $check_user = pdo_query_one($sql);
+        return $check_user;
+    }
 ?>

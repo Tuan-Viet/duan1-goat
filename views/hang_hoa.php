@@ -60,7 +60,8 @@
                                 <img src="./images/products/<?= $hanghoa['image'] ?>" alt="" class="cart_img">
                             </a>
                             <div class="overlay_addtocard">
-                                <input type="submit" class="btn_addtocard" value="Thêm vào giỏ hàng">
+                                <!-- <input type="submit" class="btn_addtocard" value="Thêm vào giỏ hàng"> -->
+                                <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $hanghoa['id'] ?>" class="btn_addtocard">Thêm vào giỏ hàng</a>
                             </div>
                         </div>
                         <div class="cart_nav">

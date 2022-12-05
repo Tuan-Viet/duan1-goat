@@ -11,13 +11,14 @@
 </head>
 <body>
     <div id="wrapper">
-        <form action="" id="form-login">
+        <form action="index.php?act=quen_mat_khau" method="post" id="form-login">
             <h1 class="form-heading">Tìm tài khoản của bạn</h1>
             <div class="form-group">
                 <i class="far fa-user"></i>
-                <input type="text" class="form-input" placeholder="Tên tài khoản">
+                <input type="text" name="email" class="form-input" placeholder="Email của bạn">
             </div>
-            <input type="submit" value="Tìm kiếm" class="form-submit">
+            <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['thong_bao']) ? $errors['thong_bao'] : '' ?></small>
+            <input type="submit" name="forget_password" value="Tìm kiếm" class="form-submit">
         </form>
     </div>
 </body>

@@ -71,4 +71,9 @@ function search_products($keyword,$condition_sort){
     $hanghoa = pdo_query($sql);
     return $hanghoa;
 }
+function search_product($keyword) {
+    $sql = "select *, (100-sale)/100*product_price as total from products WHERE product_name  LIKE '%$keyword%' ORDER BY id DESC";
+    $listhanghoa = pdo_query($sql);
+    return $listhanghoa;
+}
 ?>

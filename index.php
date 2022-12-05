@@ -57,6 +57,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             }
             if (isset($_POST['btn_search'])) {
                 $keyword = $_POST['keyword'];
+                $listhanghoa = search_product($keyword);
             }
             // $listhanghoa = show_product_total_desc();
             include "views/hang_hoa.php";
@@ -105,6 +106,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $time_sent = date('h:i:sa d/m/Y');
                 if(trim($content) != '') {
                     insert_comment($product_id,$user_id,$content,$time_sent);
+                } else {
+                    $errors['comment'] = "Bạn vui lòng nhập nội dung";
                 }
                 // echo $content;
                 // echo $product_id;
@@ -134,7 +137,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 }
                 if (!isset($errors['user_name']) && !isset($errors['user_email']) && !isset($errors['user_tel']) && !isset($errors['user_password'])) {
                     insert_account($user_name, $user_password, $user_email, $user_tel, '0');
-                    header('location:index.php?act=dang_nhap');
+                    echo "
+                        <script>window.open('index.php','_self')</script>
+                        ";
                 }
                 // $thongbao = "Chúc mừng bạn đã đăng ký thành công";
             }
@@ -174,6 +179,19 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
             include "views/accounts/dang_nhap.php";
             break;
         case 'quen_mat_khau':
+            if (isset($_POST['forget_password'])) {
+                $email = $_POST['email'];
+                $check_user = forget_password($email);
+                if (is_array($check_user)) {
+                    $to = $check_user['user_email'];
+                    $subject = "Mật khẩu của bạn là:";
+                    $message = $check_user['user_password'];
+                    
+                    $check = mail($to ,$subject ,$message);
+                } else {
+                    $errors['thong_bao'] = "Email bạn nhập chưa chính xác";
+                }
+            }
             include "views/accounts/quen_mat_khau.php";
             break;
         case 'dang_xuat':
