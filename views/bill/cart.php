@@ -14,6 +14,7 @@
                 <td class="photo_pro-view">
                     <a href="">
                         <img src="./images/products/<?= $cart[4] ?>" alt="" class="img_pro-view">
+                        <span class="pro_quantity-cart clear_fix-quantity"><span class="pro_quantity-view"><?= $cart[7] ?></span></span>
                     </a>
                 </td>
                 <td class="info_pro-view">
@@ -26,7 +27,6 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
                             </svg>
                         </button> -->
-                        <input type="text" name="quantity" min="1" value="<?= $cart[7] ?>" id="" class="form_control-quantity">
                         <!-- <button class="amountPlus" onclick="handlePlus()">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
@@ -72,7 +72,7 @@
                     <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M112 160l-64 64 64 64" />
                     <path d="M64 224h294c58.76 0 106 49.33 106 108v20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
                 </svg>Tiếp tục đặt hàng</a>
-            <a href="" class="link_update">Cập nhật</a>
+            <!-- <a href="" class="link_update">Cập nhật</a> -->
             <a href="index.php?act=bill_confirm" class="link_pay">Thanh toán</a>
         </div>
     </div>

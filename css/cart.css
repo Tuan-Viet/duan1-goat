@@ -133,6 +133,7 @@
 .link_continue{
     background-color: #333e48;
     /* position: relative; */
+    
 }
 .link_update{
     background-color: #333e48;
@@ -163,3 +164,7 @@
     font-weight: 600;
     transition: all .25s linear;
 }
+
+/* .link_continue {
+    display: block;
+} */
