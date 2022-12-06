@@ -8,6 +8,7 @@ include "models/comments.php";
 include "models/orders.php";
 include "models/orders_detail.php";
 include "models/accounts.php";
+include "models/sendmail.php";
 include "views/header.php";
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 // include "views/overlay_detail.php";
@@ -100,7 +101,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $content = $_POST['content'];
                 $product_id = $_POST['product_id'];
                 $user_id = $_SESSION['user']['id'];
-                $time_sent = date('h:i:sa d/m/Y');
+                // $time_sent = date('h:i:sa d/m/Y');
+                $time_sent = date('d-m-Y h:i:sa');
+
                 if(trim($content) != '') {
                     insert_comment($product_id,$user_id,$content,$time_sent);
                 } else {
@@ -208,7 +211,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $subject = "Mật khẩu của bạn là:";
                     $message = $check_user['user_password'];
                     
-                    $check = mail($to ,$subject ,$message);
+                    sendmail($to,$message);
+                    $errors['thong_bao'] = "Mật khẩu đã đc gửi về email của bạn";
                 } else {
                     $errors['thong_bao'] = "Email bạn nhập chưa chính xác";
                 }
