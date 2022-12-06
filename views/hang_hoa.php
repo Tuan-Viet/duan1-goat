@@ -80,6 +80,26 @@
                     </div>
                 <?php endforeach ?>
             </div>
+            <!-- <div class="content__paging">
+                <ul class="content__paging__row">
+                    <li class="icon__paging__row content__paging__row-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon_page icon_page-left"fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                        </svg>
+                    </li>
+                    <div class="number_page">
+                        <li class="active"><a href="">1</a></li>
+                        <li><a href="">2</a></li>
+                        <li><a href="">3</a></li>
+                        <li><a href="">4</a></li>
+                    </div>
+                    <li class="icon__paging__row content__paging__row-right">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon_page icon_page-right" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </li>
+                </ul>
+            </div> -->
         </div>
     </div>
 </div>
