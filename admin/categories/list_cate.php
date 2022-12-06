@@ -13,16 +13,16 @@
         <table class="list_cate">
             <tr>
                 <th style="width: 32px;"></th>
-                <th style="width: 40px;">ID</th>
-                <th>Tên loại hàng</th>
+                <!-- <th style="width: 40px;">ID</th> -->
+                <th style="float: left;margin-left: 50px;">Tên loại hàng</th>
                 <th class="active-th">Tác vụ</th>
             </tr>
             <?php foreach ($loaihang as $lh) : ?>
                 <tr>
                     <td><input type="checkbox" name="name[]" id="check_all" value="<?= $lh['id'] ?>"></td>
                     <!-- <td><input type="checkbox" name="name[]" id="check_all" style="width: 14px;"></td> -->
-                    <td><?= $lh['id'] ?></td>
-                    <td><?= $lh['cate_name'] ?></td>
+                    <!-- <td><?= $lh['id'] ?></td> -->
+                    <td style="float: left;margin-left: 50px;"><?= $lh['cate_name'] ?></td>
                     <td class="active-td">
                         <a href="?act=edit_categories&id=<?= $lh['id'] ?>" name="btn" title="Chỉnh sửa"><img src="./../images/logo/edit.png" alt="" width="20"></a>
                         <a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="?act=delete_categories&id=<?= $lh['id'] ?>" title="Xóa"><img src="./../images/logo/delete.png" alt="" width="20"></a>

@@ -4,13 +4,13 @@
     </div>
     <div class="row filterGroup">
         <form action="?act=list_products" method="POST" class="formSearch fl">
-            <input type="text" class="inputSearch" value="<?= $keyword ?>" placeholder="Search" name="keyword" required>
+            <input type="text" class="inputSearch" value="<?= $keyword ?>" placeholder="Search" name="keyword" >
             <?php
             if ($num_product == 0) {
                 echo '<span class="kq_search" style="color: red;">Không tìm thấy kết quả</span>';
             }
             ?>
-            <button type="submit" class="btnSearch" name="btn-search"><i class="fa fa-search"></i></button>
+            <button type="submit" class="btnSearch" name="btn"><i class="fa fa-search"></i></button>
             <input type="hidden" name="condition_sort" value="<?= $condition_sort  ?>">
         </form>
         <div class="areaFilter fr row">
@@ -47,28 +47,26 @@
 
 
             <div class="boxFilter">
-                <form action="?act=?act=list_products&keyword=<?= $keyword ?>&sort=<?= $sort ?>">
+                <form action="?act=list_products" method="POST">
                     <div class="btnFilter"><span class="fa fa-close"></span>Đóng</div>
                     <div class="groupInput">
-                        <select name="">
+                        <select name="filter_cate">
+                            <option value="" hidden>Danh mục</option>
                             <?php foreach ($loaihang as $loai) : ?>
                                 <option value="<?= $loai['id'] ?>"><?= $loai['cate_name'] ?></option>
                             <?php endforeach ?>
                         </select>
-
-
                     </div>
-
-                    <div class="groupInput">
+                    <!-- <div class="groupInput">
                         <p class="titleInput">Ngày nhập </p>
-                        <!-- <div id="filterPrice"></div> -->
                         <div class="areaValue">
                             <p>Từ</p>
                             <input type="date" class="">
                             <p>Đến</p>
                             <input type="date" class="" value="<?= $now ?>">
                         </div>
-                    </div>
+                    </div> -->
+                    <button type="submit" name="btn" class="btn-filter"><span class="fa fa-filter"></span> Lọc</button>
                 </form>
 
             </div>
@@ -147,7 +145,7 @@
         </div>
     </form>
     <?php
-    if ($num_product > 0) {
+    if ($num_product > 20) {
         echo '<div id="pageNavPosition"></div>';
     }
     ?>

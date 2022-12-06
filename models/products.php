@@ -49,6 +49,8 @@
         $listhanghoa = pdo_query($sql);
         return $listhanghoa;
     }
+
+
 //Xóa sản phẩm
 function delete_product($id){
     $sql = "DELETE FROM products WHERE id ='$id'";
@@ -66,14 +68,9 @@ function edit_product($id,$product_name,$product_price,$sale,$image,$cate_id,$de
     pdo_execute($sql);
 }
 // show all 
-function search_products($keyword,$condition_sort){
+function load_products($keyword,$cate,$condition_sort){
     $sql="SELECT * FROM products WHERE product_name  LIKE '%$keyword%' OR id LIKE '%$keyword%' ".$condition_sort." ";
     $hanghoa = pdo_query($sql);
     return $hanghoa;
-}
-function search_product($keyword) {
-    $sql = "select *, (100-sale)/100*product_price as total from products WHERE product_name  LIKE '%$keyword%' ORDER BY id DESC";
-    $listhanghoa = pdo_query($sql);
-    return $listhanghoa;
 }
 ?>

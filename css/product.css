@@ -172,12 +172,14 @@ button.btn_list-pro {
     font-size: 14px;
     box-shadow: 0 0 3px #9f9f9f99;
     opacity: 0.8;
+    display: block;
     /* border-radius: 5px; */
 }
 
 .overlay_addtocard .btn_addtocard:hover {
     background-color: #dc3545;
     color: #fff;
+    text-decoration: none;
 }
 
 .cart:hover .overlay_addtocard {

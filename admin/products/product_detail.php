@@ -2,30 +2,34 @@
     <div class="title">
         <p>CHI TIẾT SẢN PHẨM</p>
     </div>
-    <div class="">
-        <div class="box"></div>
+    <div class="main">
         <?php foreach ($hanghoa as $hh) : ?>
-            <div class="box-input">
-                <label class="">MÃ SP</label>
-                <input type="text" name="id" readonly value="<?= $hh['id'] ?>" disabled>
-                <!-- <label for="" class="note">*ID tự động tăng</label> -->
+
+            <div class="box" style="margin-bottom: 50px;">
+                <div class="col-lg-12 box_pro-main row" style="display: flex;">
+                    <div class="list_thumbs col-lg-2 col-xs-12">
+                        <?php foreach ($hh_detail as $loai)
+                            if ($hh['id'] == $loai['product_id']) { ?>
+                            <div class="thumb_photo row" onclick="changeimg(this)">
+                                <img src="./../images/products/<?= $loai['image_detail'] ?>" alt="" width="60">
+                            </div>
+                        <?php } ?>
+                    </div>
+                    <div class="photo_pro-main col-lg-10">
+                        <img src="./../images/products/<?= $hh['image'] ?>" alt="" class="img_pro-main" width="300">
+                    </div>
+                </div>
+                <div class="subbox-right">
+                    <div class="name_product">
+                        <span><?= $hh['product_name'] ?></span>
+                    </div>
+                    <hr>
+                    <div class="price">
+                        <span><?= $hh['product_price'] ?></span>
+                    </div>
+                </div>
             </div>
-            <div class="box-input">
-                <label class="">Tên sản phẩm</label>
-                <input type="text" class="" id="" name="ten_hh" readonly value="<?= $hh['product_name'] ?>" disabled>
-            </div>
-            <div class="box-input">
-                <label class="">Đơn giá</label>
-                <input type="text" class="" id="" name="product_price" readonly value="<?= $hh['product_price'] ?>" disabled>
-            </div>
-            <div class="box-input">
-                <label class="">Giảm giá</label>
-                <input type="text" class="" id="" name="sale" readonly value="<?= $hh['sale'] ?>" disabled>
-            </div>
-            <div class="box-input">
-                <label class="">Mô tả</label>
-                <textarea name="description" id="" cols="30" rows="10"><?= $hh['description'] ?></textarea>
-            </div>
+            
         <?php endforeach ?>
         <table class="table">
             <tr>
@@ -79,7 +83,7 @@
                             }
                             ?>
                         </td>
-                        
+
                     </tr>
                 <?php
                 }

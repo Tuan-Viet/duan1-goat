@@ -9,25 +9,25 @@ include "../models/accounts.php";
 include "../models/products_detail.php";
 include "header.php";
 date_default_timezone_set('Asia/Ho_Chi_Minh');
-// $_SESSION['prroducts_detail'] = array();
 
 // controller
+
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
   $act = $_GET['act'];
   switch ($act) {
       //Danh sách sản phẩm
     case 'list_products':
       $now = date('d-m-Y');
-
       if ((isset($_POST['keyword'])) && ($_POST['keyword'] != "")) {
         $keyword = $_POST['keyword'];
       } else {
         $keyword = "";
       }
-      if ((isset($_POST['keyword'])) && ($_POST['keyword'] != "")) {
-        $keyword = $_POST['keyword'];
+      if ((isset($_POST['filter_cate'])) && ($_POST['filter_cate'] != "")) {
+        $cate_id = $_POST['filter_cate'];
+        $cate = "cate_id = $cate_id";
       } else {
-        $keyword = "";
+        $cate = "";
       }
       if ((isset($_GET['sort'])) && ($_GET['sort'] != "")) {
         $sort = $_GET['sort'];
@@ -45,17 +45,31 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         $condition_sort = "ORDER BY id DESC";
       }
 
-      $hanghoa = search_products($keyword, $condition_sort);
+      $hanghoa = load_products($keyword,$cate, $condition_sort);
+      
       $num_product = count($hanghoa);
       $loaihang = loai_all();
       include_once "./products/list_products.php";
       break;
+      //Lọc sản phẩm
+    // case 'filter_products':
+    //   if ((isset($_GET['btn-filter'])) && ($_GET['btn-filter'] != "")) {
+    //     extract($_POST);
+    //     $cate_id = $filter_cate;
+    //     $hanghoa = product_filter($cate_id);
+    //     $num_product = count($hanghoa);
+    //     include_once "./products/list_products.php";
+    //   } else {
+    //     include_once "./products/list_products.php";
+    //   }
+    //   break;
 
       //Chi tiết sản phẩm
     case 'product_detail':
       $id = $_GET['id'];
       $product_detail = products_detail_all();
       $hanghoa = product_one($id);
+      $hh_detail = products_detail_all();
       include_once "./products/product_detail.php";
       break;
 
@@ -236,12 +250,12 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         if (empty($cate_name)) {
           $errors['cate_name'] = "Vui lòng nhập danh mục";
         }
-        if(!$errors){
+        if (!$errors) {
           insert_categories($cate_name);
-        echo "
+          echo "
         <script>window.open('?act=list_cate','_self')</script>
         ";
-        exit;
+          exit;
         }
         include_once "./categories/add.php";
       } else {
@@ -286,7 +300,24 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       break;
       //Danh sách bình luận
     case 'list_comments':
-      $binhluan = comment_all();
+      if ((isset($_POST['keyword'])) && ($_POST['keyword'] != "")) {
+        $keyword = $_POST['keyword'];
+      } else {
+        $keyword = "";
+      }
+      if ((isset($_GET['sort'])) && ($_GET['sort'] != "")) {
+        $sort = $_GET['sort'];
+        $keyword = $_GET['keyword'];
+        if ($sort == 1) {
+          $condition_sort = "ORDER BY id DESC";
+        } elseif ($sort == 2) {
+          $condition_sort = "ORDER BY id ASC";
+        }
+      } else {
+        $condition_sort = "ORDER BY id DESC";
+      }
+      $binhluan = load_comments($keyword,$condition_sort);
+      $num_product = count($binhluan);
       include_once './comments/list_comments.php';
       break;
       //Xóa bình luận 
@@ -313,7 +344,13 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       break;
       //Lấy ra danh sách khách hàng
     case "list_users":
-      $users = user_all();
+      if ((isset($_POST['keyword'])) && ($_POST['keyword'] != "")) {
+        $keyword = $_POST['keyword'];
+      } else {
+        $keyword = "";
+      }
+      $users = load_user($keyword);
+      $num_product = count($users);
       include_once './accounts/users/list_user.php';
       break;
       //Khóa tài khoản
@@ -365,18 +402,46 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     case "user_detail":
       $id = $_GET['id'];
       $user_one = user_one($id);
-      // $users = user_all();
-      // include_once './accounts/users/list_user.php';
       break;
+
       //Lấy ra danh sách đơn hàng
     case "list_orders":
-      // $id = $_POST['id'];
-      // $orders_detail = order_one($id);
-      $orders = orders_all();
+      if ((isset($_POST['keyword'])) && ($_POST['keyword'] != "")) {
+        $keyword = $_POST['keyword'];
+      } else {
+        $keyword = "";
+      }
+      if ((isset($_GET['sort'])) && ($_GET['sort'] != "")) {
+        $sort = $_GET['sort'];
+        $keyword = $_GET['keyword'];
+        if ($sort == 1) {
+          $condition_sort = "ORDER BY id DESC";
+        } elseif ($sort == 2) {
+          $condition_sort = "ORDER BY id ASC";
+        }
+      } else {
+        $condition_sort = "ORDER BY id DESC";
+      }
+      $orders = load_orders($keyword,$condition_sort);
+      $num_product = count($orders);
       include_once './orders/list_orders.php';
 
       break;
       //Xóa đơn hàng
+    case "update_status":
+      $id= $_GET['id'];
+      $status_order = $_GET['status'] ;
+      if($status_order == 0){
+        $status = 1;
+      }elseif($status_order == 1){
+        $status = 2;
+      } 
+      update_status($id,$status);
+      echo "
+            <script>window.open('?act=list_orders','_self')</script>
+            ";
+      exit;
+      break;
     case 'delete_order':
       $id = $_GET['id'];
       delete_order($id);
@@ -412,7 +477,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
 
     default:
-      include "home.php";
+      // include "home.php";
       break;
   }
 }

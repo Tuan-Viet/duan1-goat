@@ -53,10 +53,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $cate_id = $_GET['id'];
                 $listhanghoa = show_product_cate($_GET['id']);
             }
-            if (isset($_POST['btn_search'])) {
-                $keyword = $_POST['keyword'];
-                $listhanghoa = search_product($keyword);
-            }
+            // if (isset($_POST['btn_search'])) {
+            //     $keyword = $_POST['keyword'];
+            //     $listhanghoa = search_product($keyword);
+            // }
             // $listhanghoa = show_product_total_desc();
             include "views/hang_hoa.php";
             break;
@@ -101,9 +101,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $content = $_POST['content'];
                 $product_id = $_POST['product_id'];
                 $user_id = $_SESSION['user']['id'];
-                // $time_sent = date('h:i:sa d/m/Y');
                 $time_sent = date('d-m-Y h:i:sa');
-
                 if(trim($content) != '') {
                     insert_comment($product_id,$user_id,$content,$time_sent);
                 } else {

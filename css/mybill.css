@@ -114,8 +114,13 @@
 .row_mybill-nav{
     display: flex;
     justify-content: space-between;
-
+    margin-bottom: 28px;
 }
+
+.info_pro-id.row_mybill-nav {
+    margin-bottom: 28px;
+}
+
 
 .btn-success {
     
