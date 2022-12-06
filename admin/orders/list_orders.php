@@ -3,16 +3,16 @@
         <p>QUẢN LÍ ĐƠN HÀNG</p>
     </div>
     <div class="row filterGroup">
-        <form action="?act=search_products" method="GET" class="formSearch fl">
-            <input type="text" class="inputSearch" placeholder="Search" name="keyword">
+        <form action="?act=list_orders" method="POST" class="formSearch fl">
+            <input type="text" class="inputSearch" value="<?= $keyword ?>" placeholder="Search" name="keyword">
             <button type="submit" class="btnSearch" name="btn-search"><i class="fa fa-search"></i></button>
         </form>
         <div class="areaFilter fr row">
             <div class="boxSelect fr">
                 <div class="titleSelect">Sắp xếp</div>
                 <ul class="optionSelect">
-                    <li sortIndex="0"><a href="">Mới nhất</a></li>
-                    <li sortIndex="1"><a href="">Cũ nhất</a></li>
+                    <li sortIndex="0"><a href="?act=list_orders&keyword=<?= $keyword ?>&sort=1">Mới nhất</a></li>
+                    <li sortIndex="1"><a href="?act=list_orders&keyword=<?= $keyword ?>&sort=2  ">Cũ nhất</a></li>
                 </ul>
             </div>
             <div class="btnFilter fr bg-fff"><span class="fa fa-filter"></span>Lọc</div>
@@ -57,7 +57,7 @@
                 <thead>
                     <tr>
                         <th></th>
-                        <th>MÃ ĐƠN HÀNG</th>
+                        <th>Mã ĐH   </th>
                         <th>User ID</th>
                         <th>Ngày tạo đơn</th>
                         <th>Phương thức thanh toán</th>
@@ -106,7 +106,7 @@
 
                             <td class="active-td">
 
-                                <a href="?act=product_detail&id=<?= $ord['id'] ?>"><img src="./../images/logo/eye.png" alt="" width="20px" title="Xem chi tiết"></a>
+                                <a href=""><img src="./../images/logo/eye.png" alt="" width="20px" title="Xem chi tiết"></a>
                                 <a onclick="return confirm('Xác nhận xóa?')" href="?act=delete_order&id=<?= $ord['id'] ?>"><img src="./../images/logo/delete.png" alt="" width="20px" title="Xóa"></a>
                             </td>
                         </tr>
@@ -116,7 +116,11 @@
         </div>
     </form>
 
-    <div id="pageNavPosition"></div>
+    <?php
+    if ($num_product > 20) {
+        echo '<div id="pageNavPosition"></div>';
+    }
+    ?>
     <script type="text/javascript">
         var pager = new Pager('results', 20);
         pager.init();

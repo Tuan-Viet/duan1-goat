@@ -70,6 +70,12 @@
         $sql = "UPDATE orders SET status = '$status' WHERE id =$id";
         pdo_execute($sql);
     }
+    //load đơn hàng
+    function load_orders($keyword,$condition_sort){
+        $sql="SELECT * FROM orders WHERE id  LIKE '%$keyword%' OR user_id LIKE '%$keyword%' OR name LIKE '%$keyword%' ".$condition_sort." ";
+        $orders = pdo_query($sql);
+        return $orders;
+    }
 ?>
 
 
