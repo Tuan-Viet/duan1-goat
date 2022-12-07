@@ -34,19 +34,13 @@
             <?php } ?>
         </div>
         <div class="nav_list">
-                <!-- <h3 class="title_list">Danh mục sản phẩm</h3> -->
-                <!-- <div class="line_list"></div> -->
                 <ul class="nav_list-section mt8">
                     <li><a href="index.php?act=hang_hoa" class="select_list active">Tât cả sản phẩm</a></li>
                     <?php foreach($loaihang as $hang): ?>
                     <li><a href="index.php?act=hang_hoa&id=<?= $hang['id'] ?>" class="select_list"><?= $hang['cate_name'] ?></a></li>
-                    <!-- <li><a href="" class="select_list">Giày</a></li>
-                    <li><a href="" class="select_list">Balo</a></li>
-                    <li><a href="" class="select_list">Túi xách</a></li> -->
                     <?php endforeach ?>
                     <div class="line"></div>
                 </ul>
-                <!-- <div class="line_list"></div> -->
             </div>
         <div class="container mt40">
             <div class="carts row">
@@ -80,26 +74,24 @@
                     </div>
                 <?php endforeach ?>
             </div>
-            <!-- <div class="content__paging">
+            <div class="content__paging">
                 <ul class="content__paging__row">
                     <li class="icon__paging__row content__paging__row-left">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon_page icon_page-left"fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                        </svg>
+                        
+                    <ion-icon name="chevron-back-outline" class="icon_page icon_page-left"></ion-icon>
                     </li>
                     <div class="number_page">
-                        <li class="active"><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">4</a></li>
+                        <!-- <li class="active">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li> -->
                     </div>
                     <li class="icon__paging__row content__paging__row-right">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon_page icon_page-right" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                        </svg>
+                        <!-- <ion-icon name="chevron-forward-outline"></ion-icon> -->
+                        <ion-icon name="chevron-forward-outline" class="icon_page icon_page-right"></ion-icon>
                     </li>
                 </ul>
-            </div> -->
+            </div>
         </div>
     </div>
 </div>
