@@ -35,28 +35,100 @@ function changecolor(event){
 // overlay_cart.addEventListener('click',overlay_none)
 // icon_close.addEventListener('click',overlay_none)
 
+if(nav_overlay_cart){
+    nav_overlay_cart.addEventListener('click',function(event){
+        event.stopPropagation(); 
+    })
+}
 
-nav_overlay_cart.addEventListener('click',function(event){
-    event.stopPropagation(); 
-})
 
 
+let carts = document.querySelectorAll('.cart');
+let cart = document.querySelector('.cart');
 
-const lists = document.querySelectorAll('.select_list');
-const listActive = document.querySelector('.select_list.active');
-const line_style = document.querySelector('.nav_list-section .line');
-console.log(line_style);
+let perpage = 16;
+let currentPage = 1;
+let start = 0;
+let end = perpage;
 
-line_style.style.left = listActive.offsetLeft + 'px';
-line_style.style.width = listActive.offsetWidth + 'px';
+const totalPage = Math.ceil(carts.length / perpage);
+// console.log(totalPage);
 
-lists.forEach((list,index) => {
-    list.onclick = function(event){
-        event.preventDefault();
-        document.querySelector('.select_list.active').classList.remove('active');
-        line_style.style.left = this.offsetLeft + 'px';
-        line_style.style.width = this.offsetWidth + 'px';
+let btn_row_right = document.querySelector('.content__paging__row-right');
+let btn_row_left = document.querySelector('.content__paging__row-left');
 
-        this.classList.add('active');
+// console.log();
+
+function getCurrentPage(currentPage) {
+    start = perpage * (currentPage - 1);
+    end = perpage * currentPage;
+}
+function renderCarts() {
+    carts.forEach((item, key) => {
+        if (key >= start && key < end) {
+            item.style.display = "block";
+        } else {
+            item.style.display = "none";
+        }
+    })
+}
+renderCarts();
+renderListPage();
+
+function renderListPage() {
+    let html = '';
+    html += `<li class="active"><a>${1}</a></li>`
+    for (let i = 2; i <= totalPage; i++) {
+        html += `<li><a>${i}</a></li>`
     }
+    document.querySelector('.number_page').innerHTML = html;
+}
+// renderListPage()
+
+function changePage() {
+    const listPage = document.querySelectorAll('.number_page li');
+    // console.log(listPage)
+    for(let i = 0 ; i < listPage.length ; i++ ){
+        listPage[i].addEventListener('click', () => {
+            // console.log(i)
+            let value = i + 1;
+            currentPage = value;
+            $('.number_page li').removeClass('active');
+            listPage[i].classList.add('active');
+            getCurrentPage(currentPage);
+            renderCarts();
+        })
+
+    }
+}
+changePage()
+
+btn_row_right.addEventListener('click', () => {
+    currentPage++;
+    if (currentPage > totalPage) {
+        currentPage = totalPage;
+    }
+
+    if(currentPage === totalPage) {
+        $('.content__paging__row-right').addClass('btn_active');
+    }
+    $('.content__paging__row-left').removeClass('btn_active')
+    $(`.number_page li`).removeClass('active');
+    $(`.number_page li:eq(${currentPage - 1})`).addClass('active');
+    getCurrentPage(currentPage);
+    renderCarts();
+})
+btn_row_left.addEventListener('click', () => {
+    currentPage--;
+    if (currentPage < 1) {
+        currentPage = 1;
+    }
+    if(currentPage === 1) {
+        $('.content__paging__row-left').addClass('btn_active');
+    }
+    $(`.number_page li`).removeClass('active');
+    $(`.number_page li:eq(${currentPage - 1})`).addClass('active');
+    $('.content__paging__row-right').removeClass('btn_active')
+    getCurrentPage(currentPage);
+    renderCarts();
 })
