@@ -6,7 +6,7 @@
         $subject = "GOAT quên mật khẩu";
         $body = $user_password;
         $from = "thanhvt1509@gmail.com";  // you mail
-        $password = "fkwhsygtsuouwaej";  // your mail password
+        
 
         // Ignore from here
 
