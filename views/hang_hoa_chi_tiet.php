@@ -38,7 +38,7 @@
                         <h1><?= $product_name ?></h1>
                     </div>
                     <div class="price_pro">
-                        <?php if($sale != 0){ ?>
+                        <?php if ($sale != 0) { ?>
                             <h1><?= $total ?><del class="price_pro-sale"><?= $product_price ?></del></h1>
                         <?php } else { ?>
                             <h1><?= $product_price ?></h1>
@@ -69,22 +69,22 @@
                             <span class="header_swatch mb8">Kích thước</span>
                             <div class="select_swap">
                                 <label class="swap_element" for="radio_size0">
-                                    <input type="radio" name="size" value="S" id="radio_size0" class="size_0-1" <?= $quantity_size_S<=0 ? 'disabled' : '' ?>>
+                                    <input type="radio" name="size" value="S" id="radio_size0" class="size_0-1" <?= $quantity_size_S <= 0 ? 'disabled' : '' ?>>
                                     <div class="ellipse"></div>
                                     <name class="size-S">S</name>
                                 </label>
                                 <label class="swap_element" for="radio_size1">
-                                    <input type="radio" name="size" value="M" id="radio_size1" class="size_0-1" <?= $quantity_size_M<=0 ? 'disabled' : '' ?>>
+                                    <input type="radio" name="size" value="M" id="radio_size1" class="size_0-1" <?= $quantity_size_M <= 0 ? 'disabled' : '' ?>>
                                     <div class="ellipse"></div>
                                     <name class="size-S">M</name>
                                 </label>
                                 <label class="swap_element" for="radio_size2">
-                                    <input type="radio" name="size" value="L" id="radio_size2" class="size_0-1" <?= $quantity_size_L<=0 ? 'disabled' : '' ?>>
+                                    <input type="radio" name="size" value="L" id="radio_size2" class="size_0-1" <?= $quantity_size_L <= 0 ? 'disabled' : '' ?>>
                                     <div class="ellipse"></div>
                                     <name class="size-S">L</name>
                                 </label>
                                 <label class="swap_element" for="radio_size3">
-                                    <input type="radio" name="size" value="XL" id="radio_size3" class="size_0-1" <?= $quantity_size_XL<=0 ? 'disabled' : '' ?>>
+                                    <input type="radio" name="size" value="XL" id="radio_size3" class="size_0-1" <?= $quantity_size_XL <= 0 ? 'disabled' : '' ?>>
                                     <div class="ellipse"></div>
                                     <name class="size-S">XL</name>
                                 </label>
@@ -93,23 +93,19 @@
                         </div>
                         <div class="select_watch">
                             <div class="amount">
-                            <button class="amountMinus" onclick="handleMinus()">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
-</svg>
-</button>
-                            <input type="text" name="quantity" min="1" value="1" id="" class="form_control-quantity">
-                            <button class="amountPlus" onclick="handlePlus()">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-</svg>
-</button>
+                                <button class="amountMinus" onclick="handleMinus()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15" />
+                                    </svg>
+                                </button>
+                                <input type="text" name="quantity" min="1" value="1" id="" class="form_control-quantity">
+                                <button class="amountPlus" onclick="handlePlus()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                                    </svg>
+                                </button>
+                                <!-- <br> -->
                             </div>
-                            <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['quantity']) ? $errors['quantity'] : '' ?></small>
-                            <!-- <a href="" class="btn_cart">Thêm vào giỏ hàng</a> -->
-                            <!-- <a href="" name="btn_buynow" class="btn_cart">
-                                <button type="submit" class="btn_cart">Mua ngay</button>    
-                            </a> -->
                             <?php if (isset($_SESSION['user'])) { ?>
                                 <a href="" class="btn_cart"><input type="submit" name="btn_addtocart" value="Thêm vào giỏ hàng"></a>
                                 <a href="" class="btn_cart"><input type="submit" name="btn_buynow" value="Mua ngay"></a>
@@ -118,6 +114,7 @@
                                 <a href="index.php?act=dang_nhap" class="btn_cart"><input type="" name="" value="Mua ngay"></a>
                             <?php } ?>
                         </div>
+                        <small style="margin: 10px 15px 0; display: block; font-size: small;" class="text-danger"><?= isset($errors['quantity']) ? $errors['quantity'] : '' ?></small>
                     </form>
                 </div>
                 <ul class="nav_tabs-menu">
@@ -173,23 +170,23 @@
                     <?php extract($product) ?>
                     <div class="cart cart_related col-lg-3 col-md-4">
                         <div class="cart_photo">
-                            <div class="sale_pro">-<?= $sale?>%</div>
+                            <div class="sale_pro">-<?= $sale ?>%</div>
                             <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $id ?>" class="img_href">
                                 <img src="images/products/<?= $image ?>" alt="" class="cart_img">
                             </a>
                             <div class="overlay_addtocard">
                                 <input type="submit" class="btn_addtocard" value="Thêm vào giỏ hàng">
                             </div>
-                            </div>
+                        </div>
                         <div class="cart_nav">
-                            <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $id ?>" class="cart_name"><?= $product_name?></a>
+                            <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $id ?>" class="cart_name"><?= $product_name ?></a>
                             <p class="cart_price"><?= $total ?> <del class="sale" style="color:#6666"><?= $product_price ?></del></p>
                         </div>
                     </div>
                 <?php endforeach ?>
             </div>
             <div class="row_comments mt28">
-                <?php if(isset($_SESSION['user'])) { ?>
+                <?php if (isset($_SESSION['user'])) { ?>
                     <?php extract($listhanghoa) ?>
                     <form action="index.php?act=hang_hoa_chi_tiet&id=<?= $id ?>" method="post" class="form_comments">
                         <input type="hidden" name="product_id" value="<?= $id ?>">
@@ -203,11 +200,11 @@
             </div>
             <h3 class="title_comment mt8">Bình luận</h3>
             <div class="box_user-comments">
-                <?php foreach($listcomment as $comment): ?>
+                <?php foreach ($listcomment as $comment) : ?>
                     <div class="nav_comments mt28">
                         <div class="user_comment">
-                            <?php foreach($list_user as $user): ?>
-                                <?php if($user['id'] == $comment['user_id']): ?>
+                            <?php foreach ($list_user as $user) : ?>
+                                <?php if ($user['id'] == $comment['user_id']) : ?>
                                     <strong><?= $user['full_name'] ?></strong>
                                 <?php endif ?>
                             <?php endforeach ?>
