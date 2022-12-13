@@ -29,7 +29,7 @@
 
 /* left */
 .main_left{
-    width: 60%;
+    /* width: 60%; */
     padding: 56px 66px 0 0;
     height: 100%;
 }
@@ -165,7 +165,7 @@
 /* right */
 
 .main_right {
-    width: 40%;
+    /* width: 40%; */
     /* background-color: #FAFAFA; */
     padding: 56px 0 0px 46px;
     border-left: 1px solid #ccc;

@@ -54,9 +54,9 @@
                                                 </div>
                                             </div>
                                             <hr>
-                                            <div class="row bottom_mycart">
-                                                <div class="col-lg-3">Tổng tiền</div>
-                                                <div class="col-lg-9 fz24"><span class="pro_price-view pro_price-cart price_mycart-section mt8 fz24" style="display: block;" ><?= $order['total'] + 30000 ?></span></div>
+                                            <div class="bottom_mycart">
+                                                <div class="title_total_bottom_mycart">Tổng tiền</div>
+                                                <div class="price_total_bottom_mycart fz24"><span class="pro_price-view pro_price-cart price_mycart-section mt8 fz24" style="display: block;" ><?= $order['total'] + 30000 ?></span></div>
                                             </div>
                                             <?php if($order['status'] != 2 ) { ?>
                                                 <?php
