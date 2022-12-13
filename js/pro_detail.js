@@ -21,7 +21,7 @@ const panels = document.querySelectorAll('.tab_panel');
 const tabActive = document.querySelector('.tab.active');
 const line = document.querySelector('.nav_tabs-menu .line');
 
-line.style.left = tabActive.offsetLeft + 'px';
+line.style.left = tabActive.offsetLeft + 'px';  
 line.style.width = tabActive.offsetWidth + 'px';
 
 

@@ -2,13 +2,9 @@
     <div class="content_banner">
         <img src="https://file.hstatic.net/200000136061/file/slide-01_67f1c987d8394c28b528d35368a098d8.jpg" alt="" class="img_banner-content">
     </div>
-    <div class="content_main wrapper">
+    <div class="content_main wrapper container-fluid">
+    <p class="title_content-main mt28">Tất cả sản phẩm</p>
         <div class="header_content-main">
-            <div class="first_section">
-                <ion-icon class="icon_option" name="options-outline"></ion-icon>
-                <span>Bộ lọc</span>
-            </div>
-            <p class="title_content-main">Tất cả sản phẩm</p>
             <?php if(isset($_GET['id'])) { ?>
             <form action="index.php?act=hang_hoa&id=<?= $_GET['id'] ?>&cate_id=<?= $_GET['id'] ?>" method="post" class="form_content-main">
                 <ion-icon name="list-outline" class="option_cate"></ion-icon>
@@ -42,10 +38,10 @@
                     <div class="line"></div>
                 </ul>
             </div>
-        <div class="container mt40">
-            <div class="carts row">
+        <div class="container-fluid mt40">
+            <div class="carts row row_product-md">
                 <?php foreach ($listhanghoa as $hanghoa) : ?>
-                    <div class="cart col-lg-3 col-sm-4">
+                    <div class="cart col-lg-3 col-md-4 col-sm-6 col-xs-12">
                         <div class="cart_photo">
                             <?php if($hanghoa['sale'] != 0) { ?>
                                 <div class="sale_pro">-<?= $hanghoa['sale'] ?>%</div>

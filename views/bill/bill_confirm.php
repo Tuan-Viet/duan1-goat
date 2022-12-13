@@ -1,10 +1,10 @@
 <div class="main_bill">
-    <div class="row">
+    <div class="row row_main_bill">
         <div class="main_left col-lg-7">
             <div class="main_header">
                 <p class="logo_text">Goat</p>
             </div>
-            <div class="main_content container">
+            <div class="main_content">
                 <div class="main_section">
                     <h3 class="section_title pdh20">Thông tin giao hàng</h3>
                     <div class="section_content-infomation">

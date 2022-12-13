@@ -1,6 +1,6 @@
-    <footer>
-    <div class="footer container mt80">
-        <div class="box_footer">
+    <footer class="mt80">
+    <div class="footer wrapper row">
+        <div class="box_footer col-lg-4 col-sm-6">
             <p class="footer_title">Liên kết</p>
             <div class="footer_content">
                 <ul class="list_footer">
@@ -12,7 +12,7 @@
                 </ul>
             </div>
         </div>
-        <div class="box_footer">
+        <div class="box_footer col-lg-4 col-sm-6">
             <p class="footer_title">Thông tin liên hệ</p>
             <div class="footer_content">
                 <ul class="list_footer">
@@ -22,7 +22,7 @@
                 </ul>
             </div>
         </div>
-        <div class="box_footer">
+        <div class="box_footer col-lg-4 col-sm-6">
             <p class="footer_title">Fanpage</p>
         </div>
     </div>

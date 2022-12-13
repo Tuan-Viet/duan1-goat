@@ -164,11 +164,11 @@
             </div>
         </div>
         <div class="list_product-related mt40">
-            <h1 class="title_pro-related mb24">Sản phẩm liên quan</h1>
+            <h1 class="title_pro-related mb24 container">Sản phẩm liên quan</h1>
             <div class="carts carts_related row">
                 <?php foreach ($product_cate as $product) : ?>
                     <?php extract($product) ?>
-                    <div class="cart cart_related col-lg-3 col-md-4">
+                    <div class="cart cart_related">
                         <div class="cart_photo">
                             <div class="sale_pro">-<?= $sale ?>%</div>
                             <a href="index.php?act=hang_hoa_chi_tiet&id=<?= $id ?>" class="img_href">

@@ -53,10 +53,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $cate_id = $_GET['id'];
                 $listhanghoa = show_product_cate($_GET['id']);
             }
-            // if (isset($_POST['btn_search'])) {
-            //     $keyword = $_POST['keyword'];
-            //     $listhanghoa = search_product($keyword);
-            // }
+            if (isset($_POST['btn_search'])) {
+                $keyword = $_POST['keyword'];
+                $listhanghoa = search_product($keyword);
+            }
             // $listhanghoa = show_product_total_desc();
             include "views/hang_hoa.php";
             break;
