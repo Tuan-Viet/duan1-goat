@@ -1,6 +1,6 @@
 <?php
-    function insert_order($user_id, $name, $address, $tel, $date_time,$thanh_tien) {
-        $sql = "insert into orders(user_id, name, address, tel, date_time,total) values ('$user_id', '$name', '$address', '$tel', '$date_time','$thanh_tien')";
+    function insert_order($user_id, $name, $address, $tel, $date_time,$thanh_tien,$status) {
+        $sql = "insert into orders(user_id, name, address, tel, date_time,total,status) values ('$user_id', '$name', '$address', '$tel', '$date_time','$thanh_tien','$status')";
         return pdo_execute_lastInsertId($sql);
     }
     function tongtien() {
@@ -61,7 +61,7 @@
     }
     //Lấy ra đơn hàng theo id
     function order_one($id){
-        $sql = "SELECT * FROM orders WHERE id =$id";
+        $sql = "SELECT * FROM orders WHERE id = $id";
         $order_one = pdo_query_one($sql);
         return $order_one;
     }
@@ -71,8 +71,8 @@
         pdo_execute($sql);
     }
     //load đơn hàng
-    function load_orders($keyword,$condition_sort){
-        $sql="SELECT * FROM orders WHERE id  LIKE '%$keyword%' OR user_id LIKE '%$keyword%' OR name LIKE '%$keyword%' ".$condition_sort." ";
+    function load_orders($keyword,$filter_status,$condition_sort){
+        $sql="SELECT * FROM orders WHERE (id LIKE '%$keyword%' OR user_id LIKE '%$keyword%' OR name LIKE '%$keyword%') ".$filter_status."  ".$condition_sort." ";
         $orders = pdo_query($sql);
         return $orders;
     }

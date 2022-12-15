@@ -69,8 +69,9 @@ function edit_product($id,$product_name,$product_price,$sale,$image,$cate_id,$de
 }
 // show all 
 function load_products($keyword,$cate,$condition_sort){
-    $sql="SELECT * FROM products WHERE product_name  LIKE '%$keyword%' OR id LIKE '%$keyword%' ".$condition_sort." ";
+    $sql="SELECT * FROM products WHERE (product_name  LIKE '%$keyword%' OR id LIKE '%$keyword%') ".$cate."  ".$condition_sort." ";
     $hanghoa = pdo_query($sql);
     return $hanghoa;
 }
+
 ?>

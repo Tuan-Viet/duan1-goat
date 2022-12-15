@@ -187,7 +187,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                             }
                         } elseif ($role == 1) {
                             echo "
-                                <script>window.open('admin/index.php','_self')</script>
+                                <script>window.open('admin/index.php?act=list_products','_self')</script>
                                 ";
                         }
                         // header('location:index.php');
@@ -436,7 +436,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $address = $_POST['address'];
                     $date_time = date('h:i:sa d/m/Y');
                     $thanh_tien = tongtien();
-                    $id_order = insert_order($user_id, $name, $address, $tel, $date_time, $thanh_tien);
+                    $status = 0;
+                    insert_order($user_id, $name, $address, $tel, $date_time,$thanh_tien,$status);
                 } else {
                     if (trim($_POST['name']) == '') {
                         $_SESSION['name'] = "Bạn vui lòng nhập tên";

@@ -2,6 +2,26 @@
     <div class="title">
         <p>QUẢN LÍ KHÁCH HÀNG</p>
     </div>
+    <div class="msg">
+        <?php
+        if ((isset($_GET['msg_unlock'])) && ($_GET['msg_unlock'] != "")) {
+        ?>
+            <label>
+                <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+                <div class="alert success_unlock">
+
+                    <div class="messenger">
+                        <?= $_GET['msg_unlock'] ?>
+                    </div>
+                    <div class="tick_x">
+                        <i class="fa-sharp fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </label>
+        <?php
+        }
+        ?>
+    </div>
     <div class="row filterGroup">
         <form action="?act=search_user" method="GET" class="formSearch fl">
             <input type="text" class="inputSearch" placeholder="Search" name="keyword">
@@ -41,59 +61,55 @@
         </div> -->
     </div>
     <form action="?act=delete_all_users" method="post">
-    <div class="btn_dk">
-        <button type="button" class="btn btn-secondary" id="click_all">Chọn tất cả</button>
-        <button type="button" class="btn btn-success" id="unchecked">Bỏ chọn</button>
-        <button type="submit" class="btn btn-danger">Xóa mục đã chọn</button>
-
-
-    </div>
-    <div class="">
-        <table class="list_users" id="results">
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>ID</th>
-                    <th>Họ và tên</th>
-                    <th>Ảnh</th>
-                    <th>Địa chỉ</th>
-                    <th>Email</th>
-                    <th>SĐT</th>
-                    <th>Trạng thái</th>
-                    <th class="active-th">Tác vụ</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($users as $user) : ?>
+        <div class="btn_dk">
+            <button type="button" class="btn btn-secondary" id="click_all">Chọn tất cả</button>
+            <button type="button" class="btn btn-success" id="unchecked">Bỏ chọn</button>
+            <button type="submit" class="btn btn-danger">Xóa mục đã chọn</button>
+        </div>
+        <div class="">
+            <table class="list_users" id="results">
+                <thead>
                     <tr>
-                        <td><input type="checkbox" name="name[]" id="check_all" value="<?= $hh['id'] ?>"></td>
-                        <td><?= $user['id'] ?></td>
-                        <td><?= $user['user_name'] ?></td>
-                        <td>
-                            <img src="./../images/users/<?= $user['avatar'] ?>" alt="" width="60">
-                        </td>
-                        <
-                        <td><?= $user['address'] ?></td>
-                        <td><?= $user['user_email'] ?></td>
-                        <td><?= $user['user_tel'] ?></td>
-                        <td>
-                        <?php
-                                if($user['status']==1){
-                                    echo "Khóa";
-                                }
-                            ?>
-                        </td>
-                        <td class="active-td">
-                            <a onclick="return confirm('Bạn có chắc mở khóa không?')" href="?act=unlock_user&id=<?= $user['id'] ?>"><img src="./../images/logo/unlock.png" alt="" width="20px" title="Khôi phục"></a>
-                            <a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="?act=delete_user&id=<?= $user['id'] ?>"><img src="./../images/logo/delete.png" alt="" width="20px" title="Xóa"></a>
-                        </td>
+                        <th></th>
+                        <th>ID</th>
+                        <th>Họ và tên</th>
+                        <th>Ảnh</th>
+                        <th>Địa chỉ</th>
+                        <th>Email</th>
+                        <th>SĐT</th>
+                        <th>Trạng thái</th>
+                        <th class="active-th">Tác vụ</th>
                     </tr>
-                <?php endforeach ?>
-            </tbody>
-        </table>
-    </div>
-   </form>
-
+                </thead>
+                <tbody>
+                    <?php foreach ($users as $user) : ?>
+                        <tr>
+                            <td><input type="checkbox" name="name[]" id="check_all" value="<?= $hh['id'] ?>"></td>
+                            <td><?= $user['id'] ?></td>
+                            <td><?= $user['user_name'] ?></td>
+                            <td>
+                                <img src="./../images/users/<?= $user['avatar'] ?>" alt="" width="60">
+                            </td>
+                            < <td><?= $user['address'] ?></td>
+                                <td><?= $user['user_email'] ?></td>
+                                <td><?= $user['user_tel'] ?></td>
+                                <td>
+                                    <?php
+                                    if ($user['status'] == 1) {
+                                        echo "Khóa";
+                                    }
+                                    ?>
+                                </td>
+                                <td class="active-td">
+                                    <a onclick="return confirm('Bạn có chắc mở khóa không?')" href="?act=unlock_user&id=<?= $user['id'] ?>"><img src="./../images/logo/unlock.png" alt="" width="20px" title="Khôi phục"></a>
+                                    <a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="?act=delete_user&id=<?= $user['id'] ?>"><img src="./../images/logo/delete.png" alt="" width="20px" title="Xóa"></a>
+                                </td>
+                        </tr>
+                    <?php endforeach ?>
+                </tbody>
+            </table>
+        </div>
+    </form>
     <div id="pageNavPosition"></div>
     <script type="text/javascript">
         var pager = new Pager('results', 20);
@@ -102,6 +118,6 @@
         pager.showPage(1);
     </script>
     <script>
-   $('#my-table').DataTable();
-</script>
+        $('#my-table').DataTable();
+    </script>
 </div>

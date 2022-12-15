@@ -131,6 +131,7 @@
                         <div class="dsc_pro-detail">
                             <div class="title_dsc-detail">Chọn size phù hợp</div>
                             <div class="nav_dsc-detail">
+                                <!-- <?= $description ?> -->
                                 <p>Size S dài 69 rộng 50cm
                                     <br>
                                     Size M dài 70 rộng 54cm

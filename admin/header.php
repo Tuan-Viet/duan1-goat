@@ -12,6 +12,7 @@
     <script src="../js/pro_detail.js    "></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
     <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+    
     <link rel="stylesheet" href="../css/">
 </head>
 
@@ -79,8 +80,8 @@
                 <div class="account fr">
                     <div class="name has-submenu">ADMIN<span class="fa fa-angle-down"></span></div>
                     <ul class="accountLinks submenu">
-                        <li><a href="../index.php">View website</a></li>
-                        <li><a href="">Đăng xuất<span class="fa fa-sign-out fr"></span></a></li>
+                        <!-- <li><a href="../index.php">View website</a></li> -->
+                        <li><a href="../index.php">Đăng xuất<span class="fa fa-sign-out fr"></span></a></li>
                     </ul>
                 </div>
 

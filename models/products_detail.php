@@ -12,7 +12,7 @@ function show_products_details($product_id)
 //Lấy ra danh sách sản phẩm
 function products_detail_all()
 {
-    $sql = "SELECT * FROM products_detail ORDER BY id DESC";
+    $sql = "SELECT * FROM products_detail  ORDER BY id DESC";
     $product_detail = pdo_query($sql);
     return $product_detail;
 }
@@ -44,10 +44,16 @@ function insert_product_detail($product_id, $product_color, $image_detail, $quan
 $sql = "INSERT INTO products_detail (product_id,product_color,image_detail,quantity_size_S,quantity_size_M,quantity_size_L,quantity_size_XL) VALUES ('$product_id','$product_color','$image_detail','$quantity_size_S','$quantity_size_M','$quantity_size_L','$quantity_size_XL')";
 pdo_execute($sql);
 }
-//Xóa sản phẩm
+//Xóa sản phẩm mẫu theo id sản phẩm
 function delete_product_detail($product_id)
 {
 $sql = "DELETE FROM products_detail WHERE product_id ='$product_id'";
+pdo_execute($sql);
+}
+//Xóa sản phẩm mẫu
+function delete_pd_detail($id)
+{
+$sql = "DELETE FROM products_detail WHERE id ='$id'";
 pdo_execute($sql);
 }
 //Sửa sản phẩm mẫu

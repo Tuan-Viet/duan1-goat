@@ -2,9 +2,60 @@
     <div class="title">
         <p>QUẢN LÍ SẢN PHẨM</p>
     </div>
+    <div class="msg">
+        <?php
+        if ((isset($_GET['msg_add'])) && ($_GET['msg_add'] != "")) {
+        ?>
+            <label>
+                <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+                <div class="alert success_add">
+
+                    <div class="messenger">
+                        <?= $_GET['msg_add'] ?>
+                    </div>
+                    <div class="tick_x">
+                        <i class="fa-sharp fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </label>
+        <?php
+        }
+        if ((isset($_GET['msg_delete'])) && ($_GET['msg_delete'] != "")) {
+        ?>
+            <label>
+                <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+                <div class="alert success_delete">
+
+                    <div class="messenger">
+                        <?= $_GET['msg_delete'] ?>
+                    </div>
+                    <div class="tick_x">
+                        <i class="fa-sharp fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </label>
+        <?php
+        }
+        if ((isset($_GET['msg_edit'])) && ($_GET['msg_edit'] != "")) {
+        ?>
+            <label>
+                <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+                <div class="alert success_edit">
+                    <div class="messenger">
+                        <?= $_GET['msg_edit'] ?>
+                    </div>
+                    <div class="tick_x">
+                        <i class="fa-sharp fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </label>
+        <?php
+        }
+        ?>
+    </div>
     <div class="row filterGroup">
         <form action="?act=list_products" method="POST" class="formSearch fl">
-            <input type="text" class="inputSearch" value="<?= $keyword ?>" placeholder="Search" name="keyword" >
+            <input type="text" class="inputSearch" value="<?= $keyword ?>" placeholder="Search" name="keyword">
             <?php
             if ($num_product == 0) {
                 echo '<span class="kq_search" style="color: red;">Không tìm thấy kết quả</span>';
@@ -12,6 +63,7 @@
             ?>
             <button type="submit" class="btnSearch" name="btn"><i class="fa fa-search"></i></button>
             <input type="hidden" name="condition_sort" value="<?= $condition_sort  ?>">
+            <input type="hidden" name="condition_sort" value="<?= $cate  ?>">
         </form>
         <div class="areaFilter fr row">
             <div class="boxSelect fr">
@@ -137,7 +189,9 @@
                                     <a href="?act=edit_product&id=<?= $hh['id'] ?>"><img src="./../images/logo/edit.png" alt="" width="20px" title="Chỉnh sửa"></a>
                                     <a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="?act=delete_product&id=<?= $hh['id'] ?>"><img src="./../images/logo/delete.png" alt="" width="20px" title="Xóa"></a>
                                 </td>
+
                             </tr>
+
                         <?php endforeach ?>
                     </tbody>
                 </table>
@@ -158,4 +212,5 @@
     <script>
         $('#my-table').DataTable();
     </script>
+    
 </div>

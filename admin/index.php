@@ -5,6 +5,7 @@ include "../models/products.php";
 include "../models/categories.php";
 include "../models/comments.php";
 include "../models/orders.php";
+include "../models/orders_detail.php";
 include "../models/accounts.php";
 include "../models/products_detail.php";
 include "header.php";
@@ -25,7 +26,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       }
       if ((isset($_POST['filter_cate'])) && ($_POST['filter_cate'] != "")) {
         $cate_id = $_POST['filter_cate'];
-        $cate = "cate_id = $cate_id";
+        $cate = "AND cate_id = $cate_id";
       } else {
         $cate = "";
       }
@@ -45,24 +46,26 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         $condition_sort = "ORDER BY id DESC";
       }
 
-      $hanghoa = load_products($keyword,$cate, $condition_sort);
-      
+      $hanghoa = load_products($keyword, $cate, $condition_sort);
+
       $num_product = count($hanghoa);
       $loaihang = loai_all();
       include_once "./products/list_products.php";
+
       break;
+
       //Lọc sản phẩm
-    // case 'filter_products':
-    //   if ((isset($_GET['btn-filter'])) && ($_GET['btn-filter'] != "")) {
-    //     extract($_POST);
-    //     $cate_id = $filter_cate;
-    //     $hanghoa = product_filter($cate_id);
-    //     $num_product = count($hanghoa);
-    //     include_once "./products/list_products.php";
-    //   } else {
-    //     include_once "./products/list_products.php";
-    //   }
-    //   break;
+      // case 'filter_products':
+      //   if ((isset($_GET['btn-filter'])) && ($_GET['btn-filter'] != "")) {
+      //     extract($_POST);
+      //     $cate_id = $filter_cate;
+      //     $hanghoa = product_filter($cate_id);
+      //     $num_product = count($hanghoa);
+      //     include_once "./products/list_products.php";
+      //   } else {
+      //     include_once "./products/list_products.php";
+      //   }
+      //   break;
 
       //Chi tiết sản phẩm
     case 'product_detail':
@@ -105,8 +108,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           //Upload hình
           move_uploaded_file($file['tmp_name'], '../images/products/' . $image);
           $lastID = insert_product($product_name, $product_price, $sale, $image, $cate_id, $description, $date, $view);
+          $msg = "Thêm sản phẩm thành công";
           echo "
-        <script>window.open('?act=add_product_detail&id=$lastID','_self')</script>
+        <script>window.open('?act=add_product_detail&id=$lastID&msg=$msg','_self')</script>
         ";
           exit;
         }
@@ -155,8 +159,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           //Upload hình
           move_uploaded_file($file_detail['tmp_name'], '../images/products/' . $image_detail);
           insert_product_detail($product_id, $product_color, $image_detail, $quantity_size_S, $quantity_size_M, $quantity_size_L, $quantity_size_XL);
+          $msg_add = "Thêm mới thành công";
           echo "
-           <script>window.open('?act=add_product_detail&id=$product_id','_self')</script>
+           <script>window.open('?act=add_product_detail&id=$product_id&msg_add=$msg_add','_self')</script>
            ";
           exit;
         }
@@ -180,8 +185,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           move_uploaded_file($file['tmp_name'], '../images/products/' . $image);
         }
         edit_product($id, $product_name, $product_price, $sale, $image, $cate_id, $description);
+        $msg_edit = "Lưu thành công";
         echo "
-        <script>window.open('?act=list_products','_self')</script>
+        <script>window.open('?act=list_products&msg_edit=$msg_edit','_self')</script>
         ";
         exit;
       } else {
@@ -219,8 +225,22 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       $product_id = $id;
       delete_product($id);
       delete_product_detail($product_id);
+      $msg_delete = "Xóa thành công";
       echo ";
-        <script>window.open('?act=list_products','_self')</script>
+        <script>window.open('?act=list_products&msg_delete=$msg_delete','_self')</script>
+        ";
+      exit;
+      break;
+      //Xóa mẫu sản phẩm
+    case 'delete_product_detail':
+      $id = $_GET['id'];
+      $product_detail_id = $id;
+      $product_detail = products_detail_one($product_detail_id);
+      $id_pd = $product_detail['product_id'];
+      delete_pd_detail($id);
+
+      echo "
+        <script>window.open('?act=edit_product&id=" . $id_pd . "','_self')</script>
         ";
       exit;
       break;
@@ -230,11 +250,14 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         $check = $_POST['name'];
         foreach ($check as $ma) {
           $id = $ma;
+          $product_id = $id;
           delete_product($id);
+          delete_product_detail($product_id);
+          $msg_delete = "Xóa thành công";
         }
       }
       echo "
-        <script>window.open('?act=list_products','_self')</script>
+        <script>window.open('?act=list_products&msg_delete=$msg_delete','_self')</script>
         ";
       break;
       //Danh sách danh mục
@@ -252,8 +275,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         }
         if (!$errors) {
           insert_categories($cate_name);
+          $msg_add = "Thêm mới thành công";
           echo "
-        <script>window.open('?act=list_cate','_self')</script>
+        <script>window.open('?act=list_cate&msg_add=$msg_add','_self')</script>
         ";
           exit;
         }
@@ -266,9 +290,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     case 'edit_categories':
       if (isset($_POST['btn'])) {
         extract($_POST);
+
         update_categories($id, $cate_name);
+        $msg_edit = "Lưu thành công";
         echo "
-        <script>window.open('?act=list_cate','_self')</script>
+        <script>window.open('?act=list_cate&msg_edit=$msg_edit','_self')</script>
         ";
         exit;
       } else {
@@ -281,8 +307,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     case 'delete_categories':
       $id = $_GET['id'];
       delete_categories($id);
+      $msg_delete = "Xóa thành công";
       echo "
-        <script>window.open('?act=list_cate','_self')</script>
+        <script>window.open('?act=list_cate&msg_delete=$msg_delete','_self')</script>
         ";
       break;
       //Xóa nhiều danh mục
@@ -292,10 +319,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         foreach ($check as $ma) {
           $id = $ma;
           delete_categories($id);
+          $msg_delete = "Xóa thành công";
         }
       }
       echo "
-        <script>window.open('?act=list_cate','_self')</script>
+        <script>window.open('?act=list_cate&msg_delete=$msg_delete','_self')</script>
         ";
       break;
       //Danh sách bình luận
@@ -316,16 +344,17 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       } else {
         $condition_sort = "ORDER BY id DESC";
       }
-      $binhluan = load_comments($keyword,$condition_sort);
+      $binhluan = load_comments($keyword, $condition_sort);
       $num_product = count($binhluan);
       include_once './comments/list_comments.php';
       break;
       //Xóa bình luận 
-    case 'delete_comment':
+    case 'delete_comement':
       $id = $_GET['id'];
       delete_comment($id);
+      $msg_delete = "Xóa thành công";
       echo "
-          <script>window.open('?act=list_comments','_self')</script>
+          <script>window.open('?act=list_comments&msg_delete=$msg_delete','_self')</script>
           ";
       exit;
       break;
@@ -336,10 +365,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         foreach ($check as $ma) {
           $id = $ma;
           delete_comment($id);
+          $msg_delete = "Xóa thành công";
         }
       }
       echo "
-          <script>window.open('?act=list_comments','_self')</script>
+          <script>window.open('?act=list_comments&msg_delete=$msg_delete','_self')</script>
           ";
       break;
       //Lấy ra danh sách khách hàng
@@ -358,8 +388,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       $status = '1';
       $id = $_GET['id'];
       lock_user($id, $status);
+      $msg_lock = "Tài khoản $id đã bị khóa";
       echo "
-          <script>window.open('?act=list_users','_self')</script>
+          <script>window.open('?act=list_users&msg_lock=$msg_lock','_self')</script>
           ";
       break;
       //Lấy ra danh sách khách hàng bị khóa
@@ -372,16 +403,18 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       $status = '0';
       $id = $_GET['id'];
       lock_user($id, $status);
+      $msg_unlock = "Tài khoản $id đã khôi phục";
       echo "
-          <script>window.open('?act=user_lock','_self')</script>
+          <script>window.open('?act=user_lock&msg_unlock=$msg_unlock','_self')</script>
           ";
       break;
       //Xóa user
     case 'delete_user':
       $id = $_GET['id'];
       delete_user($id);
+      $msg_delete = "Xóa thành công";
       echo "
-            <script>window.open('?act=user_lock','_self')</script>
+            <script>window.open('?act=list_users&msg_delete=$msg_delete','_self')</script>
             ";
       exit;
       break;
@@ -392,10 +425,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         foreach ($check as $ma) {
           $id = $ma;
           delete_user($id);
+          $msg_delete = "Xóa thành công";
         }
       }
       echo "
-          <script>window.open('?act=user_lock','_self')</script>
+          <script>window.open('?act=list_users&msg_delete=$msg_delete','_self')</script>
           ";
       break;
       //Chi tiết khách hàng
@@ -411,6 +445,12 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       } else {
         $keyword = "";
       }
+      if ((isset($_POST['filter_status'])) && ($_POST['filter_status'] != "")) {
+        $status = $_POST['filter_status'];
+        $filter_status = "AND status = $status";
+      } else {
+        $filter_status = "";
+      }
       if ((isset($_GET['sort'])) && ($_GET['sort'] != "")) {
         $sort = $_GET['sort'];
         $keyword = $_GET['keyword'];
@@ -422,62 +462,65 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       } else {
         $condition_sort = "ORDER BY id DESC";
       }
-      $orders = load_orders($keyword,$condition_sort);
+      $orders = load_orders($keyword, $filter_status, $condition_sort);
       $num_product = count($orders);
       include_once './orders/list_orders.php';
-
       break;
-      //Xóa đơn hàng
+
+      //Chi tiết đơn hàng
+    case "order_detail":
+      $id = $_GET['id'];
+      $id_order = $id;
+      $order = order_one($id);
+      $order_detail = load_all_order_detail($id_order);
+      
+      include_once './orders/order_detail.php';
+      break;
+
+      //Cập nhật trạng thái đơn hàng
     case "update_status":
-      $id= $_GET['id'];
-      $status_order = $_GET['status'] ;
-      if($status_order == 0){
+      $id = $_GET['id'];
+      $status_order = $_GET['status'];
+      if ($status_order == 0) {
         $status = 1;
-      }elseif($status_order == 1){
+      } elseif ($status_order == 1) {
         $status = 2;
-      } 
-      update_status($id,$status);
+      }
+      update_status($id, $status);
       echo "
             <script>window.open('?act=list_orders','_self')</script>
             ";
       exit;
       break;
+      //Xóa  đơn hàng
     case 'delete_order':
       $id = $_GET['id'];
       delete_order($id);
+      $msg_delete = "Xóa thành công";
       echo "
-            <script>window.open('?act=list_orders','_self')</script>
+            <script>window.open('?act=list_orders&msg_delete=$msg_delete','_self')</script>
             ";
       exit;
       break;
       //Xóa nhiều đơn hàng
-      // case 'delete_all_orders':
-      //   if (isset($_POST['name'])) {
-      //     $check = $_POST['name'];
-      //     foreach ($check as $ma) {
-      //       $id = $ma;
-      //       delete_order($id);
-      //     }
-      //   }
-      //   echo "
-      //       <script>window.open('?act=list_orders','_self')</script>
-      //       ";
-      //   break;
-
-
-
-
-
-
-
-
-
-
+    case 'delete_all_orders':
+      if (isset($_POST['name'])) {
+        $check = $_POST['name'];
+        foreach ($check as $ma) {
+          $id = $ma;
+          delete_order($id);
+          $msg_delete = "Xóa thành công";
+        }
+      }
+      echo "
+            <script>window.open('?act=list_orders&msg_delete=$msg_delete','_self')</script>
+            ";
+      break;
 
 
 
     default:
-      // include "home.php";
+
       break;
   }
 }

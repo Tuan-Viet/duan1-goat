@@ -1,7 +1,57 @@
-
 <div class="mainContent">
     <div class="title">
         <p>QUẢN LÍ KHÁCH HÀNG</p>
+    </div>
+    <div class="msg">
+        <?php
+        if ((isset($_GET['msg_lock'])) && ($_GET['msg_lock'] != "")) {
+        ?>
+            <label>
+                <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+                <div class="alert success_lock">
+
+                    <div class="messenger">
+                        <?= $_GET['msg_lock'] ?>
+                    </div>
+                    <div class="tick_x">
+                        <i class="fa-sharp fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </label>
+        <?php
+        }
+        if ((isset($_GET['msg_delete'])) && ($_GET['msg_delete'] != "")) {
+        ?>
+            <label>
+                <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+                <div class="alert success_delete">
+
+                    <div class="messenger">
+                        <?= $_GET['msg_delete'] ?>
+                    </div>
+                    <div class="tick_x">
+                        <i class="fa-sharp fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </label>
+        <?php
+        }
+        if ((isset($_GET['msg_edit'])) && ($_GET['msg_edit'] != "")) {
+        ?>
+            <label>
+                <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+                <div class="alert success_edit">
+                    <div class="messenger">
+                        <?= $_GET['msg_edit'] ?>
+                    </div>
+                    <div class="tick_x">
+                        <i class="fa-sharp fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </label>
+        <?php
+        }
+        ?>
     </div>
     <div class="row filterGroup">
         <form action="?act=list_users" method="POST" class="formSearch fl">
@@ -43,7 +93,7 @@
             </div>
         </div> -->
     </div>
-    <form action="?act=delete_all_products" method="post">
+    <form action="?act=delete_all_users" method="post">
         <div class="btn_dk">
             <a href="?act=add_product"><button type="button" class="btn btn-primary">Thêm mới</button></a>
             <button type="button" class="btn btn-secondary" id="click_all">Chọn tất cả</button>
@@ -60,7 +110,9 @@
                         <th></th>
                         <th>ID</th>
                         <th>Họ và tên</th>
-                        <th>Avatar</th>
+                        <th>Tài khoản</th>
+                        <th>Mật khẩu</th>
+                        <!-- <th>Avatar</th> -->
                         <th>Địa chỉ</th>
                         <th>Email</th>
                         <th>SĐT</th>
@@ -73,24 +125,26 @@
                         <tr>
                             <td><input type="checkbox" name="name[]" id="check_all" value="<?= $user['id'] ?>"></td>
                             <td><?= $user['id'] ?></td>
+                            <td><?= $user['full_name'] ?></td>
                             <td><?= $user['user_name'] ?></td>
-                            <td>
+                            <td><?= $user['user_password'] ?></td>
+                            <!-- <td>
                                 <img src="./../images/products/<?= $user['avatar'] ?>" alt="" width="60">
-                            </td>
+                            </td> -->
                             <td><?= $user['address'] ?></td>
                             <td><?= $user['user_email'] ?></td>
                             <td><?= $user['user_tel'] ?></td>
                             <td>
                                 <?php
                                 if ($user['status'] == 0) {
-                                    echo "Bình thường";
+                                    echo '<span style="color: #1E90FF;">Nor</span>';
                                 }
                                 ?>
                             </td>
 
                             <td class="active-td" style="width: 150px;">
-                                <a href="?act=product_detail&id=<?= $user['id'] ?>"><img src="./../images/logo/eye.png" alt="" width="20px" title="Xem chi tiết"></a>
-                                <a href="?act=edit_product&id=<?= $user['id'] ?>"><img src="./../images/logo/edit.png" alt="" width="20px" title="Chỉnh sửa"></a>
+                                <!-- <a href="?act=product_detail&id=<?= $user['id'] ?>"><img src="./../images/logo/eye.png" alt="" width="20px" title="Xem chi tiết"></a> -->
+                                <!-- <a href="?act=edit_product&id=<?= $user['id'] ?>"><img src="./../images/logo/edit.png" alt="" width="20px" title="Chỉnh sửa"></a> -->
                                 <a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="?act=lock_user&id=<?= $user['id'] ?>"><img src="./../images/logo/lock.png" alt="" width="20px" title="Khóa tài khoản"></a>
                                 <a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="?act=delete_user&id=<?= $user['id'] ?>"><img src="./../images/logo/delete.png" alt="" width="20px" title="Xóa"></a>
                             </td>
@@ -100,6 +154,7 @@
             </table>
         </div>
     </form>
+
     <?php
     if ($num_product > 20) {
         echo '<div id="pageNavPosition"></div>';

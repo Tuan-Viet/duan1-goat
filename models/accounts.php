@@ -91,7 +91,7 @@
     }
     //Load user
     function load_user($keyword){
-        $sql="SELECT * FROM users WHERE id LIKE '%$keyword%' OR full_name LIKE '%$keyword%' OR address LIKE '%$keyword%'";
+        $sql="SELECT * FROM users WHERE (id LIKE '%$keyword%' OR full_name LIKE '%$keyword%' OR address LIKE '%$keyword%') AND status = 0 ORDER BY id DESC";
         $user = pdo_query($sql);
         return $user;
     }
