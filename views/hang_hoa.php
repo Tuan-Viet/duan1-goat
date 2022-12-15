@@ -8,7 +8,15 @@
                 <ion-icon class="icon_option" name="options-outline"></ion-icon>
                 <span>Bộ lọc</span>
             </div>
-            <p class="title_content-main">Tất cả sản phẩm</p>
+            <?php if (isset($_GET['id'])) { ?>
+                    <?php foreach($loaihang as $hang): ?>
+                        <?php if ($hang['id'] == $_GET['id']) :?>
+                            <p class="title_content-main"><?= $hang['cate_name'] ?></p>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                <?php } else { ?>
+                <p class="title_content-main">Tất cả sản phẩm</p>
+            <?php } ?>
             <?php if(isset($_GET['id'])) { ?>
             <form action="index.php?act=hang_hoa&id=<?= $_GET['id'] ?>&cate_id=<?= $_GET['id'] ?>" method="post" class="form_content-main">
                 <ion-icon name="list-outline" class="option_cate"></ion-icon>

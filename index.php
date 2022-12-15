@@ -524,7 +524,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 } else {
                     $check_useremail = check_useremail($user_email);
                     if (is_array($check_useremail)) {
-                        $errors['user_email'] = "Email đã tồn tại";
+                        if ($check_useremail['user_email'] != $_SESSION['user']['user_email']) {
+                            $errors['user_email'] = "Email đã tồn tại";
+                        }
                     }
                 }
                 if (trim($user_tel) == '') {
@@ -532,7 +534,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 } else {
                     $check_usertel = check_usertel($user_tel);
                     if (is_array($check_usertel)) {
+                        if ($check_usertel['user_tel'] != $_SESSION['user']['user_tel']) {
                         $errors['user_tel'] = "Số điện thoại đã tồn tại";
+                        }
                     }
                 }
                 if (trim($address) == '') {

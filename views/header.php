@@ -124,7 +124,10 @@
                 </div>
                 <div class="btn_cart mt28">
                     <a href="index.php?act=cart" class="link_to-cart">Xem giỏ hàng</a>
-                    <a href="index.php?act=bill_confirm" class="link_to-checkout">Thanh Toán</a>
+                    <?php if (sizeof($_SESSION['my_cart']) != 0 ) : ?>
+                        <a href="index.php?act=bill_confirm" class="link_to-checkout">Thanh Toán</a>
+                    <?php endif ?>
+                    
                 </div>
                 </div>
                 

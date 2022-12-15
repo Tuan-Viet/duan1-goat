@@ -28,7 +28,7 @@
                 </li>
             </ul>
         </div>
-        <div class="bottom_page-contact">
+        <!-- <div class="bottom_page-contact">
             <h3 class="title_page-contact mb24 mt40 c-orange">Gửi thắc mắc cho chúng tôi</h3>
             <div class="line-contact mb24"></div>
             <form action="" class="form_page-contact">
@@ -46,7 +46,7 @@
                 </div>
                 <button type="submit" name="btn_submit" class="link_continue mt28 btn_contact b-orange">Gửi cho chúng tôi</button>
             </form>
-        </div>
+        </div> -->
     </div>
 </div>
 </div>
