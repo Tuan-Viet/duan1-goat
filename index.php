@@ -8,6 +8,7 @@ include "models/comments.php";
 include "models/orders.php";
 include "models/orders_detail.php";
 include "models/accounts.php";
+include "models/sendmail.php";
 include "views/header.php";
 date_default_timezone_set('Asia/Ho_Chi_Minh');
 // include "views/overlay_detail.php";
@@ -52,10 +53,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 $cate_id = $_GET['id'];
                 $listhanghoa = show_product_cate($_GET['id']);
             }
-            // if (isset($_POST['btn_search'])) {
-            //     $keyword = $_POST['keyword'];
-            //     $listhanghoa = search_product($keyword);
-            // }
+            if (isset($_POST['btn_search'])) {
+                $keyword = $_POST['keyword'];
+                $listhanghoa = search_product($keyword);
+            }
             // $listhanghoa = show_product_total_desc();
             include "views/hang_hoa.php";
             break;
@@ -208,7 +209,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $subject = "Mật khẩu của bạn là:";
                     $message = $check_user['user_password'];
                     
-                    $check = mail($to ,$subject ,$message);
+                    sendmail($to,$message);
+                    $errors['thong_bao'] = "Mật khẩu đã đc gửi về email của bạn";
                 } else {
                     $errors['thong_bao'] = "Email bạn nhập chưa chính xác";
                 }
@@ -523,7 +525,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 } else {
                     $check_useremail = check_useremail($user_email);
                     if (is_array($check_useremail)) {
-                        $errors['user_email'] = "Email đã tồn tại";
+                        if ($check_useremail['user_email'] != $_SESSION['user']['user_email']) {
+                            $errors['user_email'] = "Email đã tồn tại";
+                        }
                     }
                 }
                 if (trim($user_tel) == '') {
@@ -531,7 +535,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 } else {
                     $check_usertel = check_usertel($user_tel);
                     if (is_array($check_usertel)) {
+                        if ($check_usertel['user_tel'] != $_SESSION['user']['user_tel']) {
                         $errors['user_tel'] = "Số điện thoại đã tồn tại";
+                        }
                     }
                 }
                 if (trim($address) == '') {

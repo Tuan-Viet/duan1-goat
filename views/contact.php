@@ -1,7 +1,7 @@
 <div class="line_top"></div>
 <div class="container mt28">
 <div class="row contact">
-    <div class="col-lg-6 map">
+    <div class="col-lg-6 map mt_md-intro">
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d119056.71041998955!2d106.037248!3d21.1714048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1669901113358!5m2!1sen!2s" width="100%" height="750" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <div class="col-lg-6 contact_right">
@@ -28,7 +28,7 @@
                 </li>
             </ul>
         </div>
-        <div class="bottom_page-contact">
+        <!-- <div class="bottom_page-contact">
             <h3 class="title_page-contact mb24 mt40 c-orange">Gửi thắc mắc cho chúng tôi</h3>
             <div class="line-contact mb24"></div>
             <form action="" class="form_page-contact">
@@ -46,7 +46,7 @@
                 </div>
                 <button type="submit" name="btn_submit" class="link_continue mt28 btn_contact b-orange">Gửi cho chúng tôi</button>
             </form>
-        </div>
+        </div> -->
     </div>
 </div>
 </div>

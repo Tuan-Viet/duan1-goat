@@ -2,13 +2,21 @@
     <div class="content_banner">
         <img src="https://file.hstatic.net/200000136061/file/slide-01_67f1c987d8394c28b528d35368a098d8.jpg" alt="" class="img_banner-content">
     </div>
-    <div class="content_main wrapper">
+    <div class="content_main wrapper container-fluid">
         <div class="header_content-main">
             <div class="first_section">
                 <ion-icon class="icon_option" name="options-outline"></ion-icon>
                 <span>Bộ lọc</span>
             </div>
-            <p class="title_content-main">Tất cả sản phẩm</p>
+            <?php if (isset($_GET['id'])) { ?>
+                    <?php foreach($loaihang as $hang): ?>
+                        <?php if ($hang['id'] == $_GET['id']) :?>
+                            <p class="title_content-main"><?= $hang['cate_name'] ?></p>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                <?php } else { ?>
+                <p class="title_content-main">Tất cả sản phẩm</p>
+            <?php } ?>
             <?php if(isset($_GET['id'])) { ?>
             <form action="index.php?act=hang_hoa&id=<?= $_GET['id'] ?>&cate_id=<?= $_GET['id'] ?>" method="post" class="form_content-main">
                 <ion-icon name="list-outline" class="option_cate"></ion-icon>
@@ -34,24 +42,18 @@
             <?php } ?>
         </div>
         <div class="nav_list">
-                <!-- <h3 class="title_list">Danh mục sản phẩm</h3> -->
-                <!-- <div class="line_list"></div> -->
                 <ul class="nav_list-section mt8">
                     <li><a href="index.php?act=hang_hoa" class="select_list active">Tât cả sản phẩm</a></li>
                     <?php foreach($loaihang as $hang): ?>
                     <li><a href="index.php?act=hang_hoa&id=<?= $hang['id'] ?>" class="select_list"><?= $hang['cate_name'] ?></a></li>
-                    <!-- <li><a href="" class="select_list">Giày</a></li>
-                    <li><a href="" class="select_list">Balo</a></li>
-                    <li><a href="" class="select_list">Túi xách</a></li> -->
                     <?php endforeach ?>
                     <div class="line"></div>
                 </ul>
-                <!-- <div class="line_list"></div> -->
             </div>
-        <div class="container mt40">
-            <div class="carts row">
+        <div class="container-fluid mt40">
+            <div class="carts row row_product-md">
                 <?php foreach ($listhanghoa as $hanghoa) : ?>
-                    <div class="cart col-lg-3 col-sm-4">
+                    <div class="cart col-lg-3 col-md-4 col-sm-6 col-xs-12">
                         <div class="cart_photo">
                             <?php if($hanghoa['sale'] != 0) { ?>
                                 <div class="sale_pro">-<?= $hanghoa['sale'] ?>%</div>
@@ -79,6 +81,24 @@
                         </div>
                     </div>
                 <?php endforeach ?>
+            </div>
+            <div class="content__paging">
+                <ul class="content__paging__row">
+                    <li class="icon__paging__row content__paging__row-left">
+                        
+                    <ion-icon name="chevron-back-outline" class="icon_page icon_page-left"></ion-icon>
+                    </li>
+                    <div class="number_page">
+                        <!-- <li class="active">1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li> -->
+                    </div>
+                    <li class="icon__paging__row content__paging__row-right">
+                        <!-- <ion-icon name="chevron-forward-outline"></ion-icon> -->
+                        <ion-icon name="chevron-forward-outline" class="icon_page icon_page-right"></ion-icon>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>

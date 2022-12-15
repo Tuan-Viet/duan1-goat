@@ -1,13 +1,13 @@
 <div class="carts_check mt40 container">
     <div class="header_carts-check">
         <h1>Giỏ hàng của bạn</h1>
-        <p class="count_cart">Có <span>1 sản phẩm</span> trong giỏ hàng của bạn</p>
+        <p class="count_cart">Có <span><?= isset($_SESSION['my_cart']) ? sizeof($_SESSION['my_cart']) : '0'?> sản phẩm</span> trong giỏ hàng của bạn</p>
     </div>
     <table id="view_cart" class="mt50">
         <!-- <tbody> -->
         <?php
         $dem = 0;
-        $thanhtoan = 0;
+        $thanhtoan = 0; 
         ?>
         <?php foreach ($_SESSION['my_cart'] as $cart) : ?>
             <tr class="item_id-pro">
@@ -36,7 +36,7 @@
 </div>
 </td>
 <td>
-    <a href="index.php?act=delete_cart&id_cart=<?= $dem ?>">
+    <a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="index.php?act=delete_cart&id_cart=<?= $dem ?>">
         <svg xmlns="http://www.w3.org/2000/svg" class="icon_trash ionicon" viewBox="0 0 512 512">
             <title>Trash</title>
             <path d="M112 112l20 320c.95 18.49 14.4 32 32 32h184c17.67 0 30.87-13.51 32-32l20-320" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
@@ -73,8 +73,11 @@
                     <path d="M64 224h294c58.76 0 106 49.33 106 108v20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
                 </svg>Tiếp tục đặt hàng</a>
             <!-- <a href="" class="link_update">Cập nhật</a> -->
+            <?php if (sizeof($_SESSION['my_cart'] ) != 0) : ?>
             <a href="index.php?act=bill_confirm" class="link_pay">Thanh toán</a>
+            <?php endif ?>
         </div>
     </div>
+</div>
 </div>
 </div>

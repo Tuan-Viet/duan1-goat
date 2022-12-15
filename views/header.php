@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="./css/blog.css">
     <link rel="stylesheet" href="./css/product.css">
     <link rel="stylesheet" href="./css/main.css">
-    <link rel="stylesheet" href="./css/reponsive/rp_header.css">
+    <link rel="stylesheet" href="./css/responsive.css">
 </head>
 <body class="main">
         <header>
@@ -83,11 +83,64 @@
                             <?php } ?>
                         </div>
                     </div>
+                    <div class="header_menu_right-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="header_menu-icon" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </div>
                 </div>
                 
                 </div>
             </div>
         </header>
+        <div class="model">
+            <div class="nav_model">
+            <svg xmlns="http://www.w3.org/2000/svg" class="nav_model_close ionicon" viewBox="0 0 512 512"><title>Close</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" d="M368 368L144 144M368 144L144 368"/></svg>
+            
+                <div class="header_model mt28">
+                    <div class="logo_header logo_header-model">
+                        <a href="?act=home"><img src="./images/logo/z3873649224107_9da7327af01da45a4a2f921f0e652d14-removebg-preview.png" alt="" class="logo_header"></a>
+                    </div>
+                    <a href="index.php?act=cart" class="header_model-cart">                  
+                    <svg xmlns="http://www.w3.org/2000/svg" class="header_model-cart-icon" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M24 0C10.7 0 0 10.7 0 24S10.7 48 24 48H76.1l60.3 316.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H179.9l-9.1-48h317c14.3 0 26.9-9.5 30.8-23.3l54-192C578.3 52.3 563 32 541.8 32H122l-2.4-12.5C117.4 8.2 107.5 0 96 0H24zM176 512c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm336-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48z"/></svg>
+                    </a>
+                </div>
+                <div class="header_right header_right-model">
+                        <div class="user">
+                            <?php if (isset($_SESSION['user'])){ ?>
+                                <?php
+                                    $users = user_one($_SESSION['user']['id']);
+                                foreach($users as $user) {
+                                    extract($user);
+                                } ?>
+                                <a href="index.php?act=mycart" class="icon_user">        
+                                    <ion-icon name="people-outline" class="icon_user-header"></ion-icon>
+                                    <p>Hi! <span><?= $full_name ?></span></p>
+                                </a>
+                            <?php } else { ?>
+                                <a href="index.php?act=dang_nhap" class="icon_user">        
+                                    <ion-icon name="people-outline" class="icon_user-header"></ion-icon>
+                                    <span>Đăng nhập</span>
+                                </a>
+                            <?php } ?>
+                        </div>
+                    </div>
+                <div class="sub_header-right sub_header-right-model mt8">
+                    <form action="index.php?act=hang_hoa" method="post">
+                        <input type="text" name="keyword" class="form_control-header" placeholder="Tìm kiếm sản phẩm ..." required>
+                        <button type="submit" name="btn_search" class="btn_search-header btn_search-header-model"><svg xmlns="http://www.w3.org/2000/svg" class="icon_search-header" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></button>
+                    </form>
+                </div>
+                <div class="content_model">
+                <ul class="menu_model">
+                        <li><a href="./index.php">Trang chủ</a></li>
+                        <li><a href="index.php?act=hang_hoa">Sản phẩm</a></li>
+                        <li><a href="index.php?act=intro">Giới thiệu</a></li>
+                        <li><a href="index.php?act=contact">Liên hệ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
         <div class="overlay_addtocart">
             <div class="nav_addtocart">
                 <div class="view_overlay-cart">
@@ -124,7 +177,10 @@
                 </div>
                 <div class="btn_cart mt28">
                     <a href="index.php?act=cart" class="link_to-cart">Xem giỏ hàng</a>
-                    <a href="index.php?act=bill_confirm" class="link_to-checkout">Thanh Toán</a>
+                    <?php if (sizeof($_SESSION['my_cart']) != 0 ) : ?>
+                        <a href="index.php?act=bill_confirm" class="link_to-checkout">Thanh Toán</a>
+                    <?php endif ?>
+                    
                 </div>
                 </div>
                 

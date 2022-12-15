@@ -92,7 +92,9 @@
 
 }
 .pay_box-left{
-
+    width: 100%;
+    text-align: center;
+    opacity: 0;
 }
 .note{
     padding: 5px 20px;
@@ -103,6 +105,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
 }
 .total_info{
     text-align: right;
@@ -119,8 +122,8 @@
     margin-left: 10px;
 }
 .cart_buttons{
-    text-align: right;
-
+    display: flex;
+    justify-content: flex-end;
 }
 
 .icon_return {
@@ -132,7 +135,9 @@
 }
 .link_continue{
     background-color: #333e48;
+    margin-right: 10px;
     /* position: relative; */
+    /* float: right; */
     
 }
 .link_update{
@@ -155,8 +160,13 @@
     color: #333e48;
 }
 
+.cart_buttons .link_pay {
+    display: block;
+    float: right;
+}
+
 .link_continue , .link_update , .link_pay {
-    padding: 19px 20px;
+    padding: 14px 20px;
     color: #Fff;
     text-transform: uppercase;
     font-size: 14px;
