@@ -21,13 +21,17 @@
 .img_banner-content {
     width: 100%;
 }
+
+.first_section {
+    opacity: 0;
+}
 .content_main{
 
 }
 
 .content_main .header_content-main{
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     padding: 24px 0;
 }
@@ -40,7 +44,7 @@
     font-size: 24px;
     font-family: 'font_main-bold';
     left: 0;
-    /* margin-left: 180px; */
+    margin-left: 180px;
     color: #666666;
     text-align: center;
 }
