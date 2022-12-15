@@ -64,37 +64,37 @@
             <div class="content_section-bottom">
                 <div class="box_content-bottom">
                     <div class="photo_content-bottom">
-                        <a href="" class="img_href">
+                        <a href="index.php?act=hang_hoa" class="img_href">
                             <img src="https://file.hstatic.net/200000136061/file/z2438908040220_72b736f1d225dbabe576be53145114c6_f8bb9872698341d7aee25aeba949db29.jpg" alt="" class="img_content-bottom">
                             <div class="nav_content-bottom">
-                                <p class="title_content-bottom">Backpack</p>
-                                <p class="pro_quantity">23 sản phẩm</p>
+                                <p class="title_content-bottom">Sản phẩm</p>
+                                <!-- <p class="pro_quantity">23 sản phẩm</p> -->
                             </div>
                         </a>
                     </div>
                     <div class="photo_content-bottom">
-                        <a href="" class="img_href">
+                        <a href="index.php?act=intro" class="img_href">
                             <img src="https://file.hstatic.net/200000136061/file/z2438908040372_06e31198149a28544df62e6ec14bd451_1264cb336bb94cbf9b5ee524d400c48a.jpg" alt="" class="img_content-bottom">
                             <div class="nav_content-bottom">
-                                <p class="title_content-bottom">Backpack</p>
-                                <p class="pro_quantity">23 sản phẩm</p>
+                                <p class="title_content-bottom">Giới thiệu</p>
+                                <!-- <p class="pro_quantity">23 sản phẩm</p> -->
                             </div>
                         </a>
                     </div>
                     <div class="photo_content-bottom">
-                        <a href="" class="img_href">
+                        <a href="index.php?act=contact" class="img_href">
                             <img src="https://file.hstatic.net/200000136061/file/z2438908029449_31054c9a1a8845a7e4eb066452abda2c_0ad5286cbead4c7d8958b7b5c4907283.jpg" alt="" class="img_content-bottom">
                             <div class="nav_content-bottom">
-                                <p class="title_content-bottom">Backpack</p>
-                                <p class="pro_quantity">23 sản phẩm</p>
+                                <p class="title_content-bottom">Liên hệ</p>
+                                <!-- <p class="pro_quantity">23 sản phẩm</p> -->
                             </div>
                         </a>
                     </div>
                     <div class="photo_content-bottom">
-                        <a href="" class="img_href">
+                        <a href="index.php?act=hang_hoa" class="img_href">
                             <img src="https://file.hstatic.net/200000136061/file/z2438908119007_719f4812609147f9e47425fd35239021_bbfb6e5555a247039bae5ebc20c74f24.jpg" alt="" class="img_content-bottom">
                             <div class="nav_content-bottom">
-                                <p class="title_content-bottom">Backpack</p>
+                                <p class="title_content-bottom">Sản phẩm hiện có</p>
                                 <p class="pro_quantity">23 sản phẩm</p>
                             </div>
                         </a>
