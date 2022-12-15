@@ -73,7 +73,9 @@
                     <path d="M64 224h294c58.76 0 106 49.33 106 108v20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
                 </svg>Tiếp tục đặt hàng</a>
             <!-- <a href="" class="link_update">Cập nhật</a> -->
+            <?php if (sizeof($_SESSION['my_cart'] ) != 0) : ?>
             <a href="index.php?act=bill_confirm" class="link_pay">Thanh toán</a>
+            <?php endif ?>
         </div>
     </div>
 </div>
