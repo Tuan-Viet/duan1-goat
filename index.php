@@ -174,8 +174,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                 }
                 if (!isset($errors['user_name']) && !isset($errors['user_password'])) {
                     $check_user = check_user($user_name, $user_password);
-                    extract($check_user);
+                    
                     if (is_array($check_user)) {
+                        extract($check_user);
                         $_SESSION['user'] = $check_user;
                         if ($role == 0) {
                             if ($status ==1) {
@@ -439,7 +440,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
                     $date_time = date('h:i:sa d/m/Y');
                     $thanh_tien = tongtien();
                     $status = 0;
-                    insert_order($user_id, $name, $address, $tel, $date_time,$thanh_tien,$status);
+                    $id_order = insert_order($user_id, $name, $address, $tel, $date_time,$thanh_tien,$status);
                 } else {
                     if (trim($_POST['name']) == '') {
                         $_SESSION['name'] = "Bạn vui lòng nhập tên";

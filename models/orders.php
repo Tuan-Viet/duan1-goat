@@ -61,7 +61,7 @@
     }
     //Lấy ra đơn hàng theo id
     function order_one($id){
-        $sql = "SELECT * FROM orders WHERE id = $id";
+        $sql = "SELECT * FROM orders WHERE id =$id";
         $order_one = pdo_query_one($sql);
         return $order_one;
     }
