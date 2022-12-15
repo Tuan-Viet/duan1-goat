@@ -94,6 +94,7 @@
 .pay_box-left{
     width: 100%;
     text-align: center;
+    opacity: 0;
 }
 .note{
     padding: 5px 20px;
