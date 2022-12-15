@@ -3,20 +3,20 @@
         <img src="https://file.hstatic.net/200000136061/file/slide-01_67f1c987d8394c28b528d35368a098d8.jpg" alt="" class="img_banner-content">
     </div>
     <div class="content_main wrapper container-fluid">
-    <?php if (isset($_GET['id'])) { ?>
-            <?php foreach($loaihang as $hang): ?>
-                <?php if ($hang['id'] == $_GET['id']) :?>
-                    <p class="title_content-main"><?= $hang['cate_name'] ?></p>
-                <?php endif ?>
-            <?php endforeach ?>
-        <?php } else { ?>
-        <p class="title_content-main">Tất cả sản phẩm</p>
-    <?php } ?>
         <div class="header_content-main">
             <div class="first_section">
                 <ion-icon class="icon_option" name="options-outline"></ion-icon>
                 <span>Bộ lọc</span>
             </div>
+            <?php if (isset($_GET['id'])) { ?>
+                    <?php foreach($loaihang as $hang): ?>
+                        <?php if ($hang['id'] == $_GET['id']) :?>
+                            <p class="title_content-main"><?= $hang['cate_name'] ?></p>
+                        <?php endif ?>
+                    <?php endforeach ?>
+                <?php } else { ?>
+                <p class="title_content-main">Tất cả sản phẩm</p>
+            <?php } ?>
             <?php if(isset($_GET['id'])) { ?>
             <form action="index.php?act=hang_hoa&id=<?= $_GET['id'] ?>&cate_id=<?= $_GET['id'] ?>" method="post" class="form_content-main">
                 <ion-icon name="list-outline" class="option_cate"></ion-icon>
