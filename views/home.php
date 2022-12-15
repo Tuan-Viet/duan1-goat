@@ -1,4 +1,4 @@
-<content>
+<content class="content_home main">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!--Carousel Indicators-->
         <ol class="carousel-indicators">

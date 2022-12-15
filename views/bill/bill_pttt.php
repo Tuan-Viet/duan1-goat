@@ -1,5 +1,5 @@
 <div class="main_bill">
-    <div class="row row_confirm">
+    <div class="row row_confirm row_main_bill">
         <div class="main_left col-lg-7">
             <div class="price_ship">
                 <h3 class="section_title">Phương thức vận chuyển</h3>
