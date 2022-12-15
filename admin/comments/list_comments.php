@@ -2,9 +2,34 @@
     <div class="title">
         <p>QUẢN LÍ BÌNH LUẬN</p>
     </div>
+    <div class="msg">
+        <?php
+        if ((isset($_GET['msg_delete'])) && ($_GET['msg_delete'] != "")) {
+        ?>
+            <label>
+                <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+                <div class="alert success_delete">
+
+                    <div class="messenger">
+                        <?= $_GET['msg_delete'] ?>
+                    </div>
+                    <div class="tick_x">
+                        <i class="fa-sharp fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </label>
+        <?php
+        }
+        ?>
+    </div>
     <div class="row filterGroup">
         <form action="?act=list_comments" method="POST" class="formSearch fl">
             <input type="text" class="inputSearch" value="<?= $keyword ?>" placeholder="Search" name="keyword">
+            <?php
+            if ($num_product == 0) {
+                echo '<span class="kq_search" style="color: red;">Không tìm thấy kết quả</span>';
+            }
+            ?>
             <button type="submit" class="btnSearch" name="btn-search"><i class="fa fa-search"></i></button>
         </form>
         <div class="areaFilter fr row">
@@ -15,7 +40,7 @@
                     <li sortIndex="1"><a href="?act=list_comments&keyword=<?= $keyword ?>&sort=2">Cũ nhất</a></li>
                 </ul>
             </div>
-            <div class="btnFilter fr bg-fff"><span class="fa fa-filter"></span>Lọc</div>
+            <!-- <div class="btnFilter fr bg-fff"><span class="fa fa-filter"></span>Lọc</div>
             <div class="boxFilter">
                 <div class="btnFilter"><span class="fa fa-close"></span>Đóng</div>
                 <div class="groupInput">
@@ -30,7 +55,6 @@
 
                 <div class="groupInput">
                     <p class="titleInput">Ngày tạo đơn </p>
-                    <!-- <div id="filterPrice"></div> -->
                     <div class="areaValue">
                         <p>Từ</p>
                         <input type="text" class="rangeValue">
@@ -38,8 +62,7 @@
                         <input type="text" class="rangeValue">
                     </div>
                 </div>
-
-            </div>
+            </div> -->
         </div>
     </div>
     <form action="?act=delete_all_comments" method="post">

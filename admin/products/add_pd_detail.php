@@ -2,6 +2,26 @@
     <div class="title">
         <p>THÊM MẪU SẢN PHẨM</p>
     </div>
+    <div class="msg">
+        <?php
+        if ((isset($_GET['msg_add'])) && ($_GET['msg_add'] != "")) {
+        ?>
+            <label>
+                <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+                <div class="alert success_add">
+
+                    <div class="messenger">
+                        <?= $_GET['msg_add'] ?>
+                    </div>
+                    <div class="tick_x">
+                        <i class="fa-sharp fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </label>
+        <?php
+        }
+        ?>
+    </div>
     <form action="?act=add_product_detail" method="post" enctype="multipart/form-data" class="" novalidate>
         <div class="main container-fluid">
             <input type="hidden" name="product_id" value="<?= $id ?>">
@@ -13,7 +33,7 @@
                     </div> -->
                     <label for="file-input" onclick="preview()" id="btn-upload-file">
                         <img id="img-preview" src="./../images/logo/image.png" style="margin: 0;" />
-                    </label>    
+                    </label>
                     <input accept="image/*" type="file" id="file-input" name="image_detail">
                 </div>
                 <div class="box-right">
@@ -47,6 +67,6 @@
             <button type="reset" class="btn btn-danger">Nhập lại</button>
             <a href="?act=list_products"><button type="button" class="btn btn-primary">Danh sách</button></a>
         </div>
-        
+
     </form>
 </div>

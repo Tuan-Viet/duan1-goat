@@ -48,9 +48,11 @@ a {
     font-weight: inherit;
     line-height: inherit;
 }
+
 td {
     font-size: 14px;
 }
+
 span,
 label {
     display: inline-block;
@@ -1124,6 +1126,7 @@ img#img-preview {
 .sale-msg::placeholder {
     color: #777 !important;
 }
+
 .description::placeholder {
     color: red;
 }
@@ -1139,28 +1142,159 @@ span.errors {
     margin: 0 10px;
 }
 
-.btn-filter{
+.btn-filter {
     float: right;
 }
-.image_product{
-    
-}
-.list_thumbs{
 
-}
-.photo_pro-main{
+.image_product {}
 
-}
-.subbox-right{
+.list_thumbs {}
+
+.photo_pro-main {}
+
+.subbox-right {
     width: 60%;
     margin: 0 30px;
 }
-.name_product{
-    font-size: 24px;
+
+.name_product {
+    font-size: 28px;
     font-weight: 600;
     margin-bottom: 20px;
 }
-hr{
+
+hr {
     width: 370px;
 }
 
+.price {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: 100;
+
+}
+
+.sale {
+    font-size: 16px;
+    margin: 10px 0;
+    font-weight: 300;
+
+}
+
+
+.alert {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 10;
+    left: 0;
+    width: 230px;
+    height: 60px;
+    padding: 5px 10px;
+    margin: 10px;
+    line-height: 1.8;
+    /* border-radius: 5px; */
+    cursor: hand;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.alertCheckbox {
+    display: none;
+}
+
+:checked+.alert {
+    display: none;
+}
+
+.alertText {
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+}
+
+.alertClose {
+    float: right;
+    padding-top: 5px;
+    font-size: 10px;
+}
+
+.clear {
+    clear: both;
+}
+
+
+
+.success_add {
+    background-color: #b9fcbc;
+    border-left: 5px solid #00ea56;
+    color: #037221;
+}
+
+.success_delete {
+    background-color: #fcc6b9;
+    border-left: 5px solid #ea2f00;
+    color: #721403;
+}
+.success_lock {
+    background-color: #fcc6b9;
+    border-left: 5px solid #ea2f00;
+    color: #721403;
+}
+
+.success_edit {
+    background-color: #fcf5b9;
+    border-left: 5px solid #e2ea00;
+    color: #6c7203;
+}
+.success_unlock{
+    background-color: #b9edfc;
+    border-left: 5px solid #00c7ea;
+    color: #036772;
+}
+
+.warning {
+    background-color: #FDF7DF;
+    border: 1px solid #FEEC6F;
+    color: #C9971C;
+}
+
+.error {
+    background-color: #FEE;
+    border: 1px solid #EDD;
+    color: #A66;
+}
+
+.msg {
+    overflow: hidden;
+    position: fixed;
+    bottom: 20;
+    right: 20;
+    /* animation-name: move_right;
+    animation-delay:5s;
+    animation-duration: 2s;
+
+    animation-iteration-count: 1; */
+    /* transition: all 2s 0.5s ease-in-out;
+    -moz-transition: all 2s 0.5s ease-in-out;
+    -webkit-transition: all 2s 0.5s ease-in-out; */
+}
+.msg:checked{
+    right: -500px;
+}
+@keyframes move_right {
+    0% {
+    }
+
+    100% {
+        right: -500px;
+    }
+}
+
+.messenger {
+    display: flex;
+    align-items: center;
+}

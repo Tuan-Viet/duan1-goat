@@ -75,6 +75,7 @@
                                         <td><?= $prd['quantity_size_XL'] ?></td>
                                         <td>
                                             <a href="?act=edit_product_detail&id=<?= $prd['id'] ?>"><img src="./../images/logo/edit.png" alt="" width="20px" title="Chỉnh sửa"></a>
+                                            <a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="?act=delete_product_detail&id=<?= $prd['id'] ?>"><img src="./../images/logo/delete.png" alt="" width="20px" title="Xóa"></a>
 
                                         </td>
                                     </tr>
@@ -90,9 +91,9 @@
 
         </div>
         <div class="btn_remote">
-            <button type="submit" class="btn btn-success " name="btn">Lưu</button>
-            <button type="reset" class="btn btn-danger">Nhập lại</button>
-            <a href="?act=list_cate"><button type="button" class="btn btn-primary">Danh sách</button></a>
+            <button onclick="return confirm('Xác nhận thay đổi.Lưu')" type="submit" class="btn btn-success " name="btn">Lưu</button>
+            <button onclick="return confirm('Nhập lại')" type="reset" class="btn btn-danger">Nhập lại</button>
+            <a onclick="return confirm('Chưa lưu. Xác nhận tới trang danh sách')" href="?act=list_cate"><button type="button" class="btn btn-primary">Danh sách</button></a>
         </div>
     </form>
 

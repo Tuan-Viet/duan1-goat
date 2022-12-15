@@ -2,6 +2,27 @@
     <div class="title">
         <p>QUẢN LÍ ĐƠN HÀNG</p>
     </div>
+    <div class="msg">
+        <?php
+
+        if ((isset($_GET['msg_delete'])) && ($_GET['msg_delete'] != "")) {
+        ?>
+            <label>
+                <input type="checkbox" class="alertCheckbox" autocomplete="off" />
+                <div class="alert success_delete">
+
+                    <div class="messenger">
+                        <?= $_GET['msg_delete'] ?>
+                    </div>
+                    <div class="tick_x">
+                        <i class="fa-sharp fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </label>
+        <?php
+        }
+        ?>
+    </div>
     <div class="row filterGroup">
         <form action="?act=list_orders" method="POST" class="formSearch fl">
             <input type="text" class="inputSearch" value="<?= $keyword ?>" placeholder="Search" name="keyword">
@@ -17,27 +38,28 @@
             </div>
             <div class="btnFilter fr bg-fff"><span class="fa fa-filter"></span>Lọc</div>
             <div class="boxFilter">
-                <div class="btnFilter"><span class="fa fa-close"></span>Đóng</div>
-                <div class="groupInput">
-                    <select name="">
-                        <option value="0">Đơn hàng mới</option>
-                        <option value="1">Đang chuẩn bị hàng</option>
-                        <option value="2">Đang giao</option>
-                        <option value="3">Hoàn thành</option>
-                    </select>
-
-                </div>
-
-                <div class="groupInput">
-                    <p class="titleInput">Ngày tạo đơn </p>
-                    <!-- <div id="filterPrice"></div> -->
-                    <div class="areaValue">
-                        <p>Từ</p>
-                        <input type="text" class="rangeValue">
-                        <p>Đến</p>
-                        <input type="text" class="rangeValue">
+                <form action="?act=list_orders" method="POST">
+                    <div class="btnFilter"><span class="fa fa-close"></span>Đóng</div>
+                    <div class="groupInput">
+                        <select name="filter_status">
+                            <option value="" hidden>Danh mục</option>
+                            <option value="0">Đơn hàng mới</option>
+                            <option value="1">Đang chuẩn bị hàng</option>
+                            <option value="2">Đang giao</option>
+                            <option value="3">Hoàn thành</option>
+                        </select>
                     </div>
-                </div>
+                    <!-- <div class="groupInput">
+                        <p class="titleInput">Ngày nhập </p>
+                        <div class="areaValue">
+                            <p>Từ</p>
+                            <input type="date" class="">
+                            <p>Đến</p>
+                            <input type="date" class="" value="<?= $now ?>">
+                        </div>
+                    </div> -->
+                    <button type="submit" name="btn" class="btn-filter"><span class="fa fa-filter"></span> Lọc</button>
+                </form>
 
             </div>
         </div>
@@ -47,7 +69,7 @@
             <a href="?act=add_product"><button type="button" class="btn btn-primary">Thêm mới</button></a>
             <button type="button" class="btn btn-secondary" id="click_all">Chọn tất cả</button>
             <button type="button" class="btn btn-success" id="unchecked">Bỏ chọn</button>
-            <button type="submit" class="btn btn-danger">Xóa mục đã chọn</button>
+            <button onclick="return confirm('Bạn có chắc muốn xóa không?')" type="submit" class="btn btn-danger">Xóa mục đã chọn</button>
 
 
         </div>
@@ -57,7 +79,7 @@
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Mã ĐH   </th>
+                        <th>Mã ĐH </th>
                         <th>User ID</th>
                         <th>Ngày tạo đơn</th>
                         <th>Phương thức thanh toán</th>
@@ -79,7 +101,7 @@
                                 if ($ord['pay_methods'] == 0) {
                                     echo "Thanh toán COD";
                                 } else {
-                                    echo "Thanh toán";
+                                    echo "Thanh toán qua ATM";
                                 }
                                 ?>
                             </td>
@@ -106,7 +128,7 @@
 
                             <td class="active-td">
 
-                                <a href=""><img src="./../images/logo/eye.png" alt="" width="20px" title="Xem chi tiết"></a>
+                                <a href="?act=order_detail&id=<?= $ord['id'] ?>"><img src="./../images/logo/eye.png" alt="" width="20px" title="Xem chi tiết"></a>
                                 <a onclick="return confirm('Xác nhận xóa?')" href="?act=delete_order&id=<?= $ord['id'] ?>"><img src="./../images/logo/delete.png" alt="" width="20px" title="Xóa"></a>
                             </td>
                         </tr>

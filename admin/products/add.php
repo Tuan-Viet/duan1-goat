@@ -44,7 +44,7 @@
                         </div>
                         <div class="box-input">
                             <label for="formGroupExampleInput" class="form-label">Giảm giá(%)</label>
-                            <input type="text" class="form-control sale-msg" id="" name="sale" placeholder="0<?= $errors['sale'] ?? '' ?>" required style="">
+                            <input type="text" class="form-control sale-msg" id="" name="sale" value="0" placeholder="<?= $errors['sale'] ?? '' ?>" required style="">
                         </div>
                     </div>
                     <div class="box">
