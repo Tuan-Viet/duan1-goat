@@ -53,7 +53,7 @@
                     <ul class="menu">
                         <li><a href="./index.php">Trang chủ</a></li>
                         <li><a href="index.php?act=hang_hoa">Sản phẩm</a></li>
-                        <li><a href="index.php?act=blog">Blog</a></li>
+                        <!-- <li><a href="index.php?act=blog">Blog</a></li> -->
                         <li><a href="index.php?act=intro">Giới thiệu</a></li>
                         <li><a href="index.php?act=contact">Liên hệ</a></li>
                     </ul>
