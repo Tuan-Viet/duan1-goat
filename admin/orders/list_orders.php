@@ -80,28 +80,28 @@
                     <tr>
                         <th></th>
                         <th>Mã ĐH </th>
-                        <th>User ID</th>
+                        <!-- <th>User ID</th> -->
                         <th>Ngày tạo đơn</th>
-                        <th>Phương thức thanh toán</th>
+                        <th>PTTT</th>
                         <th>Tổng tiền</th>
                         <th>Trạng thái</th>
-                        <th></th>
-                        <th class="active-th">Tác vụ</th>
+                        <th style="width: 10px;"></th>
+                        <th class="active-th" style="width: 80px;">Tác vụ</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($orders as $ord) : ?>
                         <tr>
                             <td><input type="checkbox" name="name[]" id="check_all" value="<?= $ord['id'] ?>"></td>
-                            <td><?= $ord['id'] ?></td>
-                            <td><?= $ord['user_id'] ?></td>
+                            <td>GOAT-<?= $ord['id'] ?></td>
+                            <!-- <td><?= $ord['user_id'] ?></td> -->
                             <td><?= $ord['date_time'] ?></td>
                             <td>
                                 <?php
                                 if ($ord['pay_methods'] == 0) {
-                                    echo "Thanh toán COD";
+                                    echo "COD";
                                 } else {
-                                    echo "Thanh toán qua ATM";
+                                    echo "ATM";
                                 }
                                 ?>
                             </td>

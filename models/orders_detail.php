@@ -9,5 +9,12 @@
         $load_all_order_detail = pdo_query($sql);
         return $load_all_order_detail;
     }
+    //Lấy ra danh sách chi đơn hàng
+    function order_detail_all(){
+        $sql = "SELECT * FROM orders_detail ";
+        $order_detail_all = pdo_query($sql);
+        return $order_detail_all;
+    }
+
   
 ?>
