@@ -398,6 +398,14 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       $users = user_lock();
       include_once './accounts/users/user_lock.php';
       break;
+          //Chi tiết user
+    case "user_detail":
+      $id = $_GET['id'];
+      $user = user_one_detail($id);
+      $order = orders_all ();
+      $order_detail = order_detail_all();
+      include_once './accounts/users/user_detail.php';
+      break;
       //Khôi phục tài khoản
     case "unlock_user":
       $status = '0';

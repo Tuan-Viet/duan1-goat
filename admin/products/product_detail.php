@@ -15,7 +15,7 @@
                             </div>
                         <?php } ?>
                     </div> -->
-                    <div class="photo_pro-main col-lg-10">
+                    <div class="photo_pro-main col-lg-10" style="margin-right: 20px;">
                         <img src="./../images/products/<?= $hh['image'] ?>" alt="" class="img_pro-main" width="300">
                     </div>
                 </div>
@@ -41,6 +41,8 @@
                             </div>
                         </div>
                     </div>
+                    <label for="formGroupExampleInput" class="form-label" style="font-size: 16px;">Màu sắc: </label>
+
                     <div class="image_product">
 
                         <div class="list_thumbs col-lg-2 col-xs-12" style="display: flex;">

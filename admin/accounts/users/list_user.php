@@ -95,7 +95,7 @@
     </div>
     <form action="?act=delete_all_users" method="post">
         <div class="btn_dk">
-            <a href="?act=add_product"><button type="button" class="btn btn-primary">Thêm mới</button></a>
+            <!-- <a href="?act=add_product"><button type="button" class="btn btn-primary">Thêm mới</button></a> -->
             <button type="button" class="btn btn-secondary" id="click_all">Chọn tất cả</button>
             <button type="button" class="btn btn-success" id="unchecked">Bỏ chọn</button>
             <button type="submit" class="btn btn-danger">Xóa mục đã chọn</button>
@@ -110,8 +110,8 @@
                         <th></th>
                         <th>ID</th>
                         <th>Họ và tên</th>
-                        <th>Tài khoản</th>
-                        <th>Mật khẩu</th>
+                        <!-- <th>Tài khoản</th>
+                        <th>Mật khẩu</th> -->
                         <!-- <th>Avatar</th> -->
                         <th>Địa chỉ</th>
                         <th>Email</th>
@@ -126,8 +126,8 @@
                             <td><input type="checkbox" name="name[]" id="check_all" value="<?= $user['id'] ?>"></td>
                             <td><?= $user['id'] ?></td>
                             <td><?= $user['full_name'] ?></td>
-                            <td><?= $user['user_name'] ?></td>
-                            <td><?= $user['user_password'] ?></td>
+                            <!-- <td><?= $user['user_name'] ?></td>
+                            <td><?= $user['user_password'] ?></td> -->
                             <!-- <td>
                                 <img src="./../images/products/<?= $user['avatar'] ?>" alt="" width="60">
                             </td> -->
@@ -143,7 +143,7 @@
                             </td>
 
                             <td class="active-td" style="width: 150px;">
-                                <!-- <a href="?act=product_detail&id=<?= $user['id'] ?>"><img src="./../images/logo/eye.png" alt="" width="20px" title="Xem chi tiết"></a> -->
+                                <a href="?act=user_detail&id=<?= $user['id'] ?>"><img src="./../images/logo/eye.png" alt="" width="20px" title="Xem chi tiết"></a>
                                 <!-- <a href="?act=edit_product&id=<?= $user['id'] ?>"><img src="./../images/logo/edit.png" alt="" width="20px" title="Chỉnh sửa"></a> -->
                                 <a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="?act=lock_user&id=<?= $user['id'] ?>"><img src="./../images/logo/lock.png" alt="" width="20px" title="Khóa tài khoản"></a>
                                 <a onclick="return confirm('Bạn có chắc muốn xóa không?')" href="?act=delete_user&id=<?= $user['id'] ?>"><img src="./../images/logo/delete.png" alt="" width="20px" title="Xóa"></a>

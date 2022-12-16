@@ -80,6 +80,12 @@
         $users = pdo_query($sql);
         return $users;
     }
+    //Lấy ra 1 khách hàng theo id
+    function user_one_detail($id){
+        $sql="SELECT * FROM users WHERE id='$id'";
+        $users = pdo_query_one($sql);
+        return $users;
+    }
     function forget_password($email) {
         $sql = " select * from users where user_email = '$email'";
         $check_user = pdo_query_one($sql);
